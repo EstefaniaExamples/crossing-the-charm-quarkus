@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Crossing the chasm:</h1>
+						<img src="./images/quarkus_logo.png" width="50%" />
+						<ul>
+							<li>Estefania Castro Vizoso</li>
+							<li>Juan Antonio Breña Moral</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<ul>
+							<li>What is your need?</li>
+							<li>Product Life cycle</li>
+							<li>Crossing the chasm</li>
+							<li>Quarkus features</li>
+							<li>Use cases</li>
+							<li>Alternatives</li>
+							<li>Numbers</li>
+							<li>It is necessary to change?</li>
+							<li>Cost of change</li>
+							<li>References</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>What is your need?</h2>
+					<p>
+						Develop Enterprise Grade software
+						for Cloud Native environments & Serverless.
+					</p>
+				</section>
+				<section>
+					<h2>Product Life cycle</h2>
+					<p>
+						It is the amount of time a product goes from being
+						introduced into the market until it is taken off
+						the shelves.
+					</p>
+					<img src="images/product_life_cycle.jpg" width="50%" />
+				</section>
+				<section>
+					<section>
+						<h2>Crossing the chasm</h2>
+						<img src="images/chasm.png" width="50%" />
+					</section>
+					<section>
+						<h2>Crossing the chasm</h2>
+						<img src="images/crossing-the-chasm-book.jpg" width="30%" />
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Quarkus features</h2>
+						<img src="images/quarkus-architecture.png" width="80%" />
+					</section>
+					<section>
+						<h2>Quarkus features</h2>
+						<img src="images/microservice-aspects.png" width="50%" />
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
