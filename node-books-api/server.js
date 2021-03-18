@@ -6,7 +6,10 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./api/routes/booksRoutes'); //importing route
+const db = require('./api/models');
+db.sequelize.sync();
+
+var routes = require('./api/routes'); //importing route
 routes(app); //register the route
 
 app.use(function(req, res) {

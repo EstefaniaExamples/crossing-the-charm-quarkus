@@ -1,7 +1,11 @@
 {
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.3.4",
     "express": "^4.17.1",
-    "pg": "^8.5.1"
+    "mocha": "^8.3.2",
+    "pg": "^8.5.1",
+    "sequelize": "^6.5.1",
+    "sequelize-cli": "^6.2.0"
   }
 }
