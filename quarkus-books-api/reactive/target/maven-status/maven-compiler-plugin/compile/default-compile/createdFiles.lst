@@ -1,0 +1,6 @@
+org/quarkus/training/ApplicationProperties.class
+org/quarkus/training/ApplicationLifecycle.class
+org/quarkus/training/Book.class
+org/quarkus/training/HeaderAdditionContainerResponseFilter.class
+org/quarkus/training/reactive/routes/BooksHandler.class
+org/quarkus/training/reactive/routes/AppRouterRegister.class
