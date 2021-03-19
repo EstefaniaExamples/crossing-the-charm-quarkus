@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.springboot.training.reactive.routes.AppRouterRegisterTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.691 s - in org.springboot.training.reactive.routes.AppRouterRegisterTest

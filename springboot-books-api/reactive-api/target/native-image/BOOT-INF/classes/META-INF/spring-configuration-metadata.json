@@ -1,0 +1,60 @@
+{
+  "groups": [
+    {
+      "name": "books-datasource",
+      "type": "org.springboot.training.datasource.DataSourceProperties",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.pool",
+      "type": "org.springboot.training.datasource.DataSourceProperties$PoolConfig",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties",
+      "sourceMethod": "getPool()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "books-datasource.credentials",
+      "type": "java.lang.String",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.database",
+      "type": "java.lang.String",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.host",
+      "type": "java.lang.String",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.pool.max-connections",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties$PoolConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "books-datasource.pool.min-connections",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties$PoolConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "books-datasource.port",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.protocol",
+      "type": "java.lang.String",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    },
+    {
+      "name": "books-datasource.read-only",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springboot.training.datasource.DataSourceProperties"
+    }
+  ],
+  "hints": []
+}

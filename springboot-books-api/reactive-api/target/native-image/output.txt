@@ -1,0 +1,455 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.example:reactive-api >----------------------
+[INFO] Building reactive-api 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ reactive-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ reactive-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 7 source files to /Users/fanycastro/Documents/workspace/crossing-the-chasm-quarkus/springboot-books-api/reactive-api/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ reactive-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ reactive-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/fanycastro/Documents/workspace/crossing-the-chasm-quarkus/springboot-books-api/reactive-api/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ reactive-api ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.springboot.training.reactive.routes.AppRouterRegisterTest
+16:39:23.823 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:39:23.831 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:39:23.860 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:39:23.867 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest], using SpringBootContextLoader
+16:39:23.870 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest]: class path resource [org/springboot/training/reactive/routes/AppRouterRegisterTest-context.xml] does not exist
+16:39:23.871 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest]: class path resource [org/springboot/training/reactive/routes/AppRouterRegisterTestContext.groovy] does not exist
+16:39:23.871 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:39:23.871 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.springboot.training.reactive.routes.AppRouterRegisterTest]: AppRouterRegisterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:39:23.908 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [org.springboot.training.reactive.routes.AppRouterRegisterTest]
+16:39:23.916 [main] DEBUG org.springframework.context.index.CandidateComponentsIndexLoader - Loaded 1] index(es)
+16:39:23.950 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/fanycastro/Documents/workspace/crossing-the-chasm-quarkus/springboot-books-api/reactive-api/target/classes/org/springboot/training/Application.class]
+16:39:23.950 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.springboot.training.Application for test class org.springboot.training.reactive.routes.AppRouterRegisterTest
+16:39:24.007 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [org.springboot.training.reactive.routes.AppRouterRegisterTest]: using defaults.
+16:39:24.007 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:39:24.013 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [javax/servlet/ServletContext]
+16:39:24.017 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1800a575, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1458ed9c, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@10a9d961, org.springframework.test.context.support.DirtiesContextTestExecutionListener@130e116b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@e383572, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5ddf0d24, org.springframework.test.context.event.EventPublishingTestExecutionListener@363a52f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@60856961, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2fd953a6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@a4add54, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@141e5bef, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5f9be66c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3abada5a]
+16:39:24.020 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@66c92293 testClass = AppRouterRegisterTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [ReactiveWebMergedContextConfiguration@332796d3 testClass = AppRouterRegisterTest, locations = '{}', classes = '{class org.springboot.training.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@4f0100a7 key = [org.springframework.boot.autoconfigure.security.oauth2.client.reactive.ReactiveOAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.reactive.ReactiveOAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@66f57048, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@36916eb0, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@55634720, org.springframework.boot.test.web.reactive.server.WebTestClientContextCustomizer@b9b00e0, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@273e7444, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@ec54a5c9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@52719fb6, org.springframework.test.context.support.DynamicPropertiesContextCustomizer@affd0231, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7e2d773b], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+16:39:24.067 [main] DEBUG org.testcontainers.utility.TestcontainersConfiguration - Testcontainers configuration overrides will be loaded from file:/Users/fanycastro/.testcontainers.properties
+16:39:24.072 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+16:39:24.292 [ducttape-0] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Pinging docker daemon...
+16:39:24.302 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+16:39:24.657 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+16:39:24.657 [main] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Transport type: 'okhttp', Docker host: 'unix:///var/run/docker.sock'
+16:39:24.657 [main] DEBUG org.testcontainers.dockerclient.DockerClientProviderStrategy - Checking Docker OS type for local Unix socket (unix:///var/run/docker.sock)
+16:39:24.662 [main] INFO org.testcontainers.DockerClientFactory - Docker host IP address is localhost
+16:39:24.663 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+16:39:24.681 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 
+16:39:24.699 [main] INFO org.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 20.10.5
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 1988 MB
+16:39:24.699 [main] DEBUG org.testcontainers.DockerClientFactory - Ryuk is enabled
+16:39:24.701 [main] INFO org.testcontainers.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+16:39:24.702 [main] DEBUG org.testcontainers.utility.PrefixingImageNameSubstitutor - No prefix is configured
+16:39:24.702 [main] DEBUG org.testcontainers.utility.ImageNameSubstitutor - Did not find a substitute image for testcontainers/ryuk:0.3.0 (using image substitutor: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor'))
+16:39:24.703 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: testcontainers/ryuk:0.3.0
+16:39:24.727 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Looking up auth config for image: testcontainers/ryuk:0.3.0 at registry: index.docker.io
+16:39:24.727 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - RegistryAuthLocator has configFile: /Users/fanycastro/.docker/config.json (exists) and commandPathPrefix: 
+16:39:24.729 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - registryName [index.docker.io] for dockerImageName [testcontainers/ryuk:0.3.0]
+16:39:24.729 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Executing docker credential provider: docker-credential-desktop to locate auth config for: index.docker.io
+16:39:24.733 [main] DEBUG org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Executing [docker-credential-desktop, get].
+16:39:24.737 [main] DEBUG org.testcontainers.shaded.org.zeroturnaround.exec.ProcessExecutor - Started Process[pid=86559, exitValue="not exited"]
+16:39:24.764 [WaitForProcess-Process[pid=86559, exitValue="not exited"]] DEBUG org.testcontainers.shaded.org.zeroturnaround.exec.WaitForProcess - Process[pid=86559, exitValue=0] stopped with exit code 0
+16:39:24.766 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Credential helper/store provided auth config for: index.docker.io
+16:39:24.767 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - found creds store auth config [AuthConfig{username=fanycastro, password=hidden non-blank value, auth=blank, email=null, registryAddress=index.docker.io, registryToken=blank}]
+16:39:24.767 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Cached auth found: [AuthConfig{username=fanycastro, password=hidden non-blank value, auth=blank, email=null, registryAddress=index.docker.io, registryToken=blank}]
+16:39:24.767 [main] DEBUG org.testcontainers.dockerclient.AuthDelegatingDockerClientConfig - Effective auth config [AuthConfig{username=fanycastro, password=hidden non-blank value, auth=blank, email=null, registryAddress=index.docker.io, registryToken=blank}]
+16:39:24.769 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: org.testcontainers.shaded.com.github.dockerjava.core.command.CreateContainerCmdImpl@61019f59[name=testcontainers-ryuk-068c88ff-1c6a-4ae6-8f1e-2fce8ffe3659,hostName=<null>,domainName=<null>,user=<null>,attachStdin=<null>,attachStdout=<null>,attachStderr=<null>,portSpecs=<null>,tty=<null>,stdinOpen=<null>,stdInOnce=<null>,env=<null>,cmd=<null>,healthcheck=<null>,argsEscaped=<null>,entrypoint=<null>,image=testcontainers/ryuk:0.3.0,volumes=com.github.dockerjava.api.model.Volumes@4c5204af,workingDir=<null>,macAddress=<null>,onBuild=<null>,networkDisabled=<null>,exposedPorts=com.github.dockerjava.api.model.ExposedPorts@3f3ddbd9,stopSignal=<null>,stopTimeout=<null>,hostConfig=HostConfig(binds=[/var/run/docker.sock:/var/run/docker.sock:rw], blkioWeight=null, blkioWeightDevice=null, blkioDeviceReadBps=null, blkioDeviceWriteBps=null, blkioDeviceReadIOps=null, blkioDeviceWriteIOps=null, memorySwappiness=null, nanoCPUs=null, capAdd=null, capDrop=null, containerIDFile=null, cpuPeriod=null, cpuRealtimePeriod=null, cpuRealtimeRuntime=null, cpuShares=null, cpuQuota=null, cpusetCpus=null, cpusetMems=null, devices=null, deviceCgroupRules=null, deviceRequests=null, diskQuota=null, dns=null, dnsOptions=null, dnsSearch=null, extraHosts=null, groupAdd=null, ipcMode=null, cgroup=null, links=[], logConfig=LogConfig(type=null, config=null), lxcConf=null, memory=null, memorySwap=null, memoryReservation=null, kernelMemory=null, networkMode=null, oomKillDisable=null, init=null, autoRemove=true, oomScoreAdj=null, portBindings=null, privileged=false, publishAllPorts=true, readonlyRootfs=null, restartPolicy=null, ulimits=null, cpuCount=null, cpuPercent=null, ioMaximumIOps=null, ioMaximumBandwidth=null, volumesFrom=null, mounts=null, pidMode=null, isolation=null, securityOpts=null, storageOpt=null, cgroupParent=null, volumeDriver=null, shmSize=null, pidsLimit=null, runtime=null, tmpFs=null, utSMode=null, usernsMode=null, sysctls=null, consoleSize=null),labels={org.testcontainers=true},shell=<null>,networkingConfig=<null>,ipv4Address=<null>,ipv6Address=<null>,aliases=<null>,authConfig=AuthConfig(username=fanycastro, email=null, registryAddress=index.docker.io, stackOrchestrator=null)]
+16:39:24.870 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: eea4e4e68b7d8950c7e0c45b24fb345e521960a7026a219c98153ad8d6127eb3
+16:39:25.217 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: eea4e4e68b7d8950c7e0c45b24fb345e521960a7026a219c98153ad8d6127eb3,false
+16:39:25.218 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.exec.InspectContainerCmdExec - GET: DefaultWebTarget{path=[/containers/eea4e4e68b7d8950c7e0c45b24fb345e521960a7026a219c98153ad8d6127eb3/json], queryParams={}}
+16:39:25.273 [testcontainers-ryuk] DEBUG org.testcontainers.utility.ResourceReaper - Sending 'label=org.testcontainers%3Dtrue&label=org.testcontainers.sessionId%3D068c88ff-1c6a-4ae6-8f1e-2fce8ffe3659' to Ryuk
+16:39:25.275 [testcontainers-ryuk] DEBUG org.testcontainers.utility.ResourceReaper - Received 'ACK' from Ryuk
+16:39:25.376 [main] INFO org.testcontainers.DockerClientFactory - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+16:39:25.376 [main] DEBUG org.testcontainers.DockerClientFactory - Checks are enabled
+16:39:25.376 [main] INFO org.testcontainers.DockerClientFactory - Checking the system...
+16:39:25.376 [main] INFO org.testcontainers.DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+16:39:25.377 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: eea4e4e68b7d8950c7e0c45b24fb345e521960a7026a219c98153ad8d6127eb3,<null>,true,<null>,<null>,<null>,<null>,{df,-P},<null>,<null>
+16:39:25.456 [main] INFO org.testcontainers.DockerClientFactory - ✔︎ Docker environment should have more than 2GB free disk space
+16:39:25.456 [main] DEBUG org.testcontainers.utility.PrefixingImageNameSubstitutor - No prefix is configured
+16:39:25.457 [main] DEBUG org.testcontainers.utility.ImageNameSubstitutor - Did not find a substitute image for postgres:11 (using image substitutor: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor'))
+16:39:25.460 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: ListImagesCmdImpl[imageNameFilter=<null>,showAll=false,filters=org.testcontainers.shaded.com.github.dockerjava.core.util.FiltersBuilder@0]
+16:39:25.492 [main] DEBUG org.testcontainers.images.AbstractImagePullPolicy - Using locally available and not pulling image: postgres:11
+16:39:25.493 [main] DEBUG 🐳 [postgres:11] - Starting container: postgres:11
+16:39:25.493 [main] DEBUG 🐳 [postgres:11] - Trying to start container: postgres:11 (attempt 1/1)
+16:39:25.493 [main] DEBUG 🐳 [postgres:11] - Starting container: postgres:11
+16:39:25.493 [main] INFO 🐳 [postgres:11] - Creating container for image: postgres:11
+16:39:25.493 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Looking up auth config for image: postgres:11 at registry: index.docker.io
+16:39:25.493 [main] DEBUG org.testcontainers.utility.RegistryAuthLocator - Cached auth found: [AuthConfig{username=fanycastro, password=hidden non-blank value, auth=blank, email=null, registryAddress=index.docker.io, registryToken=blank}]
+16:39:25.493 [main] DEBUG org.testcontainers.dockerclient.AuthDelegatingDockerClientConfig - Effective auth config [AuthConfig{username=fanycastro, password=hidden non-blank value, auth=blank, email=null, registryAddress=index.docker.io, registryToken=blank}]
+16:39:25.497 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: org.testcontainers.shaded.com.github.dockerjava.core.command.CreateContainerCmdImpl@644abb8f[name=<null>,hostName=<null>,domainName=<null>,user=<null>,attachStdin=<null>,attachStdout=<null>,attachStderr=<null>,portSpecs=<null>,tty=<null>,stdinOpen=<null>,stdInOnce=<null>,env={POSTGRES_USER=book,POSTGRES_PASSWORD=book,POSTGRES_DB=books_database},cmd={postgres,-c,fsync=off},healthcheck=<null>,argsEscaped=<null>,entrypoint=<null>,image=postgres:11,volumes=com.github.dockerjava.api.model.Volumes@1a411233,workingDir=<null>,macAddress=<null>,onBuild=<null>,networkDisabled=<null>,exposedPorts=com.github.dockerjava.api.model.ExposedPorts@70325d20,stopSignal=<null>,stopTimeout=<null>,hostConfig=HostConfig(binds=[], blkioWeight=null, blkioWeightDevice=null, blkioDeviceReadBps=null, blkioDeviceWriteBps=null, blkioDeviceReadIOps=null, blkioDeviceWriteIOps=null, memorySwappiness=null, nanoCPUs=null, capAdd=null, capDrop=null, containerIDFile=null, cpuPeriod=null, cpuRealtimePeriod=null, cpuRealtimeRuntime=null, cpuShares=null, cpuQuota=null, cpusetCpus=null, cpusetMems=null, devices=null, deviceCgroupRules=null, deviceRequests=null, diskQuota=null, dns=null, dnsOptions=null, dnsSearch=null, extraHosts=[], groupAdd=null, ipcMode=null, cgroup=null, links=[], logConfig=LogConfig(type=null, config=null), lxcConf=null, memory=null, memorySwap=null, memoryReservation=null, kernelMemory=null, networkMode=null, oomKillDisable=null, init=null, autoRemove=null, oomScoreAdj=null, portBindings={}, privileged=null, publishAllPorts=true, readonlyRootfs=null, restartPolicy=null, ulimits=null, cpuCount=null, cpuPercent=null, ioMaximumIOps=null, ioMaximumBandwidth=null, volumesFrom=[], mounts=null, pidMode=null, isolation=null, securityOpts=null, storageOpt=null, cgroupParent=null, volumeDriver=null, shmSize=null, pidsLimit=null, runtime=null, tmpFs=null, utSMode=null, usernsMode=null, sysctls=null, consoleSize=null),labels={org.testcontainers=true, org.testcontainers.sessionId=068c88ff-1c6a-4ae6-8f1e-2fce8ffe3659},shell=<null>,networkingConfig=<null>,ipv4Address=<null>,ipv6Address=<null>,aliases=<null>,authConfig=AuthConfig(username=fanycastro, email=null, registryAddress=index.docker.io, stackOrchestrator=null)]
+16:39:25.553 [main] INFO 🐳 [postgres:11] - Starting container with ID: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26
+16:39:25.554 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26
+16:39:25.840 [main] INFO 🐳 [postgres:11] - Container postgres:11 is starting: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26
+16:39:25.841 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26,false
+16:39:25.841 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.exec.InspectContainerCmdExec - GET: DefaultWebTarget{path=[/containers/8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26/json], queryParams={}}
+16:39:25.849 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26,false
+16:39:25.850 [ducttape-0] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.exec.InspectContainerCmdExec - GET: DefaultWebTarget{path=[/containers/8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26/json], queryParams={}}
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: The files belonging to this database system will be owned by user "postgres".
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: creating subdirectories ... ok
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: fixing permissions on existing directory /var/lib/postgresql/data ... ok
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: Data page checksums are disabled.
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:25.878 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: The default text search configuration will be set to "english".
+16:39:25.879 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: The default database encoding has accordingly been set to "UTF8".
+16:39:25.879 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: The database cluster will be initialized with locale "en_US.utf8".
+16:39:25.879 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:25.879 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: This user must also own the server process.
+16:39:25.894 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: selecting default max_connections ... 100
+16:39:25.912 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: selecting default shared_buffers ... 128MB
+16:39:25.928 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: selecting default timezone ... Etc/UTC
+16:39:25.928 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: selecting dynamic shared memory implementation ... posix
+16:39:25.938 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: creating configuration files ... ok
+16:39:26.022 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: running bootstrap script ... ok
+16:39:26.343 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: performing post-bootstrap initialization ... ok
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: syncing data to disk ... ok
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: --auth-local and --auth-host, the next time you run initdb.
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: You can change this by editing pg_hba.conf or using the option -A, or
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: WARNING: enabling "trust" authentication for local connections
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: 
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT:     pg_ctl -D /var/lib/postgresql/data -l logfile start
+16:39:26.493 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.494 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: Success. You can now start the database server using:
+16:39:26.494 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.513 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: waiting for server to start....2021-03-19 15:39:26.512 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+16:39:26.523 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.521 UTC [49] LOG:  database system is ready to accept connections
+16:39:26.523 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.518 UTC [50] LOG:  database system was shut down at 2021-03-19 15:39:26 UTC
+16:39:26.606 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: server started
+16:39:26.606 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT:  done
+16:39:26.882 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: CREATE DATABASE
+16:39:26.892 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.891 UTC [49] LOG:  database system is shut down
+16:39:26.893 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.887 UTC [51] LOG:  shutting down
+16:39:26.893 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.887 UTC [49] LOG:  background worker "logical replication launcher" (PID 56) exited with exit code 1
+16:39:26.893 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 2021-03-19 15:39:26.884 UTC [49] LOG:  aborting any active transactions
+16:39:26.893 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: waiting for server to shut down....2021-03-19 15:39:26.884 UTC [49] LOG:  received fast shutdown request
+16:39:26.894 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.894 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+16:39:26.894 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.894 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.985 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.986 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: 
+16:39:26.986 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: PostgreSQL init process complete; ready for start up.
+16:39:26.986 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT: server stopped
+16:39:26.986 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDOUT:  done
+16:39:26.996 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: 2021-03-19 15:39:26.992 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+16:39:26.996 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: 2021-03-19 15:39:26.991 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+16:39:26.996 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: 2021-03-19 15:39:26.991 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+16:39:27.007 [main] DEBUG org.testcontainers.containers.output.WaitingConsumer - STDERR: 2021-03-19 15:39:27.000 UTC [1] LOG:  database system is ready to accept connections
+16:39:27.107 [main] INFO 🐳 [postgres:11] - Container postgres:11 started in PT1.650773S
+16:39:27.111 [main] INFO org.testcontainers.ext.ScriptUtils - Executing database script from import-test.sql
+16:39:27.115 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.command.AbstrDockerCmd - Cmd: 8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26,false
+16:39:27.115 [main] DEBUG org.testcontainers.shaded.com.github.dockerjava.core.exec.InspectContainerCmdExec - GET: DefaultWebTarget{path=[/containers/8fb02ee1d5a520df9b1b8fabd65a5de7ac4c921137df002fe89e38538c068f26/json], queryParams={}}
+16:39:27.120 [main] DEBUG 🐳 [postgres:11] - Trying to create JDBC connection using org.postgresql.Driver to jdbc:postgresql://localhost:55111/books_database?loggerLevel=OFF with properties: {password=book, user=book}
+16:39:27.167 [main] DEBUG org.testcontainers.jdbc.JdbcDatabaseDelegate - false returned as updateCount for SQL: CREATE TABLE books (id SERIAL PRIMARY KEY, title TEXT NOT NULL, author TEXT, description TEXT)
+16:39:27.169 [main] DEBUG org.testcontainers.jdbc.JdbcDatabaseDelegate - false returned as updateCount for SQL: INSERT INTO books(id, title, author, description) VALUES ( 997, 'Understanding Bean Validation', 'Antonio Goncalves', 'In this fascicle will you will learn Bean Validation and use its different APIs to apply constraints on a bean, validate all sorts of constraints and write your own constraints')
+16:39:27.170 [main] DEBUG org.testcontainers.jdbc.JdbcDatabaseDelegate - false returned as updateCount for SQL: INSERT INTO books(id, title, author, description) VALUES ( 998, 'Understanding JPA', 'Antonio Goncalves', 'In this fascicle, you will learn Java Persistence API, its annotations for mapping entities, as well as the Java Persistence Query Language and entity life cycle')
+16:39:27.170 [main] INFO org.testcontainers.ext.ScriptUtils - Executed database script from import-test.sql in 59 ms.
+16:39:27.189 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+2021-03-19 16:39:27.394  INFO 86555 --- [           main] o.s.t.r.routes.AppRouterRegisterTest     : Starting AppRouterRegisterTest using Java 15.0.1 on iMacdeEtefania2 with PID 86555 (started by fanycastro in /Users/fanycastro/Documents/workspace/crossing-the-chasm-quarkus/springboot-books-api/reactive-api)
+2021-03-19 16:39:27.396  INFO 86555 --- [           main] o.s.t.r.routes.AppRouterRegisterTest     : No active profile set, falling back to default profiles: default
+2021-03-19 16:39:27.664  INFO 86555 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-03-19 16:39:27.670  INFO 86555 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 R2DBC repository interfaces.
+2021-03-19 16:39:27.749  INFO 86555 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-03-19 16:39:27.830  INFO 86555 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 1 R2DBC repository interfaces.
+2021-03-19 16:39:28.549  INFO 86555 --- [           main] o.s.t.r.routes.AppRouterRegisterTest     : Started AppRouterRegisterTest in 1.354 seconds (JVM running for 5.132)
+2021-03-19 16:39:28.820  INFO 86555 --- [     parallel-1] o.s.t.reactive.routes.BooksHandler       : Getting all the books ...
+2021-03-19 16:39:29.116  INFO 86555 --- [     parallel-2] o.s.t.reactive.routes.BooksHandler       : Getting book by id ...
+2021-03-19 16:39:29.168  INFO 86555 --- [     parallel-3] o.s.t.reactive.routes.BooksHandler       : Deleting book by id ...
+2021-03-19 16:39:29.188  INFO 86555 --- [     parallel-4] o.s.t.reactive.routes.BooksHandler       : Deleting book by id ...
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.691 s - in org.springboot.training.reactive.routes.AppRouterRegisterTest
+[INFO] Running org.springboot.training.BookRepositoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.springboot.training.BookRepositoryTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ reactive-api ---
+[INFO] Building jar: /Users/fanycastro/Documents/workspace/crossing-the-chasm-quarkus/springboot-books-api/reactive-api/target/reactive-api-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.1:repackage (repackage) @ reactive-api ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.128 s
+[INFO] Finished at: 2021-03-19T16:39:30+01:00
+[INFO] ------------------------------------------------------------------------
+[reactive-api:86585]    classlist:   2,491.56 ms,  0.94 GB
+   _____                     _                             _   __           __     _              
+  / ___/    ____    _____   (_)   ____    ____ _          / | / /  ____ _  / /_   (_) _   __  ___ 
+  \__ \    / __ \  / ___/  / /   / __ \  / __ `/         /  |/ /  / __ `/ / __/  / / | | / / / _ \
+ ___/ /   / /_/ / / /     / /   / / / / / /_/ /         / /|  /  / /_/ / / /_   / /  | |/ / /  __/
+/____/   / .___/ /_/     /_/   /_/ /_/  \__, /         /_/ |_/   \__,_/  \__/  /_/   |___/  \___/ 
+        /_/                            /____/                                                     
+Removing unused configurations
+Verification turned on
+Removing XML support
+Removing SpEL support
+Removing JMX support
+Use -Dspring.native.verbose=true on native-image call to see more detailed information from the feature
+[reactive-api:86585]        (cap):   2,678.94 ms,  0.94 GB
+feature operating mode: reflection (spring init active? false)
+Found #18 types in static reflection list to register
+Skipping #9 types not on the classpath
+Attempting proxy registration of #12 proxies
+Skipped registration of #9 proxies - relevant types not on classpath
+[reactive-api:86585]        setup:   4,854.43 ms,  1.34 GB
+Configuring initialization time for specific types and packages:
+#138 buildtime-init-classes   #22 buildtime-init-packages   #18 runtime-init-classes    #0 runtime-init-packages
+
+Warning: class initialization of class org.springframework.boot.validation.MessageInterpolatorFactory failed with exception java.lang.NoClassDefFoundError: javax/validation/ValidationException. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.validation.MessageInterpolatorFactory to explicitly request delayed initialization of this class.
+Warning: class initialization of class org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory failed with exception java.lang.NoClassDefFoundError: org/apache/catalina/WebResourceRoot. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory to explicitly request delayed initialization of this class.
+[verification] The type org.springframework.transaction.annotation.AnnotationTransactionAttributeSource is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.transaction.Transactional, javax.ejb.TransactionAttribute]
+[verification] The type org.springframework.data.repository.util.QueryExecutionConverters is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [io.vavr.control.Try]
+[verification] The type org.springframework.web.reactive.function.client.DefaultWebClientBuilder is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [reactor.netty.http.client.HttpClient, org.eclipse.jetty.client.HttpClient, org.apache.hc.client5.http.impl.async.CloseableHttpAsyncClient, org.apache.hc.core5.reactive.ReactiveDataConsumer]
+[verification] The type org.springframework.data.repository.core.support.ReactiveRepositoryFactorySupport$RxJavaOneConversionSetup is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.reactivestreams.Publisher]
+[verification] The type org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.springframework.instrument.InstrumentationSavingAgent]
+[verification] The type org.springframework.context.annotation.AnnotationConfigUtils is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.annotation.Resource, javax.persistence.EntityManagerFactory, org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor]
+[verification] The type org.springframework.cache.config.AnnotationDrivenCacheBeanDefinitionParser is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.cache.Cache, org.springframework.cache.jcache.interceptor.DefaultJCacheOperationSource]
+[verification] The type org.springframework.web.context.request.RequestContextHolder is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.faces.context.FacesContext]
+[verification] The type org.springframework.core.KotlinDetector is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [kotlin.reflect.full.KClasses]
+[verification] The type org.springframework.data.querydsl.QuerydslUtils is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [com.querydsl.core.types.Predicate]
+[verification] The type org.springframework.transaction.interceptor.TransactionAspectSupport is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [io.vavr.control.Try, org.reactivestreams.Publisher]
+[verification] The type org.springframework.web.reactive.config.ResourceChainRegistration is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.webjars.WebJarAssetLocator]
+[verification] The type org.springframework.transaction.config.JtaTransactionManagerFactoryBean is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [weblogic.transaction.UserTransaction, com.ibm.wsspi.uow.UOWManager]
+[verification] The type org.springframework.data.r2dbc.dialect.PostgresDialect is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [io.r2dbc.postgresql.codec.Json, io.r2dbc.postgresql.codec.Polygon]
+[verification] The type org.springframework.transaction.support.TransactionSynchronizationUtils is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.springframework.aop.scope.ScopedObject]
+[verification] The type org.springframework.boot.autoconfigure.web.format.WebConversionService is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.money.MonetaryAmount]
+[verification] The type org.springframework.data.repository.util.ReactiveWrappers is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [reactor.core.publisher.Flux, rx.Observable, rx.RxReactiveStreams, io.reactivex.Flowable, io.reactivex.rxjava3.core.Flowable, kotlinx.coroutines.reactor.MonoKt]
+[verification] The type org.springframework.web.context.support.WebApplicationContextUtils is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.faces.context.FacesContext]
+[verification] The type org.springframework.data.util.NullableWrapperConverters is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [com.google.common.base.Optional, scala.Option, io.vavr.control.Option]
+[verification] The type org.springframework.data.convert.ThreeTenBackPortConverters is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.threeten.bp.LocalDateTime]
+[verification] The type org.springframework.http.codec.xml.XmlEventDecoder is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [com.fasterxml.aalto.AsyncXMLStreamReader]
+[verification] The type org.springframework.context.event.ApplicationListenerMethodAdapter is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.reactivestreams.Publisher]
+[verification] The type org.springframework.boot.jdbc.DataSourceUnwrapper is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.springframework.jdbc.datasource.DelegatingDataSource]
+[verification] The type org.springframework.data.convert.JodaTimeConverters is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.joda.time.LocalDate]
+[verification] The type org.springframework.context.config.MBeanServerBeanDefinitionParser is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [weblogic.management.Helper, com.ibm.websphere.management.AdminServiceFactory]
+[verification] The type org.springframework.format.support.DefaultFormattingConversionService is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.money.MonetaryAmount, org.joda.time.YearMonth]
+[verification] The type org.springframework.data.auditing.AnnotationAuditingMetadata is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [java.time.Clock]
+[verification] The type org.springframework.cache.annotation.CachingConfigurationSelector is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [javax.cache.Cache, org.springframework.cache.jcache.config.ProxyJCacheConfiguration]
+[verification] The type org.springframework.web.reactive.socket.server.support.HandshakeWebSocketService is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.apache.tomcat.websocket.server.WsHttpUpgradeHandler, org.eclipse.jetty.websocket.server.WebSocketServerFactory, io.undertow.websockets.WebSocketProtocolHandshakeHandler, reactor.netty.http.server.HttpServerResponse]
+[verification] The type org.springframework.transaction.reactive.TransactionSynchronizationUtils is making isPresent() calls in the static initializer, could be worth specifying build-time-initialization. It appears to be making isPresent() checks on [org.springframework.aop.scope.ScopedObject]
+Registering resources - #0 bundles
+Processing META-INF/spring.factories files...
+spring.factories processing, problem adding access for key org.springframework.boot.diagnostics.analyzer.ValidationExceptionFailureAnalyzer: javax/validation/ValidationException
+spring.factories processing, problem adding access for key org.springframework.boot.liquibase.LiquibaseChangelogMissingFailureAnalyzer: liquibase/exception/ChangeLogParseException
+Processing spring.factories - PropertySourceLoader lists #2 property source loaders
+spring.factories processing, problem adding access for key org.springframework.boot.autoconfigure.jdbc.HikariDriverConfigurationFailureAnalyzer: org/springframework/jdbc/CannotGetJdbcConnectionException
+Processing spring.factories - EnableAutoConfiguration lists #130 configurations
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Undertow because Undertow not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat because Tomcat not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Jetty because WebAppContext not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Undertow because Undertow not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat because Tomcat not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Jetty because WebAppContext not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Undertow because Undertow not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat because Tomcat not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Jetty because WebAppContext not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Undertow because Undertow not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat because Tomcat not around
+Reducing access on org.springframework.boot.autoconfigure.web.ServerProperties$Jetty because WebAppContext not around
+Excluding 102 auto-configurations from spring.factories file
+Processing existing META-INF/spring.components files...
+SDCP: Found 1 repositories, 0 custom implementations and registered 0 annotations used by domain types.
+SDCP: Found 1 repositories, 0 custom implementations and registered 0 annotations used by domain types.
+Number of types dynamically registered for reflective access: #1758
+16:39:41.720 [ForkJoinPool-4-worker-15] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+16:39:41.760 [ForkJoinPool-4-worker-13] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+16:39:41.760 [ForkJoinPool-4-worker-13] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+16:39:42.621 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - Platform: MacOS
+16:39:42.621 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+16:39:42.621 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 11
+16:39:42.622 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+16:39:42.622 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+16:39:42.622 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+16:39:42.622 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: unavailable
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
+	at io.netty.util.internal.PlatformDependent0$4.run(PlatformDependent0.java:238)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:232)
+	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:293)
+	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:223)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:210)
+	at io.netty.util.AsciiString.cached(AsciiString.java:1401)
+	at io.netty.util.AsciiString.<clinit>(AsciiString.java:48)
+	at io.netty.handler.codec.http.HttpResponseStatus.<init>(HttpResponseStatus.java:559)
+	at io.netty.handler.codec.http.HttpResponseStatus.newStatus(HttpResponseStatus.java:326)
+	at io.netty.handler.codec.http.HttpResponseStatus.<clinit>(HttpResponseStatus.java:39)
+	at io.netty.handler.codec.http.HttpObjectAggregator.<clinit>(HttpObjectAggregator.java:90)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1042)
+	at jdk.unsupported/sun.misc.Unsafe.ensureClassInitialized(Unsafe.java:698)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.ensureClassInitialized(ConfigurableClassInitialization.java:174)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:607)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:127)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.maybeInitializeHosted(ConfigurableClassInitialization.java:165)
+	at com.oracle.svm.hosted.SVMHost.initializeType(SVMHost.java:265)
+	at com.oracle.graal.pointsto.meta.AnalysisType.lambda$new$0(AnalysisType.java:227)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+16:39:42.623 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: unavailable true
+java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
+	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31)
+	at io.netty.util.internal.PlatformDependent0$5.run(PlatformDependent0.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:284)
+	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:293)
+	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:223)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:210)
+	at io.netty.util.AsciiString.cached(AsciiString.java:1401)
+	at io.netty.util.AsciiString.<clinit>(AsciiString.java:48)
+	at io.netty.handler.codec.http.HttpResponseStatus.<init>(HttpResponseStatus.java:559)
+	at io.netty.handler.codec.http.HttpResponseStatus.newStatus(HttpResponseStatus.java:326)
+	at io.netty.handler.codec.http.HttpResponseStatus.<clinit>(HttpResponseStatus.java:39)
+	at io.netty.handler.codec.http.HttpObjectAggregator.<clinit>(HttpObjectAggregator.java:90)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1042)
+	at jdk.unsupported/sun.misc.Unsafe.ensureClassInitialized(Unsafe.java:698)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.ensureClassInitialized(ConfigurableClassInitialization.java:174)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:607)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:127)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.maybeInitializeHosted(ConfigurableClassInitialization.java:165)
+	at com.oracle.svm.hosted.SVMHost.initializeType(SVMHost.java:265)
+	at com.oracle.graal.pointsto.meta.AnalysisType.lambda$new$0(AnalysisType.java:227)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+16:39:42.623 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable
+java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent0$6 cannot access class jdk.internal.misc.Unsafe (in module java.base) because module java.base does not export jdk.internal.misc to unnamed module @7e0d708b
+	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:361)
+	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:591)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:558)
+	at io.netty.util.internal.PlatformDependent0$6.run(PlatformDependent0.java:352)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at io.netty.util.internal.PlatformDependent0.<clinit>(PlatformDependent0.java:343)
+	at io.netty.util.internal.PlatformDependent.isAndroid(PlatformDependent.java:293)
+	at io.netty.util.internal.PlatformDependent.<clinit>(PlatformDependent.java:92)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:223)
+	at io.netty.util.AsciiString.<init>(AsciiString.java:210)
+	at io.netty.util.AsciiString.cached(AsciiString.java:1401)
+	at io.netty.util.AsciiString.<clinit>(AsciiString.java:48)
+	at io.netty.handler.codec.http.HttpResponseStatus.<init>(HttpResponseStatus.java:559)
+	at io.netty.handler.codec.http.HttpResponseStatus.newStatus(HttpResponseStatus.java:326)
+	at io.netty.handler.codec.http.HttpResponseStatus.<clinit>(HttpResponseStatus.java:39)
+	at io.netty.handler.codec.http.HttpObjectAggregator.<clinit>(HttpObjectAggregator.java:90)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1042)
+	at jdk.unsupported/sun.misc.Unsafe.ensureClassInitialized(Unsafe.java:698)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.ensureClassInitialized(ConfigurableClassInitialization.java:174)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:607)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.computeInitKindAndMaybeInitializeClass(ConfigurableClassInitialization.java:127)
+	at com.oracle.svm.hosted.classinitialization.ConfigurableClassInitialization.maybeInitializeHosted(ConfigurableClassInitialization.java:165)
+	at com.oracle.svm.hosted.SVMHost.initializeType(SVMHost.java:265)
+	at com.oracle.graal.pointsto.meta.AnalysisType.lambda$new$0(AnalysisType.java:227)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+16:39:42.624 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): unavailable
+16:39:42.624 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+16:39:42.626 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - maxDirectMemory: 13362528256 bytes (maybe)
+16:39:42.626 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/k8/nwrjvkj571nd2rzn1z3cct_00000gn/T (java.io.tmpdir)
+16:39:42.627 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16:39:42.628 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: -1 bytes
+16:39:42.629 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+16:39:42.629 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.CleanerJava9 - java.nio.ByteBuffer.cleaner(): available
+16:39:42.629 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+16:39:42.630 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+16:39:42.630 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+16:39:47.270 [ForkJoinPool-4-worker-7] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkAccessible: true
+16:39:47.270 [ForkJoinPool-4-worker-7] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.checkBounds: true
+16:39:47.270 [ForkJoinPool-4-worker-7] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@fbf1e51
+16:39:50.409 [ForkJoinPool-2-worker-9] DEBUG io.netty.buffer.AdvancedLeakAwareByteBuf - -Dio.netty.leakDetection.acquireAndReleaseOnly: false
+Warning: class initialization of class io.netty.util.internal.logging.Log4JLogger failed with exception java.lang.NoClassDefFoundError: org/apache/log4j/Priority. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.util.internal.logging.Log4JLogger to explicitly request delayed initialization of this class.
+16:39:54.273 [ForkJoinPool-4-worker-13] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+16:39:54.273 [ForkJoinPool-4-worker-13] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+16:39:54.293 [ForkJoinPool-2-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacityPerThread: 4096
+16:39:54.293 [ForkJoinPool-2-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxSharedCapacityFactor: 2
+16:39:54.293 [ForkJoinPool-2-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.linkCapacity: 16
+16:39:54.293 [ForkJoinPool-2-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.ratio: 8
+16:39:54.293 [ForkJoinPool-2-worker-3] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.delayedQueue.ratio: 8
+16:39:55.327 [ForkJoinPool-4-worker-5] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv4Stack: false
+16:39:55.327 [ForkJoinPool-4-worker-5] DEBUG io.netty.util.NetUtil - -Djava.net.preferIPv6Addresses: false
+16:39:55.330 [ForkJoinPool-4-worker-5] DEBUG io.netty.util.NetUtilInitializations - Loopback interface: lo0 (lo0, 0:0:0:0:0:0:0:1%lo0)
+16:39:55.330 [ForkJoinPool-4-worker-5] DEBUG io.netty.util.NetUtil - Failed to get SOMAXCONN from sysctl and file /proc/sys/net/core/somaxconn. Default: 128
+16:39:57.743 [ForkJoinPool-2-worker-5] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibDecoder: false
+16:39:57.748 [ForkJoinPool-2-worker-5] DEBUG io.netty.handler.codec.compression.ZlibCodecFactory - -Dio.netty.noJdkZlibEncoder: false
+16:40:05.873 [ForkJoinPool-2-worker-15] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 16
+16:40:05.878 [ForkJoinPool-2-worker-1] DEBUG io.netty.handler.ssl.OpenSsl - netty-tcnative not in the classpath; OpenSslEngine will be unavailable.
+Warning: class initialization of class io.netty.handler.ssl.ReferenceCountedOpenSslContext failed with exception java.lang.NoClassDefFoundError: io/netty/internal/tcnative/SSLPrivateKeyMethod. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.ReferenceCountedOpenSslContext to explicitly request delayed initialization of this class.
+Warning: class initialization of class io.netty.handler.ssl.ReferenceCountedOpenSslContext failed with exception java.lang.NoClassDefFoundError: io/netty/internal/tcnative/SSLPrivateKeyMethod. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.ReferenceCountedOpenSslContext to explicitly request delayed initialization of this class.
+16:40:05.959 [ForkJoinPool-2-worker-15] DEBUG io.netty.handler.ssl.JdkSslContext - Default protocols (JDK): [TLSv1.3, TLSv1.2, TLSv1.1, TLSv1] 
+16:40:05.960 [ForkJoinPool-2-worker-15] DEBUG io.netty.handler.ssl.JdkSslContext - Default cipher suites (JDK): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384]
+Warning: class initialization of class io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator failed with exception java.lang.NoClassDefFoundError: org/eclipse/jetty/npn/NextProtoNego$Provider. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.JdkNpnApplicationProtocolNegotiator to explicitly request delayed initialization of this class.
+16:40:07.149 [ForkJoinPool-2-worker-7] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+16:40:07.727 [ForkJoinPool-4-worker-13] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@584b3984
+Warning: class initialization of class io.netty.handler.ssl.ConscryptAlpnSslEngine failed with exception java.lang.NoClassDefFoundError: org/conscrypt/BufferAllocator. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.ConscryptAlpnSslEngine to explicitly request delayed initialization of this class.
+Warning: class initialization of class io.netty.handler.ssl.ReferenceCountedOpenSslEngine failed with exception java.lang.NoClassDefFoundError: io/netty/internal/tcnative/SSL. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.ReferenceCountedOpenSslEngine to explicitly request delayed initialization of this class.
+Warning: class initialization of class io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine failed with exception java.lang.NoClassDefFoundError: org/eclipse/jetty/alpn/ALPN$Provider. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.JettyAlpnSslEngine$ServerEngine to explicitly request delayed initialization of this class.
+Warning: class initialization of class io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine failed with exception java.lang.NoClassDefFoundError: org/eclipse/jetty/alpn/ALPN$Provider. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.JettyAlpnSslEngine$ClientEngine to explicitly request delayed initialization of this class.
+Warning: class initialization of class io.netty.handler.ssl.JettyNpnSslEngine failed with exception java.lang.NoClassDefFoundError: org/eclipse/jetty/npn/NextProtoNego$Provider. This class will be initialized at run time because option --allow-incomplete-classpath is used for image building. Use the option --initialize-at-run-time=io.netty.handler.ssl.JettyNpnSslEngine to explicitly request delayed initialization of this class.
+16:40:23.357 [ForkJoinPool-2-worker-9] DEBUG io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.workdir: /var/folders/k8/nwrjvkj571nd2rzn1z3cct_00000gn/T (io.netty.tmpdir)
+16:40:23.363 [ForkJoinPool-2-worker-9] DEBUG io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.deleteLibAfterLoading: true
+16:40:23.363 [ForkJoinPool-2-worker-9] DEBUG io.netty.util.internal.NativeLibraryLoader - -Dio.netty.native.tryPatchShadedId: true
+[reactive-api:86585]     (clinit):   1,042.23 ms,  5.65 GB
+[reactive-api:86585]   (typeflow):  20,550.99 ms,  5.65 GB
+[reactive-api:86585]    (objects):  26,927.57 ms,  5.65 GB
+[reactive-api:86585]   (features):   3,289.88 ms,  5.65 GB
+[reactive-api:86585]     analysis:  53,401.79 ms,  5.65 GB
+[reactive-api:86585]     universe:   2,411.98 ms,  5.62 GB
+[reactive-api:86585]      (parse):   4,926.56 ms,  5.62 GB
+[reactive-api:86585]     (inline):   9,573.29 ms,  7.15 GB
+[reactive-api:86585]    (compile):  29,039.17 ms,  6.60 GB
+[reactive-api:86585]      compile:  46,108.61 ms,  6.60 GB
+[reactive-api:86585]        image:   5,395.43 ms,  6.29 GB
+[reactive-api:86585]        write:   1,265.60 ms,  6.29 GB
+[reactive-api:86585]      [total]: 117,551.99 ms,  6.29 GB
+
+real	1m58.551s
+user	9m18.791s
+sys	0m14.881s

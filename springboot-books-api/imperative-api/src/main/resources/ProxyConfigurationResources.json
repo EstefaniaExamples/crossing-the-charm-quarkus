@@ -1,0 +1,10 @@
+[
+  [
+    "org.springboot.training.repositories.BookRepository",
+    "org.springframework.data.repository.Repository",
+    "org.springframework.transaction.interceptor.TransactionalProxy",
+    "org.springframework.aop.framework.Advised",
+    "org.springframework.core.DecoratingProxy",
+    "java.io.Serializable"
+  ]
+]

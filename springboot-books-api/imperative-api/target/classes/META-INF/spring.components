@@ -1,0 +1,4 @@
+org.springboot.training.Application=org.springframework.stereotype.Component
+org.springboot.training.BookController=org.springframework.stereotype.Component
+org.springboot.training.model.Book=javax.persistence.Entity
+org.springboot.training.repositories.BookRepository=org.springframework.stereotype.Component,org.springframework.data.repository.Repository

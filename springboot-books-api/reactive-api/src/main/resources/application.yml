@@ -1,0 +1,26 @@
+server:
+  port : 8084
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          r2dbc: DEBUG
+
+books-datasource:
+  protocol: "postgresql"
+  host: "localhost"
+  port: 5432
+  database: "books_database"
+  credentials: "book"
+  read-only: false
+  pool:
+    min-connections: 1
+    max-connections: 3
+
+spring:
+  main:
+    banner-mode: off
+  jmx:
+    enabled: false
