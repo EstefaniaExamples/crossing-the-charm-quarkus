@@ -1,4 +1,0 @@
-META-INF/panache-archive.marker
-com/quarkus/training/BookResource.class
-com/quarkus/training/Book.class
-com/quarkus/training/BookService.class
