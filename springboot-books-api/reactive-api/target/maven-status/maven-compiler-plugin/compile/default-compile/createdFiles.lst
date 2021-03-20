@@ -1,8 +1,0 @@
-org/springboot/training/datasource/BooksDataSource.class
-org/springboot/training/Application.class
-org/springboot/training/reactive/routes/AppRouterRegister.class
-org/springboot/training/repositories/BookRepository.class
-org/springboot/training/reactive/routes/BooksHandler.class
-org/springboot/training/model/Book.class
-org/springboot/training/datasource/DataSourceProperties.class
-org/springboot/training/datasource/DataSourceProperties$PoolConfig.class
