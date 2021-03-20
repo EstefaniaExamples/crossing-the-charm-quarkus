@@ -1,10 +1,8 @@
 org/springboot/training/datasource/BooksDataSource.class
 org/springboot/training/Application.class
 org/springboot/training/reactive/routes/AppRouterRegister.class
-META-INF/spring-configuration-metadata.json
 org/springboot/training/repositories/BookRepository.class
 org/springboot/training/reactive/routes/BooksHandler.class
 org/springboot/training/model/Book.class
 org/springboot/training/datasource/DataSourceProperties.class
-META-INF/spring.components
 org/springboot/training/datasource/DataSourceProperties$PoolConfig.class
