@@ -1,0 +1,10 @@
+server:
+  port : 8085
+
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/books_database
+    username: book
+    password: book

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: spring-reactive-runner
+    app.kubernetes.io/version: latest
+  name: spring-reactive-runner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: spring-reactive-runner
+      app.kubernetes.io/version: latest
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: spring-reactive-runner
+        app.kubernetes.io/version: latest
+    spec:
+      containers:
+        - env:
+            - name: spring-reactive-runner
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: POSTGRESQL_REACTIVE_URL
+              value: r2dbc:postgresql://localhost:6432/books_database
+            - name: POSTGRESQL_REACTIVE_PASS
+              value: wmS4Nal7gXl290hTuEFfkvDxphj8GijqsdDcC8IfyCQlnvPF9xiBVZeeVMZE4RjC
+          image: localhost:32000/spring-boot-reactive:v1
+          imagePullPolicy: Always
+          name: spring-reactive-runner
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: spring-reactive-runner
+    app.kubernetes.io/version: latest
+  name: spring-reactive-runner
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      nodePort: 31828
+      port: 8080
+      targetPort: 8086
+  selector:
+    app.kubernetes.io/name: spring-reactive-runner
+    app.kubernetes.io/version: latest
