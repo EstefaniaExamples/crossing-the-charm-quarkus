@@ -27,7 +27,7 @@ Docker should be installed and configured on your machine prior to creating the 
 
 To create the native image, run the following goal:
 ```
-$ ./mvn clean -Pnative-image package
+$ ./mvnw clean -Pnative-image package
 ```
 
 To create the image, run the following goal:
