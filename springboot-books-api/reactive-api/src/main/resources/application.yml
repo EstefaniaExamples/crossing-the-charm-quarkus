@@ -10,7 +10,7 @@ logging:
 
 books-datasource:
   protocol: "postgresql"
-  host: "localhost"
+  host: ${DATABASE_HOST:localhost}
   port: 5432
   database: "books_database"
   credentials: "book"

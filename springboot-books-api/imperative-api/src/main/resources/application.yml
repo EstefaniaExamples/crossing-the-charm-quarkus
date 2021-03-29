@@ -4,6 +4,9 @@ server:
 spring:
   jpa:
     show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
   datasource:
     url: jdbc:postgresql://localhost:5432/books_database
     username: book

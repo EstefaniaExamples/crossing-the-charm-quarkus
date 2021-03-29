@@ -1,5 +1,7 @@
 package org.springboot.training;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -9,11 +11,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootApplication(proxyBeanMethods = false)
 public class Application {
+	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
+
 	private static ApplicationContext applicationContext;
 
 	public static void main(String[] args) {
 		applicationContext = SpringApplication.run(Application.class, args);
-		displayAllBeans();
+//		displayAllBeans();
 	}
 
 	public static void displayAllBeans() {
@@ -27,6 +31,6 @@ public class Application {
 						.append(SPACE)
 						.append(beanName)
 						.toString())
-				.forEach(System.out::println);
+				.forEach(LOG::info);
 	}
 }
