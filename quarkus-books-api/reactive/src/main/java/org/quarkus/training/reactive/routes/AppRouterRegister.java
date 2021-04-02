@@ -34,7 +34,7 @@ public class AppRouterRegister {
         router.delete("/books/:id")
                 .handler(booksHandler::deleteBookById);
 
-        router.post("/book")
+        router.post("/books")
                 .handler(booksHandler::saveBook);
     }
 

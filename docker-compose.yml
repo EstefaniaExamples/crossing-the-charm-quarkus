@@ -65,6 +65,54 @@ services:
     links:
       - postgres
 
+  quarkusreactiveapi:
+    image: 'docker.io/quarkus/quarkus-reactive-book-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1024MB
+        reservations:
+          cpus: 0.25
+          memory: 128M
+    network_mode: bridge
+    container_name: quarkusreactiveapi
+    environment:
+      - POSTGRESQL_REACTIVE_URL=postgresql://postgres:5432/books_database
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+  quarkusimperativeapi:
+    image: 'docker.io/quarkus/quarkus-imperative-book-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1024MB
+        reservations:
+          cpus: 0.25
+          memory: 128M
+    network_mode: bridge
+    container_name: quarkusimperativeapi
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://postgres:5432/books_database
+    expose:
+      - 8087
+    ports:
+      - 8087:8087
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
 volumes:
   postgres_data:
 

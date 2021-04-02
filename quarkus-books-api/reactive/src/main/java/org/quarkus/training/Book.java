@@ -55,8 +55,8 @@ public class Book {
     }
 
     public Uni<Long> save(final PgPool client) {
-        return client.preparedQuery("INSERT INTO books (id, title, description, author) VALUES ($1, $2, $3) RETURNING id")
-                .execute(Tuple.of(id, title, author))
+        return client.preparedQuery("INSERT INTO books (title, description, author) VALUES ($1, $2, $3) RETURNING id")
+                .execute(Tuple.of(title, description, author))
                 .onItem().transform(pgRowSet -> pgRowSet.iterator().next().getLong("id"));
     }
 

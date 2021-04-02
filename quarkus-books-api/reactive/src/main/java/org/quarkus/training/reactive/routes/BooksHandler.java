@@ -85,6 +85,7 @@ public class BooksHandler {
         book.save(pgPool).subscribe().with(
                 id -> routingContext.response()
                         .setStatusCode(HttpStatus.SC_CREATED)
+                        .putHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON)
                         .putHeader(HttpHeaders.LOCATION, URI.create("/books/" + id).toString())
                         .end());
     }

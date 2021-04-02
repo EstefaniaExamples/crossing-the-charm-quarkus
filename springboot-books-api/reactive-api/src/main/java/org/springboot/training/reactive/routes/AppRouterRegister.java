@@ -24,6 +24,6 @@ public class AppRouterRegister {
         return route(GET("/books"), booksHandler::getAllBooks)
                 .andRoute(GET("/books/{id}").and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getBookById)
                 .andRoute(DELETE("/books/{id}").and(contentType(MediaType.APPLICATION_JSON)), booksHandler::deleteBookById)
-                .andRoute(POST("/book").and(accept(MediaType.APPLICATION_JSON)), booksHandler::saveBook);
+                .andRoute(POST("/books").and(accept(MediaType.APPLICATION_JSON)), booksHandler::saveBook);
     }
 }

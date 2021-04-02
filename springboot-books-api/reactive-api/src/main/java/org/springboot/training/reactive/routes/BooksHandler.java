@@ -7,10 +7,10 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.net.URI;
 import java.util.logging.Logger;
 
-import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
-import static org.springframework.web.reactive.function.server.ServerResponse.ok;
+import static org.springframework.web.reactive.function.server.ServerResponse.*;
 
 @Service
 public class BooksHandler {
@@ -49,7 +49,6 @@ public class BooksHandler {
         LOG.info("Saving book ...");
         return request.bodyToMono(Book.class)
                 .flatMap(bookRepository::save)
-                .flatMap(book -> ok().header("Location", "/books/" + book.id)
-                        .body(Mono.just(book), Book.class));
+                .flatMap(book -> created(URI.create("/books/" + book.id)).build());
     }
 }

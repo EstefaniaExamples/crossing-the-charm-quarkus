@@ -2,6 +2,7 @@ package com.quarkus.training;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Timed;
+import org.jboss.resteasy.annotations.Body;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -36,5 +37,11 @@ public class BookResource {
     @Timed(name = "deleteBookbyid", description = "A measure of how long it takes to perform the primality test.", unit = MetricUnits.MILLISECONDS)
     public Long deleteBookById(@PathParam("id") Long id) {
         return bookService.deleteBookById(id);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Long saveBook(final Book book) {
+        return bookService.saveBook(book);
     }
 }
