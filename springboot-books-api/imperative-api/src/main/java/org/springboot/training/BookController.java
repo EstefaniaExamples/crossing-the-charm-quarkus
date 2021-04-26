@@ -36,15 +36,4 @@ public class BookController {
         final Book bookSaved = bookRepository.save(book);
         return new ResponseEntity<>(bookSaved, HttpStatus.OK);
     }
-
-    @DeleteMapping("/books/{id}")
-    public ResponseEntity<Book> deleteBookById(@PathVariable Long id) {
-        final Optional<Book> optionalBook = bookRepository.findById(id);
-        if (optionalBook.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            bookRepository.deleteById(optionalBook.get().getId());
-            return new ResponseEntity<>(HttpStatus.OK);
-        }
-    }
 }

@@ -22,9 +22,9 @@
 
     <properties>
         <start-class>org.springboot.training.Application</start-class>
-        <testcontainers.version>1.15.1</testcontainers.version>
+        <spring-native.version>0.9.2</spring-native.version>
+        <testcontainers.version>1.15.3</testcontainers.version>
         <java.version>11</java.version>
-        <spring-native.version>0.9.1-SNAPSHOT</spring-native.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>

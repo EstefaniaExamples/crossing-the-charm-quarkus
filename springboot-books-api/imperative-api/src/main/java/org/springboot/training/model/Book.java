@@ -1,29 +1,21 @@
 package org.springboot.training.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
+import org.springframework.data.relational.core.mapping.Table;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.HashSet;
+import java.util.Set;
 
-@Entity(name = "books")
+@Table("books")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long id;
+    private Long id;
+    private String title;
+    private String description;
 
-    public String title;
-    public String description;
-    public String author;
-
-    public Book() {
-    }
-
-    public Book(String title, String description, String author) {
-        this.title = title;
-        this.description = description;
-        this.author = author;
-    }
+    @MappedCollection(idColumn = "book_id")
+    private Set<AuthorRef> authors = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -49,11 +41,11 @@ public class Book {
         this.description = description;
     }
 
-    public String getAuthor() {
-        return author;
+    public Set<AuthorRef> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthors(Set<AuthorRef> authors) {
+        this.authors = authors;
     }
 }

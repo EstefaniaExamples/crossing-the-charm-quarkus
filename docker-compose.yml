@@ -17,6 +17,30 @@ services:
       - POSTGRES_DB=books_database
     restart: unless-stopped
 
+  nodejsapi:
+    image: 'docker.io/node-books-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1024MB
+        reservations:
+          cpus: 0.25
+          memory: 512M
+    network_mode: bridge
+    container_name: nodejsapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8085
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
   springbootreimperativeapi:
     image: 'docker.io/library/imperative-api:1.0-SNAPSHOT'
     deploy:

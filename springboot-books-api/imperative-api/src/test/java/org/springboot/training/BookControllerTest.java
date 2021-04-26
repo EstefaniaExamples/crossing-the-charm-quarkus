@@ -1,7 +1,6 @@
 package org.springboot.training;
 
 import org.junit.jupiter.api.*;
-import org.springboot.training.model.Book;
 import org.springboot.training.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,11 +16,11 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
-import java.util.Optional;
+import java.util.List;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.isA;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @Testcontainers
@@ -62,9 +61,19 @@ public class BookControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/books")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.[0].id").value(1L))
-                .andExpect(jsonPath("$.[0].title").value("Understanding Bean Validation"))
-                .andExpect(jsonPath("$.[0].description").value("In this fascicle will you will learn Bean Validation and use its different APIs to apply constraints on a bean, validate all sorts of constraints and write your own constraints"));
+                .andExpect(jsonPath("$.[0].id").value(1))
+                .andExpect(jsonPath("$.[0].title").value("Effective Java"))
+                .andExpect(jsonPath("$.[0].description").value("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9"))
+                .andExpect(jsonPath("$.[0].authors", isA(List.class)))
+                .andExpect(jsonPath("$.[0].authors", hasSize(1)))
+                .andExpect(jsonPath("$.[0].authors.[0].authorId").value("1"))
+                .andExpect(jsonPath("$.[1].id").value(2))
+                .andExpect(jsonPath("$.[1].title").value("Hands-On Spring Security 5 for Reactive Applications"))
+                .andExpect(jsonPath("$.[1].description").value("Learn effective ways to secure your applications with Spring and Spring WebFlux (English Edition)"))
+                .andExpect(jsonPath("$.[1].authors", isA(List.class)))
+                .andExpect(jsonPath("$.[1].authors", hasSize(2)))
+                .andExpect(jsonPath("$.[1].authors.[0].authorId").value("1"))
+                .andExpect(jsonPath("$.[1].authors.[1].authorId").value("2"));
     }
 
     @Test
@@ -75,28 +84,7 @@ public class BookControllerTest {
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.title").value("Understanding Bean Validation"))
-                .andExpect(jsonPath("$.description").value("In this fascicle will you will learn Bean Validation and use its different APIs to apply constraints on a bean, validate all sorts of constraints and write your own constraints"));
-    }
-
-    @Test
-    @Order(0)
-    @DisplayName("The service should response ok when deleting a not existing book")
-    public void shouldDeleteNotExistingBookById() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/books/{id}", 8)
-                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().isNotFound());
-    }
-
-    @Test
-    @Order(1)
-    @DisplayName("The service should response ok when deleting an existing book")
-    public void shouldDeleteBookById() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/books/{id}", 2)
-                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE))
-                .andExpect(status().isOk());
-
-        final Optional<Book> byId = bookRepository.findById(2L);
-        assertThat(byId).isEmpty();
+                .andExpect(jsonPath("$.title").value("Effective Java"))
+                .andExpect(jsonPath("$.description").value("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9"));
     }
 }

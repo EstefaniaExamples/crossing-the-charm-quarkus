@@ -4,8 +4,14 @@ You can find the presentation in the following link:
 https://estefaniaexamples.github.io/crossing-the-chasm-quarkus
 
 This project has been configured to let you generate a lightweight container running a native executable.
+
 Docker should be installed and configured on your machine prior to creating the image, see [the Getting Started section of the reference guide](https://docs.spring.io/spring-native/docs/0.9.1-SNAPSHOT/reference/htmlsingle/#getting-started-buildpacks).
-Postgresql should be installed and configured on your machine or running in a docker container prior to run the services.
+
+GraalVM - version
+
+gu install native-image 
+
+SOlo si ejecutas el servicio sin docker ... Postgresql should be installed and configured on your machine or running in a docker container prior to run the services.
 
 ## Spring Native
 

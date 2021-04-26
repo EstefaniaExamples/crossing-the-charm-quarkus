@@ -21,9 +21,13 @@ public class AppRouterRegister {
 
     @Bean
     RouterFunction<ServerResponse> routerFunction() {
-        return route(GET("/books"), booksHandler::getAllBooks)
-                .andRoute(GET("/books/{id}").and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getBookById)
-                .andRoute(DELETE("/books/{id}").and(contentType(MediaType.APPLICATION_JSON)), booksHandler::deleteBookById)
-                .andRoute(POST("/books").and(accept(MediaType.APPLICATION_JSON)), booksHandler::saveBook);
+        return route(GET("/books")
+                        .and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getAllBooksWithAuthor)
+
+                .andRoute(GET("/books/{id}")
+                        .and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getBookById)
+
+                .andRoute(POST("/books")
+                        .and(accept(MediaType.APPLICATION_JSON)), booksHandler::saveBook);
     }
 }

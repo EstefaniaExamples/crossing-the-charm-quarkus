@@ -1,7 +1,9 @@
 package org.springboot.training.reactive.routes;
 
 import org.springboot.training.model.Book;
+import org.springboot.training.model.BookAuthor;
 import org.springboot.training.repositories.BookRepository;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -26,6 +28,20 @@ public class BooksHandler {
         return bookRepository.findAll()
                 .collectList()
                 .flatMap(books -> ok().body(Mono.just(books), Book.class));
+    }
+
+    public Mono<ServerResponse> getAllBooksWithAuthor(final ServerRequest request) {
+        LOG.info("Getting all the books ...");
+        return bookRepository.findAllBooksWithAuthor()
+                .collectList()
+                .flatMap(booksAuthors -> ok().body(Mono.just(booksAuthors), BookAuthor.class));
+    }
+
+    public Mono<ServerResponse> getBooksCrossJoinAuthors(final ServerRequest request) {
+        LOG.info("Getting all the books ...");
+        return bookRepository.booksCrossJoinAuthors()
+                .flatMap(total -> ok().contentType(MediaType.APPLICATION_JSON)
+                        .body(Mono.just("{\"Total\": " + total +"}"), String.class));
     }
 
     public Mono<ServerResponse> getBookById(final ServerRequest request) {
