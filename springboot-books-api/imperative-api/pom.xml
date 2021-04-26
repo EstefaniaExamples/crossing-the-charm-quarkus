@@ -12,21 +12,8 @@
     <artifactId>imperative-api</artifactId>
 
     <properties>
-        <hibernate.version>5.4.28.Final</hibernate.version>
         <main.class>org.springboot.training.Application</main.class>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers-bom</artifactId>
-                <version>${testcontainers.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -129,7 +116,7 @@
                     <plugin>
                         <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>native-image-maven-plugin</artifactId>
-                        <version>21.0.0</version>
+                        <version>21.1.0</version>
                         <configuration>
                             <!-- The native image build needs to know the entry point to your application -->
                             <mainClass>org.springboot.training.Application</mainClass>
