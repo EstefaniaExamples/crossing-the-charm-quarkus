@@ -4,33 +4,34 @@ import io.r2dbc.spi.ConnectionFactories;
 import io.r2dbc.spi.ConnectionFactory;
 import io.r2dbc.spi.ConnectionFactoryOptions;
 import io.r2dbc.spi.Option;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springboot.training.Application;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.r2dbc.config.AbstractR2dbcConfiguration;
-import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
-import org.springframework.r2dbc.connection.init.CompositeDatabasePopulator;
-import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
-import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
+import org.springframework.data.r2dbc.convert.R2dbcCustomConversions;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static io.r2dbc.pool.PoolingConnectionFactoryProvider.*;
 import static io.r2dbc.spi.ConnectionFactoryOptions.*;
 
-@Configuration(proxyBeanMethods = false)
-@EnableR2dbcRepositories
+@Configuration
 public class BooksDataSource extends AbstractR2dbcConfiguration {
-    private static final Logger LOG = LoggerFactory.getLogger(BooksDataSource.class);
-
     private final DataSourceProperties dataSourceProperties;
 
     public BooksDataSource(final DataSourceProperties dataSourceProperties) {
         this.dataSourceProperties = dataSourceProperties;
+    }
+
+    @Override
+    @Bean
+    public R2dbcCustomConversions r2dbcCustomConversions() {
+        final List<Converter<?, ?>> converterList = new ArrayList<>();
+        converterList.add(new BookAuthorsReadConverter());
+        return new R2dbcCustomConversions(getStoreConversions(), converterList);
     }
 
     @Override

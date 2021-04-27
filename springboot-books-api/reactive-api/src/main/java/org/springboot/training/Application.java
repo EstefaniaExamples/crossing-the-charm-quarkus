@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@SpringBootApplication(proxyBeanMethods = false)
+@SpringBootApplication
 public class Application {
 	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 
@@ -17,7 +17,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		applicationContext = SpringApplication.run(Application.class, args);
-//		displayAllBeans();
+		displayAllBeans();
 	}
 
 	public static void displayAllBeans() {

@@ -1,12 +1,19 @@
 package org.springboot.training.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.data.annotation.Id;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+@JsonSerialize
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class BookAuthors implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
     private Long id;
     private String title;
     private String description;
