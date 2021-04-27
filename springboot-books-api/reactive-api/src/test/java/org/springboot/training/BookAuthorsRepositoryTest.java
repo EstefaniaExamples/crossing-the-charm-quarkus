@@ -2,7 +2,7 @@ package org.springboot.training;
 
 import org.junit.jupiter.api.Test;
 
-public class BookRepositoryTest {
+public class BookAuthorsRepositoryTest {
     @Test
     void loadContext() {
 

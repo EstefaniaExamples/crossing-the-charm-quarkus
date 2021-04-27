@@ -22,7 +22,7 @@ public class AppRouterRegister {
     @Bean
     RouterFunction<ServerResponse> routerFunction() {
         return route(GET("/books")
-                        .and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getAllBooksWithAuthor)
+                        .and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getAllBooksWithAuthors)
 
                 .andRoute(GET("/books/{id}")
                         .and(contentType(MediaType.APPLICATION_JSON)), booksHandler::getBookById)

@@ -116,10 +116,11 @@
                     <plugin>
                         <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>native-image-maven-plugin</artifactId>
-                        <version>21.1.0</version>
+                        <version>${graalvm.version}</version>
                         <configuration>
                             <!-- The native image build needs to know the entry point to your application -->
                             <mainClass>org.springboot.training.Application</mainClass>
+                            <imageName>books-imperative-api</imageName>
                         </configuration>
                         <executions>
                             <execution>

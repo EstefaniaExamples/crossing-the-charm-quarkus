@@ -45,7 +45,6 @@
             <version>20210307</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -116,24 +115,31 @@
     </build>
 
     <profiles>
+        <!-- Enable building a native image using a local installation of native-image with GraalVM native-image-maven-plugin -->
         <profile>
             <id>native-image</id>
+            <properties>
+                <!-- Avoid a clash between Spring Boot repackaging and native-image-maven-plugin -->
+                <classifier>exec</classifier>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
                         <configuration>
-                            <classifier>exec</classifier>
+                            <classifier>${classifier}</classifier>
                         </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.graalvm.nativeimage</groupId>
                         <artifactId>native-image-maven-plugin</artifactId>
-                        <version>21.1.0</version>
+                        <version>${graalvm.version}</version>
                         <configuration>
                             <!-- The native image build needs to know the entry point to your application -->
                             <mainClass>org.springboot.training.Application</mainClass>
+                            <imageName>${project.artifactId}</imageName>
+                            <!-- <buildArgs>${native.build.args}</buildArgs> -->
                         </configuration>
                         <executions>
                             <execution>

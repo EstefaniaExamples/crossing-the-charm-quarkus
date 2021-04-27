@@ -1,70 +1,46 @@
 package org.springboot.training.reactive.routes;
 
-import org.springboot.training.model.Book;
-import org.springboot.training.model.BookAuthor;
-import org.springboot.training.repositories.BookRepository;
+import org.springboot.training.model.BookAuthors;
+import org.springboot.training.repositories.BookAuthorsRepository;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import java.net.URI;
 import java.util.logging.Logger;
 
-import static org.springframework.web.reactive.function.server.ServerResponse.*;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 @Service
 public class BooksHandler {
     private static final Logger LOG = Logger.getLogger(BooksHandler.class.getName());
-    private final BookRepository bookRepository;
+    private final BookAuthorsRepository bookAuthorsRepository;
 
-    public BooksHandler(final BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BooksHandler(final BookAuthorsRepository bookAuthorsRepository) {
+        this.bookAuthorsRepository = bookAuthorsRepository;
     }
 
-    public Mono<ServerResponse> getAllBooks(final ServerRequest request) {
+    public Mono<ServerResponse> getAllBooksWithAuthors(final ServerRequest request) {
         LOG.info("Getting all the books ...");
-        return bookRepository.findAll()
+        return bookAuthorsRepository.findAll()
                 .collectList()
-                .flatMap(books -> ok().body(Mono.just(books), Book.class));
-    }
-
-    public Mono<ServerResponse> getAllBooksWithAuthor(final ServerRequest request) {
-        LOG.info("Getting all the books ...");
-        return bookRepository.findAllBooksWithAuthor()
-                .collectList()
-                .flatMap(booksAuthors -> ok().body(Mono.just(booksAuthors), BookAuthor.class));
-    }
-
-    public Mono<ServerResponse> getBooksCrossJoinAuthors(final ServerRequest request) {
-        LOG.info("Getting all the books ...");
-        return bookRepository.booksCrossJoinAuthors()
-                .flatMap(total -> ok().contentType(MediaType.APPLICATION_JSON)
-                        .body(Mono.just("{\"Total\": " + total +"}"), String.class));
+                .flatMap(booksAuthors -> ok().contentType(MediaType.APPLICATION_JSON)
+                        .body(Mono.just(booksAuthors), BookAuthors.class));
     }
 
     public Mono<ServerResponse> getBookById(final ServerRequest request) {
         LOG.info("Getting book by id ...");
-        return bookRepository.findById(Long.valueOf(request.pathVariable("id")))
-                .flatMap(book -> ok().body(Mono.just(book), Book.class));
-    }
-
-    public Mono<ServerResponse> deleteBookById(final ServerRequest request) {
-        LOG.info("Deleting book by id ...");
-        final Long id = Long.valueOf(request.pathVariable("id"));
-
-        return bookRepository.findById(id)
-                .flatMap(book -> bookRepository.deleteById(book.id)
-                        .then(Mono.just(book.id))
-                        .flatMap(idLong -> ok().build()))
-                .switchIfEmpty(notFound().build());
+        return bookAuthorsRepository.findByBookId(Long.valueOf(request.pathVariable("id")))
+                .flatMap(book -> ok().contentType(MediaType.APPLICATION_JSON)
+                        .body(Mono.just(book), BookAuthors.class));
     }
 
     public Mono<ServerResponse> saveBook(final ServerRequest request) {
         LOG.info("Saving book ...");
-        return request.bodyToMono(Book.class)
-                .flatMap(bookRepository::save)
-                .flatMap(book -> created(URI.create("/books/" + book.id)).build());
+//        return request.bodyToMono(Book.class)
+//                .flatMap(bookRepository::save)
+//                .flatMap(book -> created(URI.create("/books/" + book.id)).build());
+        return ServerResponse.ok().build();
     }
 }
