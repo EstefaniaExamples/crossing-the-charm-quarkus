@@ -11,3 +11,14 @@ spring:
     url: jdbc:postgresql://localhost:5432/books_database
     username: book
     password: book
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: SpringBootImperativeBooksApi

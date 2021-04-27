@@ -24,3 +24,14 @@ spring:
     banner-mode: off
   jmx:
     enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: SpringBootReactiveBooksApi
