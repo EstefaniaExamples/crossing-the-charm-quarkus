@@ -30,7 +30,7 @@ This project has been tested with the following versions:
 - Maven: Apache Maven 3.8.1 
 - Docker desktop: 3.3.1 (63152)
 
-## Java GraalVM Installation
+### Java GraalVM Installation
 It is highly recommended to use [SDKMAN](https://sdkman.io/install) to install and manage java versions.`
 
 Once you have Java GraalVM installed, you need to install native-image with the following command: ``` gu install native-image ```
@@ -49,7 +49,7 @@ to be able to have our prometheus server working.
 ### Grafana Installation and Set up
 To install Grafana you need to run the following docker command: 
 
-docker run -d -p 3000:3000 grafana/grafana
+``` docker run -d -p 3000:3000 grafana/grafana ```
 
 Once Grafana is up and running, you have to configure the prometheus source, you can do it following this [tutorial](https://ordina-jworks.github.io/monitoring/2020/11/16/monitoring-spring-prometheus-grafana.html).
 
@@ -62,8 +62,9 @@ Once Grafana is up and running, you have to configure the prometheus source, you
 ### PostgreSQL Database
 
 
+### SpringBoot Imperative Books API
 
-### Springboot Reactive Books API
+### SpringBoot Reactive Books API
 
 To create the native image, run the following goal:
 ```
@@ -83,7 +84,9 @@ $ docker run -i --rm -p 8080:8080 project-name:latest
 ```
 
 
-## Quarkus native
+### Quarkus Imperative Books API
+
+### Quarkus Reactive Books API
 
 To create the linux native image, run the following goal:
 ```
@@ -102,14 +105,3 @@ Then, you can run the app like any other container:
 $ docker run -i --rm -p 8080:8080 project-name:latest
 ```
 
-
-## All together
-
-To create the docker images for all the projects and run them already connected against a postgresql database, 
-run the follow command: 
-
-```
-$ docker-compose up 
-```
-
-This requires to have all the docker images already created (you can get that following the above instructions)
