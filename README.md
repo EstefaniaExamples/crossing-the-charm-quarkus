@@ -99,7 +99,7 @@ $ ./mvnw package -Pnative -Dquarkus.native.container-build=true
 To create the docker image in order to build a container that runs the Quarkus application in native (no JVM) mode, run the following goal:
 
 ```
-$ docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-reactive-book-api .
+$ docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-reactive-bookAuthors-api .
 ```
 
 Then, you can run the app like any other container:

@@ -15,7 +15,7 @@ public class BookAuthorsReadConverter implements Converter<Row, BookAuthors> {
     private static Logger LOG = LoggerFactory.getLogger(BookAuthorsReadConverter.class);
 
     @Override
-    public BookAuthors convert(Row row) {
+    public BookAuthors convert(final Row row) {
         final Long id = row.get("id", Long.class);
         final String bookTitle = row.get("title", String.class);
         final String bookDescription = row.get("description", String.class);

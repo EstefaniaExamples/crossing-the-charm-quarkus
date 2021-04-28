@@ -1,4 +1,4 @@
-package org.quarkus.training;
+package org.quarkus.training.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;

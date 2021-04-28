@@ -4,9 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
 import javax.ws.rs.NotFoundException;
-import javax.ws.rs.WebApplicationException;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,26 +21,5 @@ public class BookService {
         LOG.info("Finding a specific person by ID via an Optional ...");
         final Optional<Book> optional = Book.findByIdOptional(id);
         return optional.orElseThrow(NotFoundException::new);
-    }
-
-    @Transactional
-    public Long saveBook(final Book book) {
-        LOG.info("Saving new book ...");
-        if (book.id != null) {
-            throw new WebApplicationException("Id was invalidly set on request.", 422);
-        }
-        book.persist();
-        return book.id;
-    }
-
-    @Transactional
-    public Long deleteBookById(final Long id) {
-        LOG.info("Finding a specific person by ID via an Optional ...");
-        boolean deleteById = Book.deleteById(id);
-        if (deleteById) {
-            return id;
-        } else {
-            throw new NotFoundException();
-        }
     }
 }
