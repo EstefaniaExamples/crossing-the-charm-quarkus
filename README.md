@@ -40,19 +40,22 @@ Docker should be installed and configured on your machine prior to creating the 
 
 
 ### Prometheus Installation and Set up
-There is a file in the project root called ``` prometheus.yml ``` that contains the required configuration. So that we just need to run the following command
+There is a file in the project root called ``` prometheus.yml ``` that contains the required configuration.
+You must change the update the target putting there your computer IP address. Then, you just need to run the following command
 
-``` docker run -d -p 9090:9090 -v <PATH_TO_prometheus.yml_FILE>:/etc/prometheus/prometheus.yml prom/prometheus ``` 
+``` docker run -d -p 9090:9090 -v <PATH_TO_prometheus.yml_FILE>:/etc/prometheus/prometheus.yml prom/prometheus:v2.26.0 ``` 
 
-to be able to have our prometheus server working.
+to be able to have our prometheus server working. If everything goes ok, you should be able to see a screen like  this:
+
+![img.png](prometheus-targets-img.png)
 
 ### Grafana Installation and Set up
 To install Grafana you need to run the following docker command: 
 
-``` docker run -d -p 3000:3000 grafana/grafana ```
+``` docker run -d -p 3000:3000 grafana/grafana:7.5.4 ```
 
 Once Grafana is up and running, you have to configure the prometheus source, you can do it following this [tutorial](https://ordina-jworks.github.io/monitoring/2020/11/16/monitoring-spring-prometheus-grafana.html).
-
+The dashboard I used to monitor our application is the JVM Micrometer dashboard with import id: 4701.
 
 
 
@@ -68,13 +71,13 @@ Once Grafana is up and running, you have to configure the prometheus source, you
 
 To create the native image, run the following goal:
 ```
-$ ./mvnw clean -Pnative-image package
+$ mvn clean -Pnative-image package
 ```
 
 To create the docker image in order to build a container that runs the Spring Boot application in native (no JVM) mode, run the following goal:
 
 ```
-$ ./mvnw spring-boot:build-image
+$ mvn spring-boot:build-image
 ```
 
 Then, you can run the app like any other container:

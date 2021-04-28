@@ -31,7 +31,7 @@ public class BookAuthorsReadConverter implements Converter<Row, BookAuthors> {
                 }
         );
 
-        LOG.info("Book with authors: {}", new BookAuthors(id, bookTitle, bookDescription, authors));
+        LOG.debug("Book with authors: {}", new BookAuthors(id, bookTitle, bookDescription, authors));
         return new BookAuthors(id, bookTitle, bookDescription, authors);
     }
 }
