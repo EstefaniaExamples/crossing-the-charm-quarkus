@@ -8,7 +8,7 @@ booksAuthorsInserts=""
 for (( n=4; n<=1000; n++ ))
 do
     booksInserts+="INSERT INTO books (title, description) VALUES('book title $n', 'book description some lines $n');"
-    authorsInserts+="INSERT INTO authors (name, surname, dob, sex) VALUES('name $n', 'surname $n', '1967-6-10', 'm');"
+    authorsInserts+="INSERT INTO authors (name, surname, dob) VALUES('name $n', 'surname $n', '1967-6-10');"
     booksAuthorsInserts+="INSERT INTO books_authors VALUES ($n, $n);INSERT INTO books_authors VALUES ($n, $n+1);"
 done
 
@@ -21,10 +21,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     $booksInserts
 
     DROP TABLE IF EXISTS authors;
-    CREATE TABLE authors (id SERIAL PRIMARY KEY, name VARCHAR(255), surname VARCHAR(255), dob DATE, sex CHAR);
-    INSERT INTO authors (name, surname, dob, sex) VALUES ('Joshua', 'Bloch', '1960-6-27', 'm');
-    INSERT INTO authors (name, surname, dob, sex) VALUES ('Tomcy', 'John', '1960-6-27', 'm');
-    INSERT INTO authors (name, surname, dob, sex) VALUES ('Zoran', 'Majkić', '1960-6-27', 'm');
+    CREATE TABLE authors (id SERIAL PRIMARY KEY, name VARCHAR(255), surname VARCHAR(255), dob DATE);
+    INSERT INTO authors (name, surname, dob) VALUES ('Joshua', 'Bloch', '1960-6-27');
+    INSERT INTO authors (name, surname, dob) VALUES ('Tomcy', 'John', '1960-6-27');
+    INSERT INTO authors (name, surname, dob) VALUES ('Zoran', 'Majkić', '1960-6-27');
     $authorsInserts
 
     DROP TABLE IF EXISTS books_authors;
