@@ -12,12 +12,16 @@ import io.vertx.mutiny.pgclient.PgPool;
 import io.vertx.mutiny.sqlclient.Row;
 import io.vertx.mutiny.sqlclient.RowSet;
 import io.vertx.mutiny.sqlclient.Tuple;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookAuthors {
+    private static final Logger LOG = LoggerFactory.getLogger(BookAuthors.class);
+
     @JsonProperty
     private Long id;
     @JsonProperty
@@ -117,23 +121,27 @@ public class BookAuthors {
     }
 
     public static Multi<BookAuthors> findAll(final PgPool client) {
-        return client.query("SELECT b.id, b.title, b.description, " +
+        final String query = "SELECT b.id, b.title, b.description, " +
                 "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
                 "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
                 "  WHERE b.id=ba.book_id ) as authors" +
-                "  FROM books b;")
+                "  FROM books b;";
+        LOG.info("Query to find all books: {}", query);
+        return client.query(query)
                 .execute()
                 .onItem().transformToMulti(set -> Multi.createFrom().iterable(set))
                 .onItem().transform(BookAuthors::from);
     }
 
     public static Uni<BookAuthors> findById(final PgPool client, final Long id) {
-        return client.preparedQuery("SELECT b.id, b.title, b.description, " +
+        final String query = "SELECT b.id, b.title, b.description, " +
                 "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
                 "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
                 "  WHERE b.id=ba.book_id ) as authors" +
                 "  FROM books b " +
-                "  WHERE b.id=$1")
+                "  WHERE b.id=$1";
+        LOG.info("Query to find all books: {}", query);
+        return client.preparedQuery(query)
                 .execute(Tuple.of(id))
                 .onItem().transform(RowSet::iterator)
                 .onItem().transform(iterator -> iterator.hasNext() ? from(iterator.next()) : null);

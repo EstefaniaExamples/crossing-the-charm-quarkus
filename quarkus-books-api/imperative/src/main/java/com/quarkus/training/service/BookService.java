@@ -1,6 +1,6 @@
-package com.quarkus.training;
+package com.quarkus.training.service;
 
-import io.quarkus.panache.common.Sort;
+import com.quarkus.training.model.Book;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +15,7 @@ public class BookService {
 
     public List<Book> getAllBooks() {
         LOG.info("Find all the books in the database ...");
-        return Book.listAll(Sort.ascending("id"));
+        return Book.listAll();
     }
 
     public Book getBookById(final Long id) {

@@ -4,17 +4,14 @@ global:
 scrape_configs:
   - job_name: 'prometheus'
     scrape_interval: 5s
-
     static_configs:
       - targets: ['localhost:9090']
-
-  - job_name: 'spring-boot-reactive-book-api'
+  - job_name: 'springBootReactiveBookApi'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
       - targets: ['192.168.2.49:8084']
-
-  - job_name: 'spring-boot-imperative-book-api'
+  - job_name: 'springBootImperativeBookApi'
     metrics_path: '/actuator/prometheus'
     scrape_interval: 5s
     static_configs:
