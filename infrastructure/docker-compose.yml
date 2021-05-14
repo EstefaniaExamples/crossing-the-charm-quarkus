@@ -33,8 +33,22 @@ services:
   monitoring-grafana:
     image: "grafana/grafana:7.5.4"
     container_name: "books-monitoring-grafana"
+    depends_on:
+      - monitoring-prometheus
     ports:
       - 3000:3000
+
+  cadvisor:
+    image: google/cadvisor:latest
+    container_name: "books-monitoring-cadvisor"
+    ports:
+      - '8080:8080'
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
 
 volumes:
   postgres_data:

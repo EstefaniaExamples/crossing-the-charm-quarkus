@@ -17,7 +17,7 @@ public class Author extends PanacheEntity {
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "authors")
     @JsonIgnore
-    // We mark this property with @JsonIgnore to avoid infinite loops when serializing with Jackson.cd
+    // We mark this property with @JsonIgnore to avoid infinite loops when serializing with Jackson.
     public Set<Book> books = new HashSet<>();
 
     @Override

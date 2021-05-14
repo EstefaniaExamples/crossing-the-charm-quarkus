@@ -36,7 +36,7 @@ exports.findAll = (req, res) => {
     })
     .catch((err) => {
       res.status(500).send({
-        message: err.message || "Some error occured while retrieving Notes",
+        message: err.message || "Some error ocurred while retrieving Notes",
       });
     });
 };
