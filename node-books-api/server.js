@@ -1,16 +1,13 @@
 var express = require('express'),
    app = express(),
-   port = process.env.PORT || 3000,
+   port = process.env.PORT || 3001,
    bodyParser = require('body-parser');;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const db = require('./api/models');
-db.sequelize.sync();
-
-var routes = require('./api/routes'); //importing route
-routes(app); //register the route
+const bookRoutes = require('./api/routes');
+app.use(bookRoutes);
 
 app.use(function(req, res) {
    res.status(404).send({url: req.originalUrl + ' not found'})
