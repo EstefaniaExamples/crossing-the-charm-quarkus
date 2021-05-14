@@ -1,6 +1,8 @@
 .idea
 *.iml
 
+/node-books-api/node_modules
+
 /quarkus-books-api/imperative/target
 /quarkus-books-api/reactive/target
 
