@@ -3,6 +3,7 @@ package org.springboot.training.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+//TODO Migrate to Java Records
 @Table("authors")
 public class Author {
     @Id

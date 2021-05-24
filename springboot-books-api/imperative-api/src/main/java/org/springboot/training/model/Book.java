@@ -7,6 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.util.HashSet;
 import java.util.Set;
 
+//TODO Migrate to Java Records
 @Table("books")
 public class Book {
     @Id
