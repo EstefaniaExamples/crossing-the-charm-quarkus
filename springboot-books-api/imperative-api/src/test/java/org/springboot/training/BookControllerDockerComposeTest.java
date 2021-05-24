@@ -8,7 +8,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import static io.restassured.RestAssured.given;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class BookControllerTest2 {
+public class BookControllerDockerComposeTest {
 
     @LocalServerPort
     private int port;
