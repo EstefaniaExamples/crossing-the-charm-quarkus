@@ -40,12 +40,20 @@ Once you have Java GraalVM installed, you need to install native-image with the 
 ### Docker installation
 Docker should be installed and configured on your machine prior to creating the image, see [the Getting Started section of the reference guide](https://docs.spring.io/spring-native/docs/0.9.1-SNAPSHOT/reference/htmlsingle/#getting-started-buildpacks).
 
+### JMeter Installation
+
+```
+brew install jmeter
+```
 
 ### Infrastructure installation
 
 This project includes a docker compose file that will set up all the infrastructure the services need to be executed. The following command will do all the job for you: 
 
-``` docker compose up ```  (bear in mind you have to be in the /infrastucture folder to run this command).
+``` 
+docker compose up 
+```  
+(bear in mind you have to be in the /infrastucture folder to run this command).
 
 Anyway, if you want to do it manually you can follow the below steps for each of the components we need. 
 

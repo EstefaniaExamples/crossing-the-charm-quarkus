@@ -2,6 +2,7 @@ package org.springboot.training.model;
 
 import org.springframework.data.relational.core.mapping.Table;
 
+//TODO Migrate to Java Records
 @Table("books_authors")
 public class AuthorRef {
     private Long authorId;

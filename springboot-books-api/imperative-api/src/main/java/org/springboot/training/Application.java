@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootApplication(proxyBeanMethods = false)
 public class Application {
+
 	private static ApplicationContext applicationContext;
 
 	public static void main(String[] args) {
