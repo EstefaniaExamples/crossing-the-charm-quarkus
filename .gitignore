@@ -6,3 +6,5 @@
 
 /springboot-books-api/reactive-api/target
 /springboot-books-api/imperative-api/target
+
+*.DS_Store

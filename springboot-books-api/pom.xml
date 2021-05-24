@@ -58,6 +58,9 @@
         </dependency>
     </dependencies>
 
+    <!--
+    TODO: Revisar cuando no es necesario emplear este bloque
+    -->
     <repositories>
         <repository>
             <id>spring-releases</id>

@@ -1,10 +1,6 @@
 package org.springboot.training;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,8 +17,6 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
-import org.springboot.training.persistence.BookRepository;
-
 import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
@@ -30,10 +24,15 @@ import static org.hamcrest.Matchers.isA;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Testcontainers
+//@SpringBootTest
+//@Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class BookControllerTest {
+@AutoConfigureMockMvc
+public class BookControllerTest2 {
 
     private static final String DATASOURCE_URL_PROPERTY = "spring.datasource.url";
     private static final String DATASOURCE_URL_USER = "spring.datasource.username";
@@ -52,6 +51,7 @@ public class BookControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    /*
     @Container
     private static final PostgreSQLContainer<?> POSTGRE_SQL_CONTAINER = new PostgreSQLContainer<>(DockerImageName.parse("postgres:11"))
             .withDatabaseName("books_database")
@@ -69,13 +69,15 @@ public class BookControllerTest {
 
     }
 
+     */
+
     @Test
     @Order(0)
     @DisplayName("The service should response with the all the books in the database")
     public void shouldGetAllTheBooks() throws Exception {
 
         String address = "http://localhost:" + port + "/books";
-        //this.restTemplate.getForObject(address, String.class);
+        this.restTemplate.getForObject(address, String.class);
 
         /*
         mockMvc.perform(MockMvcRequestBuilders.get("/books")
@@ -96,6 +98,7 @@ public class BookControllerTest {
                 .andExpect(jsonPath("$.[1].authors.[1].authorId").value("2"));
 
          */
+
     }
 
     @Test
