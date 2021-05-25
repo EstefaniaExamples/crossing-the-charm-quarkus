@@ -1,39 +1,54 @@
 package com.quarkus.training.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
-
-import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
-@Entity(name = "books")
-public class Book extends PanacheEntity {
+public class Book {
+    private Long id;
     public String title;
     public String description;
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "books_authors",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "author_id"))
     public Set<Author> authors = new HashSet<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof Book)) {
-            return false;
-        }
-
-        Book other = (Book) o;
-
-        return Objects.equals(id, other.id);
+    public Book() {
     }
 
-    @Override
-    public int hashCode() {
-        return 31;
+    public Book(Long id, String title, String description, Set<Author> authors) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.authors = authors;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 }

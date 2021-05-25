@@ -29,9 +29,8 @@ public class BookResourceTest {
                 .body("title[0]", equalTo("Effective Java"))
                 .body("description[0]", equalTo("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9"))
                 .body("authors[0]", hasSize(1))
-                .body("authors[0].id[0]", equalTo(1))
-                .body("authors[0].name[0]", equalTo("Joshua"))
-                .body("authors[0].surname[0]", equalTo("Bloch"))
+                .body("authors[0].authorId[0]", equalTo(1))
+                .body("authors[0].fullName[0]", equalTo("Joshua Bloch"))
 
                 .body("id[1]", equalTo(2))
                 .body("title[1]", equalTo("Hands-On Spring Security 5 for Reactive Applications"))
@@ -42,9 +41,8 @@ public class BookResourceTest {
                 .body("title[2]", equalTo("Big Data Integration Theory"))
                 .body("description[2]", equalTo("This book presents a novel approach to database concepts, describing a categorical logic for database schema mapping based on views, within a framework for database integration/exchange and peer-to-peer. Database mappings, database programming languages, and denotational and operational semantics are discussed in depth. An analysis method is also developed that combines techniques from second order logic, data modeling, co-algebras and functorial categorial semantics."))
                 .body("authors[2]", hasSize(1))
-                .body("authors[2].id[0]", equalTo(3))
-                .body("authors[2].name[0]", equalTo("Zoran"))
-                .body("authors[2].surname[0]", equalTo("Majkić"));
+                .body("authors[2].authorId[0]", equalTo(3))
+                .body("authors[2].fullName[0]", equalTo("Zoran Majkić"));
     }
 
     @Test
