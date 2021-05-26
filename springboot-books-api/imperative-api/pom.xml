@@ -13,7 +13,10 @@
     <artifactId>imperative-api</artifactId>
 
     <properties>
+        <!-- GraalVM Native Image -->
         <main.class>org.springboot.training.Application</main.class>
+        <native-image.imageName>books-imperative-api</native-image.imageName>
+
         <!--
         Rest Assured issue:
         https://github.com/rest-assured/rest-assured/issues/1436
@@ -113,6 +116,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
@@ -134,8 +138,8 @@
                         <version>${graalvm.version}</version>
                         <configuration>
                             <!-- The native image build needs to know the entry point to your application -->
-                            <mainClass>org.springboot.training.Application</mainClass>
-                            <imageName>books-imperative-api</imageName>
+                            <mainClass>${main.class}</mainClass>
+                            <imageName>${native-image.imageName}</imageName>
                         </configuration>
                         <executions>
                             <execution>

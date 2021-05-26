@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@SpringBootApplication(proxyBeanMethods = false)
+@SpringBootApplication
 public class Application {
 
 	private static ApplicationContext applicationContext;
