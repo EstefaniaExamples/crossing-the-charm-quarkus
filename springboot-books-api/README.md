@@ -55,3 +55,11 @@ mvn clean package -pl imperative-api -P native-image
 ```
 ./imperative-api/target/books-imperative-api
 ```
+
+## About the computer used for the POC
+
+```
+MacBook Pro (13-inch, M1, 2020)
+Apple M1
+16 GB
+```
