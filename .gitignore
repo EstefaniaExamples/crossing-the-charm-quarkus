@@ -3,10 +3,12 @@
 
 /node-books-api/node_modules
 
-/quarkus-books-api/imperative/target
-/quarkus-books-api/reactive/target
+/quarkus-books-api/quarkus-imperative-jdbc-api/target
+/quarkus-books-api/quarkus-imperative-jpa-api/target
+/quarkus-books-api/quarkus-reactive-api/target
 
-/springboot-books-api/reactive-api/target
-/springboot-books-api/imperative-api/target
+/springboot-books-api/sp-reactive-api/target
+/springboot-books-api/sp-imperative-jpa-api/target
+/springboot-books-api/sp-imperative-jdbc-api/target
 
 *.DS_Store
