@@ -7,7 +7,7 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-imperative-book-api .
+# docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-imperative-jdbc-api .
 #
 # Then run the container using:
 #
@@ -21,7 +21,7 @@ RUN chown 1001 /work \
     && chown 1001:root /work
 COPY --chown=1001:root target/*-runner /work/application
 
-EXPOSE 8080
+EXPOSE 8087
 USER 1001
 
 CMD ["./application", "-Dquarkus.http.host=0.0.0.0"]
