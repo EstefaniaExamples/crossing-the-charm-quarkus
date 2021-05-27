@@ -1,7 +1,7 @@
 package com.quarkus.training.controller;
 
-import com.quarkus.training.service.BookService;
 import com.quarkus.training.model.Book;
+import com.quarkus.training.service.BookService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

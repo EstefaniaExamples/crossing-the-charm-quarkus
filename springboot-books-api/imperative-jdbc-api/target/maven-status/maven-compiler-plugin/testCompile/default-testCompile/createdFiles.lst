@@ -1,0 +1,3 @@
+org/springboot/training/BookControllerTest.class
+org/springboot/training/BookControllerDockerComposeTest.class
+org/springboot/training/AbstractTestContainerBaseTest.class

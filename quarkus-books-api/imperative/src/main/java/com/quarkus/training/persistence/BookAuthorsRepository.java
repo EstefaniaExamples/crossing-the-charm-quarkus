@@ -7,74 +7,44 @@ import com.quarkus.training.model.Author;
 import com.quarkus.training.model.Book;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @ApplicationScoped
 public class BookAuthorsRepository {
     private static final String FIND_ALL = "SELECT b.id, b.title, b.description, " +
-            "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
+            "( SELECT json_agg(json_build_object('id', a.id, 'name', a.name, 'surname', a.surname)) " +
             "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
             "  WHERE b.id=ba.book_id ) as authors" +
             "  FROM books b";
     private static final String FIND_BY_ID = "SELECT b.id, b.title, b.description, " +
-            "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
+            "( SELECT json_agg(json_build_object('id', a.id, 'name', a.name, 'surname', a.surname)) " +
             "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
             "  WHERE b.id=ba.book_id ) as authors" +
             "  FROM books b" +
-            "  WHERE b.id=?";
+            "  WHERE b.id=(?1)";
 
-    private final DataSource dataSource;
+    private final EntityManager entityManager;
 
-    public BookAuthorsRepository(final DataSource dataSource) {
-        this.dataSource = dataSource;
+    public BookAuthorsRepository(final EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
+
     public List<Book> findAll() {
-        final List<Book> results = new ArrayList<>();
-        try (final Connection connection = dataSource.getConnection();
-             final PreparedStatement statement = connection.prepareStatement(FIND_ALL)) {
-            try (ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    final Set<Author> authors = mountAuthorSet(resultSet);
-                    results.add(new Book(
-                            resultSet.getLong("id"),
-                            resultSet.getString("title"),
-                            resultSet.getString("description"),
-                            authors));
-                }
-            }
-
-        } catch (final SQLException e) {
-            e.printStackTrace();
-        }
-
-        return results;
+        return (List<Book>) entityManager.createNativeQuery(FIND_ALL, Book.class).getResultList();
     }
 
     public Optional<Book> findById(final Long id) {
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(FIND_BY_ID)) {
-            statement.setObject(1, id);
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    final Set<Author> authors = mountAuthorSet(resultSet);
-                    return Optional.of(new Book(
-                            resultSet.getLong("id"),
-                            resultSet.getString("title"),
-                            resultSet.getString("description"),
-                            authors));
-                }
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return Optional.empty();
+        final Query query =  entityManager.createNativeQuery(FIND_BY_ID, Book.class);
+        query.setParameter(1, id);
+        return Optional.of((Book) query.getSingleResult());
     }
 
     private Set<Author> mountAuthorSet(final ResultSet resultSet) throws SQLException {

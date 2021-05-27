@@ -1,54 +1,22 @@
 package com.quarkus.training.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity(name="books")
 public class Book {
-    private Long id;
+    @Id
+    public Long id;
     public String title;
     public String description;
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "books_authors",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+    @JsonManagedReference
     public Set<Author> authors = new HashSet<>();
-
-    public Book() {
-    }
-
-    public Book(Long id, String title, String description, Set<Author> authors) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.authors = authors;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(Set<Author> authors) {
-        this.authors = authors;
-    }
 }

@@ -2,7 +2,7 @@ const Pool = require("pg").Pool;
 const env = process.env;
 
 const config = {
-  db: { 
+  db: {
     host: env.DB_HOST || 'otto.db.elephantsql.com',
     port: env.DB_PORT || '5432',
     user: env.DB_USER || 'cklijfef',
@@ -13,7 +13,7 @@ const config = {
 
 const pool = new Pool({
     user:'book',
-    host:'localhost',
+    host:'192.168.2.49',
     database:'books_database',
     password:'book',
     port:'5432'
