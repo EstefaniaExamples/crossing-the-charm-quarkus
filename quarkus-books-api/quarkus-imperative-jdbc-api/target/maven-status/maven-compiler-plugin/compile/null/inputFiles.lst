@@ -1,7 +1,0 @@
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/model/CustomAuthorRef.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/model/Book.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/persistence/BookAuthorsRepository.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/model/BookAuthorDto.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/controller/BookResource.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/service/BookService.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/quarkus-books-api/imperative/src/main/java/com/quarkus/training/model/Author.java

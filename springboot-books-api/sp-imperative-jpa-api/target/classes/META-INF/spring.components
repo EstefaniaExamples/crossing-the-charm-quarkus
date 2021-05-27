@@ -1,7 +1,0 @@
-#
-#Wed May 26 19:22:00 CEST 2021
-org.springboot.training.persistence.BookRepository=org.springframework.data.repository.Repository
-org.springboot.training.model.Author=javax.persistence.Entity
-org.springboot.training.controller.BookController=org.springframework.stereotype.Component
-org.springboot.training.Application=org.springframework.stereotype.Component,org.springframework.boot.SpringBootConfiguration
-org.springboot.training.model.Book=javax.persistence.Entity

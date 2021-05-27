@@ -1,6 +1,0 @@
-org/quarkus/training/model/BookAuthors.class
-org/quarkus/training/ApplicationLifecycle.class
-org/quarkus/training/filter/HeaderAdditionContainerResponseFilter.class
-org/quarkus/training/model/BookAuthors$InnerAuthor.class
-org/quarkus/training/reactive/routes/BooksHandler.class
-org/quarkus/training/reactive/routes/AppRouterRegister.class

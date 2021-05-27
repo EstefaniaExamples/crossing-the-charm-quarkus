@@ -1,7 +1,0 @@
-org/springboot/training/Application.class
-org/springboot/training/model/Book.class
-org/springboot/training/persistence/AuthorRepository.class
-org/springboot/training/model/Author.class
-org/springboot/training/controller/BookController.class
-org/springboot/training/persistence/BookRepository.class
-org/springboot/training/model/AuthorRef.class
