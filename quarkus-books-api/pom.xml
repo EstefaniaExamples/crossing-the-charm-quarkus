@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>reactive</module>
-        <module>imperative</module>
+        <module>quarkus-reactive-api</module>
+        <module>quarkus-imperative-jdbc-api</module>
+        <module>quarkus-imperative-jpa-api</module>
     </modules>
 
     <properties><compiler-plugin.version>3.8.1</compiler-plugin.version>

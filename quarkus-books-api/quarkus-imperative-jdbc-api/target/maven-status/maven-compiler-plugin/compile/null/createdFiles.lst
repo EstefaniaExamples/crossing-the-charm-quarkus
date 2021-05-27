@@ -1,0 +1,4 @@
+com/quarkus/training/persistence/BookAuthorsRepository.class
+META-INF/panache-archive.marker
+com/quarkus/training/model/BookAuthorDto.class
+com/quarkus/training/model/CustomAuthorRef.class

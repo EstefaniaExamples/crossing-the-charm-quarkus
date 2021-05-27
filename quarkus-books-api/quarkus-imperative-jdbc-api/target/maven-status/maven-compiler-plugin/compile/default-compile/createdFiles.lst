@@ -1,0 +1,4 @@
+com/quarkus/training/model/Book.class
+com/quarkus/training/model/Author.class
+com/quarkus/training/service/BookService.class
+com/quarkus/training/controller/BookResource.class

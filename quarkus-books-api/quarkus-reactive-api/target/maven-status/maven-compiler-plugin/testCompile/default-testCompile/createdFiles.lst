@@ -1,0 +1,4 @@
+org/quarkus/training/reactive/routes/NativeAppRouterRegisterIT.class
+org/quarkus/training/reactive/routes/AppRouterRegisterTest.class
+org/quarkus/training/TestContainersPostgresqlTestResource.class
+org/quarkus/training/TestContainersPostgresqlTestResource$Initializer.class

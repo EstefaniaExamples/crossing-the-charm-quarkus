@@ -1,0 +1,12 @@
+org/springboot/training/Application.class
+org/springboot/training/datasource/BookAuthorsReadConverter.class
+org/springboot/training/model/Book.class
+org/springboot/training/datasource/BooksDataSource.class
+org/springboot/training/model/AuthorRef.class
+org/springboot/training/reactive/routes/AppRouterRegister.class
+org/springboot/training/model/Author.class
+org/springboot/training/reactive/routes/BooksHandler.class
+org/springboot/training/repositories/BookAuthorsRepository.class
+org/springboot/training/model/BookAuthors.class
+org/springboot/training/datasource/DataSourceProperties.class
+org/springboot/training/datasource/DataSourceProperties$PoolConfig.class

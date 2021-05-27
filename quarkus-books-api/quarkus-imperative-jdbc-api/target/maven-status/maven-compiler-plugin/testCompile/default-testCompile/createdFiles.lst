@@ -1,0 +1,4 @@
+com/quarkus/traning/TestContainersPostgresqlTestResource.class
+com/quarkus/traning/BookResourceTest.class
+com/quarkus/traning/NativeBookResourceIT.class
+com/quarkus/traning/TestContainersPostgresqlTestResource$Initializer.class

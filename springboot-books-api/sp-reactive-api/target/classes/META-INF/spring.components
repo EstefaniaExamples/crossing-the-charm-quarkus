@@ -1,0 +1,8 @@
+#
+#Wed May 26 19:22:05 CEST 2021
+org.springboot.training.repositories.BookAuthorsRepository=org.springframework.stereotype.Component,org.springframework.data.repository.Repository
+org.springboot.training.reactive.routes.BooksHandler=org.springframework.stereotype.Component
+org.springboot.training.datasource.BooksDataSource=org.springframework.stereotype.Component
+org.springboot.training.datasource.DataSourceProperties=org.springframework.stereotype.Component,org.springframework.boot.context.properties.ConfigurationProperties
+org.springboot.training.reactive.routes.AppRouterRegister=org.springframework.stereotype.Component
+org.springboot.training.Application=org.springframework.stereotype.Component,org.springframework.boot.SpringBootConfiguration
