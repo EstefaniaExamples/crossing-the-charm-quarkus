@@ -54,16 +54,12 @@ public class AppRouterRegisterTest {
                 .jsonPath("$.[0].title").isEqualTo("Effective Java")
                 .jsonPath("$.[0].description").isEqualTo("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9")
                 .jsonPath("$.[0].authors").isArray()
-                .jsonPath("$.[0].authors.[0].authorId").isEqualTo("1")
-                .jsonPath("$.[0].authors.[0].fullName").isEqualTo("Joshua Bloch")
+                .jsonPath("$.[0].authors.size()").isEqualTo(1)
                 .jsonPath("$.[1].id").isEqualTo(2)
                 .jsonPath("$.[1].title").isEqualTo("Hands-On Spring Security 5 for Reactive Applications")
                 .jsonPath("$.[1].description").isEqualTo("Learn effective ways to secure your applications with Spring and Spring WebFlux (English Edition)")
                 .jsonPath("$.[1].authors").isArray()
-                .jsonPath("$.[1].authors.[0].authorId").isEqualTo("1")
-                .jsonPath("$.[1].authors.[0].fullName").isEqualTo("Joshua Bloch")
-                .jsonPath("$.[1].authors.[1].authorId").isEqualTo("2")
-                .jsonPath("$.[1].authors.[1].fullName").isEqualTo("Tomcy John");
+                .jsonPath("$.[1].authors.size()").isEqualTo(2);
     }
 
     @Test
@@ -76,6 +72,8 @@ public class AppRouterRegisterTest {
                 .expectBody()
                 .jsonPath("$.id").isEqualTo(1)
                 .jsonPath("$.title").isEqualTo("Effective Java")
-                .jsonPath("$.description").isEqualTo("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9");
+                .jsonPath("$.description").isEqualTo("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9")
+                .jsonPath("$.authors").isArray()
+                .jsonPath("$.authors.size()").isEqualTo(1);
     }
 }

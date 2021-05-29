@@ -2,8 +2,8 @@ package org.springboot.training;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springboot.training.model.AuthorRef;
-import org.springboot.training.model.BookAuthors;
+import org.springboot.training.model.Author;
+import org.springboot.training.model.Book;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootApplication
-@TypeHint(types = {AuthorRef.class, BookAuthors.class})
+@TypeHint(types = {Author.class, Book.class})
 public class Application {
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
 

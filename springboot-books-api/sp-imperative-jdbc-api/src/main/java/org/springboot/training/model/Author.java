@@ -10,7 +10,6 @@ public class Author {
     private Long id;
     private String name;
     private String surname;
-    private Character sex;
 
     public Long getId() {
         return id;
@@ -34,13 +33,5 @@ public class Author {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public Character getSex() {
-        return sex;
-    }
-
-    public void setSex(Character sex) {
-        this.sex = sex;
     }
 }

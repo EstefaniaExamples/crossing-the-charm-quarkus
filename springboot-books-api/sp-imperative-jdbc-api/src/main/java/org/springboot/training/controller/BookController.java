@@ -1,8 +1,6 @@
 package org.springboot.training.controller;
 
 import org.springboot.training.model.Book;
-import org.springboot.training.model.BookAuthorDto;
-import org.springboot.training.persistence.BookAuthorsRepository;
 import org.springboot.training.persistence.BookRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,22 +15,20 @@ import java.util.stream.StreamSupport;
 @RestController
 public class BookController {
     private final BookRepository bookRepository;
-    private final BookAuthorsRepository bookAuthorsRepository;
 
-    public BookController(final BookRepository bookRepository, final BookAuthorsRepository bookAuthorsRepository) {
+    public BookController(final BookRepository bookRepository) {
         this.bookRepository = bookRepository;
-        this.bookAuthorsRepository = bookAuthorsRepository;
     }
 
-    @GetMapping(value = "/default/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Book>> getAllBooks() {
         return ResponseEntity.ok().body(StreamSupport.stream(bookRepository.findAll().spliterator(), false)
                 .collect(Collectors.toUnmodifiableList()));
     }
 
-    @GetMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<BookAuthorDto>> getAllBookAuthors() {
-        return ResponseEntity.ok().body(bookAuthorsRepository.findAll());
+    @GetMapping(value = "/native/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Book>> getAllBookNative() {
+        return ResponseEntity.ok().body(bookRepository.nativeFindAll());
     }
 
     @GetMapping("/books/{id}")
@@ -42,6 +38,16 @@ public class BookController {
             return ResponseEntity.notFound().build();
         } else {
             return ResponseEntity.ok().body(optionalBook.get());
+        }
+    }
+
+    @GetMapping("/native/books/{id}")
+    public ResponseEntity<Book> getNativeBookById(@PathVariable Long id) {
+        final Book book = bookRepository.nativeFindById(id);
+        if (book == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok().body(book);
         }
     }
 

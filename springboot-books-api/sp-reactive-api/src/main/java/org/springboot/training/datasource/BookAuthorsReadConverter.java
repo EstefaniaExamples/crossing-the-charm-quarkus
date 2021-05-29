@@ -5,33 +5,34 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springboot.training.model.AuthorRef;
-import org.springboot.training.model.BookAuthors;
+import org.springboot.training.model.Author;
+import org.springboot.training.model.Book;
 import org.springframework.core.convert.converter.Converter;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
-public class BookAuthorsReadConverter implements Converter<Row, BookAuthors> {
+public class BookAuthorsReadConverter implements Converter<Row, Book> {
     private static Logger LOG = LoggerFactory.getLogger(BookAuthorsReadConverter.class);
 
     @Override
-    public BookAuthors convert(final Row row) {
+    public Book convert(final Row row) {
         final Long id = row.get("id", Long.class);
         final String bookTitle = row.get("title", String.class);
         final String bookDescription = row.get("description", String.class);
 
-        final List<AuthorRef> authors = new java.util.ArrayList<>();
+        final Set<Author> authors = new HashSet<>();
 
         final JSONArray array = new JSONArray(row.get("authors", String.class));
         array.forEach(item -> {
                     final JSONObject jsonObject = (JSONObject) item;
-                    final AuthorRef authorRef = new AuthorRef(Long.parseLong(jsonObject.get("authorId").toString()),
-                            jsonObject.get("fullName").toString());
-                    authors.add(authorRef);
+                    final Author author = new Author(Long.parseLong(jsonObject.get("id").toString()),
+                            jsonObject.get("name").toString(), jsonObject.get("surname").toString());
+                    authors.add(author);
                 }
         );
 
-        LOG.debug("Book with authors: {}", new BookAuthors(id, bookTitle, bookDescription, authors));
-        return new BookAuthors(id, bookTitle, bookDescription, authors);
+        LOG.debug("Book with authors: {}", new Book(id, bookTitle, bookDescription, authors));
+        return new Book(id, bookTitle, bookDescription, authors);
     }
 }

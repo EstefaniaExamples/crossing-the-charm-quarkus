@@ -1,14 +1,31 @@
 package org.springboot.training.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.util.Set;
+
 @Table("books")
+@JsonSerialize
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Book {
     @Id
-    public Long id;
-    public String title;
-    public String description;
+    private Long id;
+    private String title;
+    private String description;
+    private Set<Author> authors;
+
+    public Book() {
+    }
+
+    public Book(Long id, String title, String description, Set<Author> authors) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.authors = authors;
+    }
 
     public Long getId() {
         return id;
@@ -32,5 +49,13 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 }
