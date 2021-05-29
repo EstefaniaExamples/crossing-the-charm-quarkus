@@ -1,0 +1,26 @@
+server:
+  port : 8085
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    url: jdbc:postgresql://localhost:5432/books_database
+    driverClassName: org.postgresql.Driver
+    sql-script-encoding: UTF-8
+    initialization-mode: embedded
+    platform: postgres
+    username: book
+    password: book
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: SpringBootImperativeBooksApi

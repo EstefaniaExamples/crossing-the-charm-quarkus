@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>sp-reactive-api</module>
-        <module>sp-imperative-jpa-api</module>
-        <module>sp-imperative-jdbc-api</module>
+        <module>sb-reactive-api</module>
+        <module>sb-imperative-jpa-api</module>
+        <module>sb-imperative-jdbc-api</module>
     </modules>
 
     <parent>

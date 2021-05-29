@@ -1,0 +1,7 @@
+#
+#Sat May 29 22:50:48 CEST 2021
+org.springboot.training.persistence.BookRepository=org.springframework.data.repository.Repository
+org.springboot.training.persistence.AuthorRepository=org.springframework.data.repository.Repository
+org.springboot.training.persistence.BookAuthorsRepository=org.springframework.stereotype.Component
+org.springboot.training.controller.BookController=org.springframework.stereotype.Component
+org.springboot.training.Application=org.springframework.stereotype.Component,org.springframework.boot.SpringBootConfiguration
