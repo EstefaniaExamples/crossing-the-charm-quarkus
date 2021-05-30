@@ -170,9 +170,6 @@
         "pattern": "org/springboot/training/persistence/AuthorRepository.class"
       },
       {
-        "pattern": "org/springboot/training/persistence/BookAuthorsRepository.class"
-      },
-      {
         "pattern": "org/springboot/training/persistence/BookRepository.class"
       },
       {

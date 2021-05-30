@@ -1,64 +1,84 @@
 version: '3.7'
 services:
-#  nodejsapi:
-#    image: 'docker.io/library/node-books-api'
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: 1
-#          memory: 2048MB
-#        reservations:
-#          cpus: 0.5
-#          memory: 256MB
-#    network_mode: bridge
-#    container_name: nodejsapi
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
-#    expose:
-#      - 8085
-#    ports:
-#      - 3001:3001
-#    restart: unless-stopped
-#
-#  springbootreimperativeapi:
-#    image: 'docker.io/library/imperative-api:1.0-SNAPSHOT'
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: 1
-#          memory: 2048MB
-#        reservations:
-#          cpus: 0.5
-#          memory: 256MB
-#    network_mode: bridge
-#    container_name: springbootreimperativeapi
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
-#    expose:
-#      - 8085
-#    ports:
-#      - 8085:8085
-#    restart: unless-stopped
-#
-#  springbootreactiveapi:
-#    image: 'docker.io/library/reactive-api:1.0-SNAPSHOT'
-#    deploy:
-#      resources:
-#        limits:
-#          cpus: 0.50
-#          memory: 1024MB
-#        reservations:
-#          cpus: 0.25
-#          memory: 128MB
-#    network_mode: bridge
-#    container_name: springbootreactiveapi
-#    environment:
-#      - DATABASE_HOST=192.168.2.49
-#    expose:
-#      - 8084
-#    ports:
-#      - 8084:8084
-#    restart: unless-stopped
+  nodejsapi:
+    image: 'docker.io/library/node-books-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: nodejsapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8085
+    ports:
+      - 3001:3001
+    restart: unless-stopped
+
+  springbootreimperativejdbcapi:
+    image: 'docker.io/library/sb-imperative-jdbc-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreimperativejdbcapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8085
+    ports:
+      - 8085:8085
+    restart: unless-stopped
+
+  springbootreimperativejpaapi:
+    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreimperativejdbcapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+
+  springbootreactiveapi:
+    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1024MB
+        reservations:
+          cpus: 0.25
+          memory: 128MB
+    network_mode: bridge
+    container_name: springbootsbreactiveapi
+    environment:
+      - DATABASE_HOST=192.168.2.49
+    expose:
+      - 8084
+    ports:
+      - 8084:8084
+    restart: unless-stopped
 
   quarkusreactiveapi:
     image: 'docker.io/quarkus/quarkus-reactive-book-api'
@@ -75,9 +95,9 @@ services:
     environment:
       - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.49:5432/books_database
     expose:
-      - 8086
+      - 8087
     ports:
-      - 8086:8086
+      - 8087:8087
     restart: unless-stopped
 
   quarkusimperativejdbcapi:
@@ -95,9 +115,9 @@ services:
     environment:
       - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5432/books_database
     expose:
-      - 8087
+      - 8088
     ports:
-      - 8087:8087
+      - 8088:8088
     restart: unless-stopped
 
   quarkusimperativejpaapi:
@@ -115,7 +135,7 @@ services:
     environment:
       - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5432/books_database
     expose:
-      - 8088
+      - 8089
     ports:
-      - 8088:8088
+      - 8089:8089
     restart: unless-stopped

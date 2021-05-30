@@ -682,14 +682,6 @@
     "allDeclaredClasses": true
   },
   {
-    "name": "org.springboot.training.persistence.BookAuthorsRepository",
-    "allDeclaredFields": true,
-    "allDeclaredConstructors": true,
-    "allDeclaredMethods": true,
-    "allPublicMethods": true,
-    "allDeclaredClasses": true
-  },
-  {
     "name": "org.springboot.training.persistence.BookRepository",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
@@ -4328,6 +4320,10 @@
     "name": "org.springframework.data.jdbc.repository.config.JdbcRepositoryConfigExtension",
     "allDeclaredFields": true,
     "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "org.springframework.data.jdbc.repository.query.Query",
     "allDeclaredMethods": true
   },
   {

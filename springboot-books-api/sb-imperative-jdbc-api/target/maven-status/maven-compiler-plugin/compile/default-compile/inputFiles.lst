@@ -1,0 +1,7 @@
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/model/AuthorRef.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/model/Book.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/persistence/AuthorRepository.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/controller/BookController.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/model/Author.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/Application.java
+/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sb-imperative-jdbc-api/src/main/java/org/springboot/training/persistence/BookRepository.java

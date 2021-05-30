@@ -59,6 +59,10 @@
     "org.springframework.core.annotation.SynthesizedAnnotation"
   ],
   [
+    "org.springframework.data.jdbc.repository.query.Query",
+    "org.springframework.core.annotation.SynthesizedAnnotation"
+  ],
+  [
     "org.springboot.training.persistence.AuthorRepository",
     "org.springframework.aop.SpringProxy",
     "org.springframework.aop.framework.Advised",

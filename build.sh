@@ -9,4 +9,7 @@ mvn package -Pnative -Dquarkus.native.container-build=true -pl quarkus-reactive-
 docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-reactive-api .
 
 
+mvn clean -Pnative-image package
+
+
 docker-compose up
