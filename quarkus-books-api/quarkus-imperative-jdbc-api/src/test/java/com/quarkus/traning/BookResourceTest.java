@@ -19,7 +19,7 @@ public class BookResourceTest {
     public void shouldGetAllTheBooks() {
         given()
                 .when()
-                .get("/books")
+                .get("/native/books")
                 .then()
                 .statusCode(200)
                 .header(HttpHeaders.CONTENT_TYPE, is(MediaType.APPLICATION_JSON))
@@ -47,10 +47,10 @@ public class BookResourceTest {
 
     @Test
     @DisplayName("The service should response with the book with the specific id")
-    public void shouldGetBookById() {
+    public void shouldGetBookByIdWhenNativeEndpointIsCalled() {
         given()
                 .when()
-                .get("/books/2")
+                .get("/native/books/2")
                 .then()
                 .statusCode(200)
                 .body("id", equalTo(2))

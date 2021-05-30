@@ -1,15 +1,14 @@
 package com.quarkus.training.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity(name="books")
-public class Book {
-    @Id
-    public Long id;
+public class Book extends PanacheEntity {
     public String title;
     public String description;
 

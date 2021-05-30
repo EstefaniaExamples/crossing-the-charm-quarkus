@@ -22,12 +22,12 @@ public class BookService {
 
     public List<Book> getAllBooks() {
         LOG.info("Find all the books in the database ...");
-        return bookAuthorsRepository.findAll();
+        return bookAuthorsRepository.nativeFindAll();
     }
 
     public Book getBookById(final Long id) {
         LOG.info("Finding a specific person by ID via an Optional ...");
-        final Optional<Book> optional = bookAuthorsRepository.findById(id);
+        final Optional<Book> optional = bookAuthorsRepository.nativeFindById(id);
         return optional.orElseThrow(NotFoundException::new);
     }
 }

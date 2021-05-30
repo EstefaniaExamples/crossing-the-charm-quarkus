@@ -26,22 +26,26 @@ public class AppRouterRegisterTest  {
                 .body("id[0]", equalTo(1))
                 .body("title[0]", equalTo("Effective Java"))
                 .body("description[0]", equalTo("The Definitive Guide to Java Platform Best Practices–Updated for Java 7, 8, and 9"))
-                .body("authors[0].authorId[0]", equalTo(1))
-                .body("authors[0].fullName[0]", equalTo("Joshua Bloch"))
+                .body("authors[0].id[0]", equalTo(1))
+                .body("authors[0].name[0]", equalTo("Joshua"))
+                .body("authors[0].surname[0]", equalTo("Bloch"))
 
                 .body("id[1]", equalTo(2))
                 .body("title[1]", equalTo("Hands-On Spring Security 5 for Reactive Applications"))
                 .body("description[1]", equalTo("Learn effective ways to secure your applications with Spring and Spring WebFlux (English Edition)"))
-                .body("authors[1].authorId[0]", equalTo(1))
-                .body("authors[1].fullName[0]", equalTo("Joshua Bloch"))
-                .body("authors[1].authorId[1]", equalTo(2))
-                .body("authors[1].fullName[1]", equalTo("Tomcy John"))
+                .body("authors[1].id[0]", equalTo(1))
+                .body("authors[1].name[0]", equalTo("Joshua"))
+                .body("authors[1].surname[0]", equalTo("Bloch"))
+                .body("authors[1].id[1]", equalTo(2))
+                .body("authors[1].name[1]", equalTo("Tomcy"))
+                .body("authors[1].surname[1]", equalTo("John"))
 
                 .body("id[2]", equalTo(3))
                 .body("title[2]", equalTo("Big Data Integration Theory"))
                 .body("description[2]", equalTo("This book presents a novel approach to database concepts, describing a categorical logic for database schema mapping based on views, within a framework for database integration/exchange and peer-to-peer. Database mappings, database programming languages, and denotational and operational semantics are discussed in depth. An analysis method is also developed that combines techniques from second order logic, data modeling, co-algebras and functorial categorial semantics."))
-                .body("authors[2].authorId[0]", equalTo(3))
-                .body("authors[2].fullName[0]", equalTo("Zoran Majkić"));
+                .body("authors[2].id[0]", equalTo(3))
+                .body("authors[2].name[0]", equalTo("Zoran"))
+                .body("authors[2].surname[0]", equalTo("Majkić"));
     }
 
     @Test
@@ -55,9 +59,11 @@ public class AppRouterRegisterTest  {
                 .body("id", equalTo(2))
                 .body("title", equalTo("Hands-On Spring Security 5 for Reactive Applications"))
                 .body("description", equalTo("Learn effective ways to secure your applications with Spring and Spring WebFlux (English Edition)"))
-                .body("authors.authorId[0]", equalTo(1))
-                .body("authors.fullName[0]", equalTo("Joshua Bloch"))
-                .body("authors.authorId[1]", equalTo(2))
-                .body("authors.fullName[1]", equalTo("Tomcy John"));
+                .body("authors.id[0]", equalTo(1))
+                .body("authors.name[0]", equalTo("Joshua"))
+                .body("authors.surname[0]", equalTo("Bloch"))
+                .body("authors.id[1]", equalTo(2))
+                .body("authors.name[1]", equalTo("Tomcy"))
+                .body("authors.surname[1]", equalTo("John"));
     }
 }

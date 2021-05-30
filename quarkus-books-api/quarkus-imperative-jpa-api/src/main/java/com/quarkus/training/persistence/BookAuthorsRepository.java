@@ -29,11 +29,11 @@ public class BookAuthorsRepository {
     }
 
 
-    public List<Book> findAll() {
+    public List<Book> nativeFindAll() {
         return (List<Book>) entityManager.createNativeQuery(FIND_ALL, Book.class).getResultList();
     }
 
-    public Optional<Book> findById(final Long id) {
+    public Optional<Book> nativeFindById(final Long id) {
         final Query query =  entityManager.createNativeQuery(FIND_BY_ID, Book.class);
         query.setParameter(1, id);
         return Optional.of((Book) query.getSingleResult());

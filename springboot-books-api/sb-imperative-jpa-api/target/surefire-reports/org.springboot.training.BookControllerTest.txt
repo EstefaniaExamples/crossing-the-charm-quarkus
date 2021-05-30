@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.springboot.training.BookControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 11.443 s <<< FAILURE! - in org.springboot.training.BookControllerTest
+given_application_when_call_native_endpoint_with_id_then_Not_Found  Time elapsed: 0.038 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <404> but was <200>.
+
+	at org.springboot.training.BookControllerTest.given_application_when_call_native_endpoint_with_id_then_Not_Found(BookControllerTest.java:42)
+

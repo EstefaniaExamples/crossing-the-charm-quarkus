@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/books")
+@Path("/")
 public class BookResource {
     private final BookService bookService;
 
@@ -19,15 +19,30 @@ public class BookResource {
     }
 
     @GET
+    @Path("/books")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Book> books() {
+    public List<Book> getAllBooks() {
+        return Book.listAll();
+    }
+
+    @GET
+    @Path("/native/books")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Book> nativeGetAllBooks() {
         return bookService.getAllBooks();
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/books/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Book bookById(@PathParam("id") Long id) {
+        return Book.findById(id);
+    }
+
+    @GET
+    @Path("/native/books/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Book nativeBookById(@PathParam("id") Long id) {
         return bookService.getBookById(id);
     }
 }

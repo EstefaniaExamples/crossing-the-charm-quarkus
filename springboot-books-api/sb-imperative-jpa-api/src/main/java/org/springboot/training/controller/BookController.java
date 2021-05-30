@@ -30,6 +30,12 @@ public class BookController {
                 .collect(Collectors.toUnmodifiableList()));
     }
 
+    @GetMapping(value = "/native/books", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Book>> nativeGetAllBookAuthors() {
+        LOG.info("Getting all books using native query ...");
+        return ResponseEntity.ok().body(bookRepository.nativeFindAll());
+    }
+
     @GetMapping("/books/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
         LOG.info("Getting book by id {} ...", id);
@@ -38,6 +44,17 @@ public class BookController {
             return ResponseEntity.notFound().build();
         } else {
             return ResponseEntity.ok().body(optionalBook.get());
+        }
+    }
+
+    @GetMapping("/native/books/{id}")
+    public ResponseEntity<Book> nativeGetBookById(@PathVariable Long id) {
+        LOG.info("Getting book by id {} using native ...", id);
+        final Book book = bookRepository.nativeFindById(id);
+        if (book == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok().body(book);
         }
     }
 
