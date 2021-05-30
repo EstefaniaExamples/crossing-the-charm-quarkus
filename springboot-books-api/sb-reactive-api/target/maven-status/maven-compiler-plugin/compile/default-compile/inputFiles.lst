@@ -1,9 +1,0 @@
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/datasource/DataSourceProperties.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/datasource/BookAuthorsReadConverter.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/reactive/routes/BooksHandler.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/Application.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/datasource/BooksDataSource.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/reactive/routes/AppRouterRegister.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/model/Book.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/repositories/BookAuthorsRepository.java
-/Users/fany/Documents/workspace-sts/crossing-the-chasm-quarkus/springboot-books-api/sp-reactive-api/src/main/java/org/springboot/training/model/Author.java
