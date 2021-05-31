@@ -1,5 +1,7 @@
 package org.springboot.training.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springboot.training.model.Book;
 import org.springboot.training.persistence.BookRepository;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,8 @@ import java.util.stream.StreamSupport;
 
 @RestController
 public class BookController {
+    private static final Logger LOG = LoggerFactory.getLogger(BookController.class);
+
     private final BookRepository bookRepository;
 
     public BookController(final BookRepository bookRepository) {
@@ -28,7 +32,9 @@ public class BookController {
 
     @GetMapping(value = "/native/books", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Book>> getAllBookNative() {
-        return ResponseEntity.ok().body(bookRepository.nativeFindAll());
+        LOG.info("Getting all books using native query ...");
+        return ResponseEntity.ok().body(StreamSupport.stream(bookRepository.nativeFindAll().spliterator(), false)
+                .collect(Collectors.toUnmodifiableList()));
     }
 
     @GetMapping("/books/{id}")

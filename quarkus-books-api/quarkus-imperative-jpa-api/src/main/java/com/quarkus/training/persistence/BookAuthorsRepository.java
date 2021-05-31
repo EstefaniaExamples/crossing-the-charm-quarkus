@@ -5,8 +5,8 @@ import com.quarkus.training.model.Book;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @ApplicationScoped
 public class BookAuthorsRepository {
@@ -29,8 +29,8 @@ public class BookAuthorsRepository {
     }
 
 
-    public List<Book> nativeFindAll() {
-        return (List<Book>) entityManager.createNativeQuery(FIND_ALL, Book.class).getResultList();
+    public Stream<Book> nativeFindAll() {
+        return entityManager.createNativeQuery(FIND_ALL, Book.class).getResultStream();
     }
 
     public Optional<Book> nativeFindById(final Long id) {

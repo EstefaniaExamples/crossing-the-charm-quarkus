@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   nodejsapi:
-    image: 'docker.io/library/node-books-api'
+    image: 'docker.io/node/node-books-api'
     deploy:
       resources:
         limits:
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
 
   springbootreimperativejpaapi:
-    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+    image: 'docker.io/library/sp-imperative-jpa-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -51,7 +51,7 @@ services:
           cpus: 0.5
           memory: 256MB
     network_mode: bridge
-    container_name: springbootreimperativejdbcapi
+    container_name: springbootreimperativejpaapi
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
     expose:
@@ -61,15 +61,15 @@ services:
     restart: unless-stopped
 
   springbootreactiveapi:
-    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
+    image: 'docker.io/library/sp-reactive-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
-          cpus: 0.50
-          memory: 1024MB
+          cpus: 1
+          memory: 2048MB
         reservations:
-          cpus: 0.25
-          memory: 128MB
+          cpus: 0.5
+          memory: 256MB
     network_mode: bridge
     container_name: springbootsbreactiveapi
     environment:
@@ -81,15 +81,15 @@ services:
     restart: unless-stopped
 
   quarkusreactiveapi:
-    image: 'docker.io/quarkus/quarkus-reactive-book-api'
+    image: 'docker.io/quarkus/quarkus-reactive-api'
     deploy:
       resources:
         limits:
-          cpus: 0.50
-          memory: 1024MB
+          cpus: 1
+          memory: 2048MB
         reservations:
-          cpus: 0.25
-          memory: 128MB
+          cpus: 0.5
+          memory: 256MB
     network_mode: bridge
     container_name: quarkusreactiveapi
     environment:
@@ -114,6 +114,7 @@ services:
     container_name: quarkusimperativejdbcapi
     environment:
       - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5432/books_database
+      - POSTGRESQL_IMPERATIVE_PW=book
     expose:
       - 8088
     ports:

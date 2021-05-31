@@ -9,6 +9,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.NotFoundException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class BookService {
@@ -22,7 +23,7 @@ public class BookService {
 
     public List<Book> getAllBooks() {
         LOG.info("Find all the books in the database ...");
-        return bookAuthorsRepository.nativeFindAll();
+        return bookAuthorsRepository.nativeFindAll().collect(Collectors.toList());
     }
 
     public Book getBookById(final Long id) {

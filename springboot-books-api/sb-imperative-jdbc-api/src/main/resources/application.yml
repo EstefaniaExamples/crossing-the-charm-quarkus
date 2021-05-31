@@ -6,13 +6,17 @@ spring:
     ansi:
       enabled: always
   datasource:
-    url: jdbc:postgresql://localhost:5432/books_database
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/books_database}
     driverClassName: org.postgresql.Driver
     sql-script-encoding: UTF-8
     initialization-mode: embedded
     platform: postgres
     username: book
     password: book
+    hikari:
+      minIdle: 10
+      idle-timeout: 10000
+      maximumPoolSize: 30
 
 management:
   endpoints:
