@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     container_name: nodejsapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5432/books_database?createDatabaseIfNotExist=true
     expose:
       - 8085
     ports:
@@ -33,7 +33,7 @@ services:
     network_mode: bridge
     container_name: springbootreimperativejdbcapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5432/books_database?createDatabaseIfNotExist=true
     expose:
       - 8085
     ports:
@@ -41,7 +41,7 @@ services:
     restart: unless-stopped
 
   springbootreimperativejpaapi:
-    image: 'docker.io/library/sp-imperative-jpa-api:1.0-SNAPSHOT'
+    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -53,7 +53,7 @@ services:
     network_mode: bridge
     container_name: springbootreimperativejpaapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5432/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5432/books_database?createDatabaseIfNotExist=true
     expose:
       - 8086
     ports:
@@ -61,7 +61,7 @@ services:
     restart: unless-stopped
 
   springbootreactiveapi:
-    image: 'docker.io/library/sp-reactive-api:1.0-SNAPSHOT'
+    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -73,7 +73,7 @@ services:
     network_mode: bridge
     container_name: springbootsbreactiveapi
     environment:
-      - DATABASE_HOST=192.168.2.49
+      - DATABASE_HOST=192.168.2.197
     expose:
       - 8084
     ports:
@@ -93,7 +93,7 @@ services:
     network_mode: bridge
     container_name: quarkusreactiveapi
     environment:
-      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.49:5432/books_database
+      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.197:5432/books_database
     expose:
       - 8087
     ports:
@@ -113,7 +113,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejdbcapi
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5432/books_database
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.197:5432/books_database
       - POSTGRESQL_IMPERATIVE_PW=book
     expose:
       - 8088
@@ -134,7 +134,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejpaapi
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5432/books_database
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.197:5432/books_database
     expose:
       - 8089
     ports:
