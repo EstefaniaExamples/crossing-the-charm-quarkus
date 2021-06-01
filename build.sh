@@ -10,6 +10,6 @@ docker build -f src/main/docker/Dockerfile.native -t quarkus/quarkus-reactive-ap
 
 
 mvn clean -Pnative-image package
-
+mvn clean spring-boot:build-image
 
 docker-compose up

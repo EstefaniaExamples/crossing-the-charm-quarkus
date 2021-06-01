@@ -17,7 +17,7 @@ books-datasource:
   read-only: false
   pool:
     min-connections: 10
-    max-connections: 30
+    max-connections: 100
 
 spring:
   main:

@@ -16,7 +16,7 @@ spring:
     hikari:
       minIdle: 10
       idle-timeout: 10000
-      maximumPoolSize: 30
+      maximumPoolSize: 100
 
 management:
   endpoints:
