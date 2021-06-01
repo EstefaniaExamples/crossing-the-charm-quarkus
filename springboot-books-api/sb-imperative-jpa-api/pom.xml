@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sp-imperative-jpa-api</artifactId>
+    <artifactId>sb-imperative-jpa-api</artifactId>
 
     <properties>
         <main.class>org.springboot.training.Application</main.class>

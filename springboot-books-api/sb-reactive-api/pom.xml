@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>sp-reactive-api</artifactId>
+    <artifactId>sb-reactive-api</artifactId>
 
     <dependencies>
         <dependency>
