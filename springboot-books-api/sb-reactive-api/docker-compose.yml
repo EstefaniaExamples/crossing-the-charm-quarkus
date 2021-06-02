@@ -1,0 +1,49 @@
+version: '3.7'
+services:
+  postgres-springbootreactiveapi:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: postgres-springbootreactiveapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5484
+    ports:
+      - 5484:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  springbootreactiveapi:
+    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreactiveapi
+    environment:
+      - DATABASE_HOST=192.168.2.197
+      - DATABASE_PORT=5484
+    expose:
+      - 8084
+    ports:
+      - 8084:8084
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootreactiveapi
+
+volumes:
+  postgres_data:

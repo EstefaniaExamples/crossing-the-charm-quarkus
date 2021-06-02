@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+  postgres-springbootimperativejpaapi:
+    image: postgres:latest
+    network_mode: bridge
+    container_name: postgres-springbootimperativejpaapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5486
+    ports:
+      - 5486:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  springbootimperativejpaapi:
+    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejpaapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5486/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejpaapi
+
+volumes:
+  postgres_data:
