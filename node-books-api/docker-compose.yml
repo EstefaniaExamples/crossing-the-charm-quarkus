@@ -9,9 +9,9 @@ services:
       - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
       - postgres_data:/var/lib/postgresql/data
     expose:
-      - 5487
+      - 5401
     ports:
-      - 5487:5432
+      - 5401:5401
     environment:
       - POSTGRES_PASSWORD=book
       - POSTGRES_USER=book
