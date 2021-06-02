@@ -17,12 +17,12 @@ import java.util.*;
 @ApplicationScoped
 public class BookAuthorsRepository {
     private static final String FIND_ALL = "SELECT b.id, b.title, b.description, " +
-            "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
+            "( SELECT json_agg(json_build_object('id', a.id, 'name', a.name, 'surname', a.surname)) " +
             "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
             "  WHERE b.id=ba.book_id ) as authors" +
             "  FROM books b";
     private static final String FIND_BY_ID = "SELECT b.id, b.title, b.description, " +
-            "( SELECT json_agg(json_build_object('authorId', a.id, 'fullName', concat_ws(' ', a.name, a.surname))) " +
+            "( SELECT json_agg(json_build_object('id', a.id, 'name', a.name, 'surname', a.surname)) " +
             "  FROM authors a JOIN books_authors ba ON a.id=ba.author_id " +
             "  WHERE b.id=ba.book_id ) as authors" +
             "  FROM books b" +

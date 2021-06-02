@@ -1,17 +1,17 @@
 version: '3.7'
 services:
-  postgres-springbootimperativejpaapi:
+  postgres-quarkusimperativejdbcapi:
     image: postgres:latest
     command: postgres -c 'max_connections=200'
     network_mode: bridge
-    container_name: postgres-springbootimperativejpaapi
+    container_name: postgres-quarkusimperativejdbcapi
     volumes:
       - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
       - postgres_data:/var/lib/postgresql/data
     expose:
-      - 5486
+      - 5488
     ports:
-      - 5486:5432
+      - 5488:5432
     environment:
       - POSTGRES_PASSWORD=book
       - POSTGRES_USER=book
@@ -23,8 +23,8 @@ services:
       timeout: 5s
       retries: 5
 
-  springbootimperativejpaapi:
-    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+  quarkusimperativejdbcapi:
+    image: 'docker.io/quarkus/quarkus-imperative-jdbc-api'
     deploy:
       resources:
         limits:
@@ -34,16 +34,16 @@ services:
           cpus: 0.5
           memory: 256MB
     network_mode: bridge
-    container_name: springbootimperativejpaapi
+    container_name: quarkusimperativejdbcapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5486/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.197:5488/books_database?createDatabaseIfNotExist=true
     expose:
-      - 8086
+      - 8088
     ports:
-      - 8086:8086
+      - 8088:8088
     restart: unless-stopped
     depends_on:
-      - postgres-springbootimperativejpaapi
+      - postgres-quarkusimperativejdbcapi
 
 volumes:
   postgres_data:

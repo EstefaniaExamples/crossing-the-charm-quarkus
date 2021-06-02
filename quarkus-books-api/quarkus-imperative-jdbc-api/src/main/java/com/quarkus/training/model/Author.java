@@ -1,30 +1,40 @@
 package com.quarkus.training.model;
 
 public class Author {
-    private Long authorId;
-    public String fullName;
+    private Long id;
+    private String name;
+    private String surname;
 
     public Author() {
     }
 
-    public Author(Long authorId, String fullName) {
-        this.authorId = authorId;
-        this.fullName = fullName;
+    public Author(Long id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
     }
 
-    public Long getAuthorId() {
-        return authorId;
+    public Long getId() {
+        return id;
     }
 
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

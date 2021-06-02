@@ -1,17 +1,17 @@
 version: '3.7'
 services:
-  postgres-springbootimperativejpaapi:
+  postgres-nodejsapi:
     image: postgres:latest
     command: postgres -c 'max_connections=200'
     network_mode: bridge
-    container_name: postgres-springbootimperativejpaapi
+    container_name: postgres-nodejsapi
     volumes:
       - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
       - postgres_data:/var/lib/postgresql/data
     expose:
-      - 5486
+      - 5487
     ports:
-      - 5486:5432
+      - 5487:5432
     environment:
       - POSTGRES_PASSWORD=book
       - POSTGRES_USER=book
@@ -23,8 +23,8 @@ services:
       timeout: 5s
       retries: 5
 
-  springbootimperativejpaapi:
-    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+  nodejsapi:
+    image: 'docker.io/node/node-books-api'
     deploy:
       resources:
         limits:
@@ -34,16 +34,17 @@ services:
           cpus: 0.5
           memory: 256MB
     network_mode: bridge
-    container_name: springbootimperativejpaapi
+    container_name: nodejsapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5486/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5401/books_database?createDatabaseIfNotExist=true
     expose:
-      - 8086
+      - 3001
     ports:
-      - 8086:8086
+      - 3001:3001
     restart: unless-stopped
     depends_on:
-      - postgres-springbootimperativejpaapi
+      - postgres-nodejsapi
+
 
 volumes:
   postgres_data:
