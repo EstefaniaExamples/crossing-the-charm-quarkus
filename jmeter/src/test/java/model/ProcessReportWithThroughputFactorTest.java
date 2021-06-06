@@ -22,7 +22,6 @@ public class ProcessReportWithThroughputFactorTest extends ProcessReportBase {
             .filter(row -> !row.toString().contains("TOTAL"))
             .map(ProcessReportWithThroughputFactorTest::toJMeter)
             .sorted((t1, t2) -> Float.compare(t2.getThroughput(), t1.getThroughput()))
-            .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getThroughput()))
             .limit(3);
     };
 
@@ -32,6 +31,8 @@ public class ProcessReportWithThroughputFactorTest extends ProcessReportBase {
         Map<String, Long> counters = IntStream.rangeClosed(1, 7).boxed()
                 .map(toURL)
                 .flatMap(toJmeter)
+                .sorted((t1, t2) -> Float.compare(t2.getThroughput(), t1.getThroughput()))
+                .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getThroughput()))
                 .collect(Collectors.groupingBy(jMeter -> jMeter.getLabel(), Collectors.counting()));
 
         LOGGER.info("Results:");
