@@ -20,7 +20,7 @@ public abstract class AbstractTestContainerBaseTest {
             .withUsername("book")
             .withPassword("book")
             .withExposedPorts(5432)
-            .withInitScript("import-test.sql");;
+            .withInitScript("import-test.sql");
 
     @DynamicPropertySource
     static void setUpProperties(final DynamicPropertyRegistry registry) {
