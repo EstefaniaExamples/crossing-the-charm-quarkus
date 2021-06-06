@@ -1,6 +1,8 @@
 .idea
 *.iml
 
+/jmeter/target
+
 /node-books-api/node_modules
 
 /quarkus-books-api/quarkus-imperative-jdbc-api/target
