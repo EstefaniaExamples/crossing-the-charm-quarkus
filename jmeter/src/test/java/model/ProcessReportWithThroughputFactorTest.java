@@ -21,8 +21,8 @@ public class ProcessReportWithThroughputFactorTest extends ProcessReportBase {
         return StreamSupport.stream(toCSVRecord.apply(url).spliterator(), false)
             .filter(row -> !row.toString().contains("TOTAL"))
             .map(ProcessReportWithThroughputFactorTest::toJMeter)
-            .sorted(Comparator.comparing(JMeter::getThroughput))
-            .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getMin()))
+            .sorted((t1, t2) -> Float.compare(t2.getThroughput(), t1.getThroughput()))
+            .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getThroughput()))
             .limit(3);
     };
 
