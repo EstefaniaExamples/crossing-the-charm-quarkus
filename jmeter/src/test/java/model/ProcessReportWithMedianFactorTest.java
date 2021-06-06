@@ -22,7 +22,6 @@ public class ProcessReportWithMedianFactorTest extends ProcessReportBase {
             .filter(row -> !row.toString().contains("TOTAL"))
             .map(ProcessReportBase::toJMeter)
             .sorted(Comparator.comparing(JMeter::getMedian))
-            .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getMin()))
             .limit(1);
     };
 
@@ -32,6 +31,8 @@ public class ProcessReportWithMedianFactorTest extends ProcessReportBase {
         Map<String, Long> counters = IntStream.rangeClosed(1, 7).boxed()
                 .map(toURL)
                 .flatMap(toJmeter)
+                .sorted(Comparator.comparing(JMeter::getMedian))
+                .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getMedian()))
                 .collect(Collectors.groupingBy(jMeter -> jMeter.getLabel(), Collectors.counting()));
 
         LOGGER.info("Results:");
