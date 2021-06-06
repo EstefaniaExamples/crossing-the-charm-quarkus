@@ -12,6 +12,7 @@
     <modules>
         <module>quarkus-books-api</module>
         <module>springboot-books-api</module>
+        <module>jmeter</module>
     </modules>
 
     <properties>
