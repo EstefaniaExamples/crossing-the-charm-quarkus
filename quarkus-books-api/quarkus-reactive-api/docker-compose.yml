@@ -36,7 +36,7 @@ services:
     network_mode: bridge
     container_name: quarkusreactiveapi
     environment:
-      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.197:5487/books_database
+      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.49:5487/books_database
     expose:
       - 8087
     ports:
@@ -44,6 +44,29 @@ services:
     restart: unless-stopped
     depends_on:
       - postgres-quarkusreactiveapi
+
+  quarkusreactiveapi-jvm:
+    image: 'docker.io/quarkus/quarkus-reactive-api-jvm'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusreactiveapi-jvm
+    environment:
+      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.2.49:5487/books_database
+    expose:
+      - 8087
+    ports:
+      - 8097:8087
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusreactiveapi
+
 
 volumes:
   postgres_data:

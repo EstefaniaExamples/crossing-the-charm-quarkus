@@ -36,12 +36,35 @@ services:
     network_mode: bridge
     container_name: springbootreactiveapi
     environment:
-      - DATABASE_HOST=192.168.2.197
+      - DATABASE_HOST=192.168.2.49
       - DATABASE_PORT=5484
     expose:
       - 8084
     ports:
       - 8084:8084
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootreactiveapi
+
+  springbootreactiveapi-jar:
+    image: 'docker.io/library/sb-reactive-api-jar:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreactiveapi-jar
+    environment:
+      - DATABASE_HOST=192.168.2.49
+      - DATABASE_PORT=5484
+    expose:
+      - 8084
+    ports:
+      - 8094:8084
     restart: unless-stopped
     depends_on:
       - postgres-springbootreactiveapi

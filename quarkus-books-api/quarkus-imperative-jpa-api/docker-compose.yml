@@ -36,11 +36,33 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejpaapi
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.197:5489/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5489/books_database?createDatabaseIfNotExist=true
     expose:
       - 8089
     ports:
       - 8089:8089
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusimperativejpaapi
+
+  quarkusimperativejpaapi-jvm:
+    image: 'docker.io/quarkus/quarkus-imperative-jpa-api-jvm'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusimperativejpaapi-jvm
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.2.49:5489/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8089
+    ports:
+      - 8099:8089
     restart: unless-stopped
     depends_on:
       - postgres-quarkusimperativejpaapi
