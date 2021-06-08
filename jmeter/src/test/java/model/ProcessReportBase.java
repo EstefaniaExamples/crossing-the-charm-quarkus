@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -13,8 +14,15 @@ import java.util.function.Function;
 @Slf4j
 public abstract class ProcessReportBase {
 
-    Function<Integer, URL> toURL = index -> {
-        final String fileName = "reports/Report-" + index + ".csv";
+    Function<Integer, String> toNativeFileName = index -> {
+        return "reports/native/Report-" + index + ".csv";
+    };
+
+    Function<Integer, String> toJVMFileName = index -> {
+        return "reports/jvm/Report-JVM-" + index + ".csv";
+    };
+
+    Function<String, URL> toURL = fileName -> {
         return getClass().getClassLoader().getResource(fileName);
     };
 
@@ -39,9 +47,16 @@ public abstract class ProcessReportBase {
         return records;
     };
 
-    static JMeter toJMeter(CSVRecord record) {
+    Integer getResourceFolderLength(String folder) {
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        URL url = loader.getResource(folder);
+        String path = url.getPath();
+        return new File(path).listFiles().length;
+    }
+
+    static JMeter toJMeter(CSVRecord record, String sufix) {
         return JMeter.builder()
-                .label(record.get(0))
+                .label(record.get(0) + sufix)
                 .samples(Long.valueOf(record.get(1)))
                 .average(Float.valueOf(record.get(2)))
                 .median(Float.valueOf(record.get(3)))
