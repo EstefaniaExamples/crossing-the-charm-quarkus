@@ -83,6 +83,7 @@ public class ProcessReportWithMedianFactorTest extends ProcessReportBase {
         Map<String, Long> counters = Stream.concat(nativeStream, jvmStream)
                 .sorted(Comparator.comparing(JMeter::getMedian))
                 .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getMedian()))
+                .limit(10)
                 .collect(Collectors.groupingBy(jMeter -> jMeter.getLabel(), Collectors.counting()));
 
         LOGGER.info("Results:");

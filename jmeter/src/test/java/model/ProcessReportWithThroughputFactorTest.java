@@ -80,6 +80,7 @@ public class ProcessReportWithThroughputFactorTest extends ProcessReportBase {
         Map<String, Long> counters = Stream.concat(nativeStream, jvmStream)
                 .sorted((t1, t2) -> Float.compare(t2.getThroughput(), t1.getThroughput()))
                 .peek(obj -> LOGGER.info("{} : {}", obj.getLabel(), obj.getThroughput()))
+                .limit(10)
                 .collect(Collectors.groupingBy(jMeter -> jMeter.getLabel(), Collectors.counting()));
 
         LOGGER.info("Results:");
