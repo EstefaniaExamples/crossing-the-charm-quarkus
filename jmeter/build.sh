@@ -1,0 +1,1 @@
+jmeter -n -t LoadJvmTests.jmx -l examples/output.csv
