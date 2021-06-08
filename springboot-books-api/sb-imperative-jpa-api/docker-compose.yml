@@ -36,11 +36,33 @@ services:
     network_mode: bridge
     container_name: springbootimperativejpaapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.197:5486/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5486/books_database?createDatabaseIfNotExist=true
     expose:
       - 8086
     ports:
       - 8086:8086
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejpaapi
+
+  springbootimperativejpaapi-jvm:
+    image: 'docker.io/library/sb-imperative-jpa-api-jvm:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejpaapi-jvm
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.2.49:5486/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8086
+    ports:
+      - 8096:8086
     restart: unless-stopped
     depends_on:
       - postgres-springbootimperativejpaapi

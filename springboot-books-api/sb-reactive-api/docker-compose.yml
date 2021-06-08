@@ -46,8 +46,8 @@ services:
     depends_on:
       - postgres-springbootreactiveapi
 
-  springbootreactiveapi-jar:
-    image: 'docker.io/library/sb-reactive-api-jar:1.0-SNAPSHOT'
+  springbootreactiveapi-jvm:
+    image: 'docker.io/library/sb-reactive-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -57,7 +57,7 @@ services:
           cpus: 0.5
           memory: 256MB
     network_mode: bridge
-    container_name: springbootreactiveapi-jar
+    container_name: springbootreactiveapi-jvm
     environment:
       - DATABASE_HOST=192.168.2.49
       - DATABASE_PORT=5484
