@@ -12,17 +12,17 @@ mvn clean package -pl sb-imperative-jpa-api
 
 cd ./sb-reactive-api/ || return
 docker build -f Dockerfile -t library/sb-reactive-api-jvm:1.0-SNAPSHOT .
-docker-compose up &>/dev/null
+docker-compose up &
 echo "***** SpringBoot reactive docker native reactive container created"
 
 cd ../sb-imperative-jdbc-api/ || return
 docker build -f Dockerfile -t library/sb-imperative-jdbc-api-jvm:1.0-SNAPSHOT .
-docker-compose up &>/dev/null
+docker-compose up &
 echo "***** SpringBoot reactive docker native imperative jdbc container created"
 
 cd ../sb-imperative-jpa-api/ || return
 docker build -f Dockerfile -t library/sb-imperative-jpa-api-jvm:1.0-SNAPSHOT .
-docker-compose up &>/dev/null
+docker-compose up &
 echo "***** SpringBoot reactive docker native imperative jpa container created"
 
 # quarkus project - native image
