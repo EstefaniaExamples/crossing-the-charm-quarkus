@@ -13,10 +13,10 @@ const config = {
 
 const pool = new Pool({
     user:'book',
-    host:'192.168.2.197',
+    host:'192.168.1.197',
     database:'books_database',
     password:'book',
-    port:'5432'
+    port:'5401'
 });
 
 module.exports = pool;

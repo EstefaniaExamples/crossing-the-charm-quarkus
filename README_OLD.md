@@ -142,16 +142,17 @@ $ docker run -i --rm -p 8080:8080 project-name:latest
 
 ## TABLE WITH TIMES
 
-|   Springboot reactive Native          |   0.177 seconds   |
-|---------------------------------------|-------------------|
-|   Springboot reactive JVM             |   9.117 seconds   |
-|   Spring imperative JPA Native        |   0.275 seconds   |
-|   Spring imperative JPA Native JVM    |   12.414 seconds  |
-|   Spring imperative JDBC Native       |   0.172 seconds   |
-|   Spring imperative JDBC Native JVM   |   9.224 seconds   |
-|   Quarkus reactive Native             |   0.014 seconds   |
-|   Quarkus reactive JVM                |   2.127 seconds   |
-|   Quarkus imperative JPA Native       |   0.069 seconds   |
-|   Quarkus imperative JPA Native JVM   |   3.924 seconds   |
-|   Quarkus imperative JDBC Native      |   0.011 seconds   |
-|   Quarkus imperative JDBC Native JVM  |   2.759 seconds   |
+|   SERVICE                             |  START UP TIME    |  FIRST REQUEST TIME
+|---------------------------------------|-------------------|-----------------------|
+|   Springboot reactive Native          |   0.177 seconds   |   0.000 seconds       |
+|   Springboot reactive JVM             |   9.117 seconds   |   0.000 seconds       |
+|   Spring imperative JPA Native        |   0.275 seconds   |   0.000 seconds       |
+|   Spring imperative JPA Native JVM    |   12.414 seconds  |   0.000 seconds       |
+|   Spring imperative JDBC Native       |   0.172 seconds   |   0.000 seconds       |
+|   Spring imperative JDBC Native JVM   |   9.224 seconds   |   0.000 seconds       |
+|   Quarkus reactive Native             |   0.014 seconds   |   0.000 seconds       |
+|   Quarkus reactive JVM                |   2.127 seconds   |   0.000 seconds       |
+|   Quarkus imperative JPA Native       |   0.069 seconds   |   0.000 seconds       |
+|   Quarkus imperative JPA Native JVM   |   3.924 seconds   |   0.000 seconds       |
+|   Quarkus imperative JDBC Native      |   0.011 seconds   |   0.000 seconds       |
+|   Quarkus imperative JDBC Native JVM  |   2.759 seconds   |   0.000 seconds       |

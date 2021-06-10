@@ -19,12 +19,12 @@ public class DemoTalk extends ProcessReportBase {
     @Test
     public void demo() {
 
-        var stream1 = IntStream.rangeClosed(1, 7).boxed()
+        var stream1 = IntStream.rangeClosed(1, 9).boxed()
                 .map(toJVMFileName)
                 .map(toURL)
                 .flatMap(url -> toJmeter.apply(url, " jvm"));
 
-        var stream2 = IntStream.rangeClosed(1, 7).boxed()
+        var stream2 = IntStream.rangeClosed(1, 10).boxed()
                 .map(toNativeFileName)
                 .map(toURL)
                 .flatMap(url -> toJmeter.apply(url, " native"));
