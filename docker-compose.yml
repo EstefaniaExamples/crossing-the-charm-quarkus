@@ -9,8 +9,8 @@ services:
     network_mode: bridge
     container_name: postgres-springbootreactiveapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_1:/var/lib/postgresql/data
     expose:
       - 5484
     ports:
@@ -79,8 +79,8 @@ services:
     network_mode: bridge
     container_name: postgres-springbootimperativejpaapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_2:/var/lib/postgresql/data
     expose:
       - 5486
     ports:
@@ -147,8 +147,8 @@ services:
     network_mode: bridge
     container_name: postgres-springbootimperativejdbcapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_3:/var/lib/postgresql/data
     expose:
       - 5485
     ports:
@@ -217,8 +217,8 @@ services:
     network_mode: bridge
     container_name: postgres-quarkusreactiveapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_4:/var/lib/postgresql/data
     expose:
       - 5487
     ports:
@@ -285,8 +285,8 @@ services:
     network_mode: bridge
     container_name: postgres-quarkusimperativejpaapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_5:/var/lib/postgresql/data
     expose:
       - 5489
     ports:
@@ -353,8 +353,8 @@ services:
     network_mode: bridge
     container_name: postgres-quarkusimperativejdbcapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_6:/var/lib/postgresql/data
     expose:
       - 5488
     ports:
@@ -420,8 +420,8 @@ services:
     network_mode: bridge
     container_name: postgres-nodejsapi
     volumes:
-      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
-      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data_7:/var/lib/postgresql/data
     expose:
       - 5401
     ports:
@@ -461,4 +461,10 @@ services:
       - postgres-nodejsapi
 
 volumes:
-  postgres_data:
+  postgres_data_1:
+  postgres_data_2:
+  postgres_data_3:
+  postgres_data_4:
+  postgres_data_5:
+  postgres_data_6:
+  postgres_data_7:
