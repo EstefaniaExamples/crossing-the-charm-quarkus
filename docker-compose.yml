@@ -414,6 +414,51 @@ services:
     depends_on:
       - postgres-quarkusimperativejdbcapi
 
+  postgres-nodejsapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-nodejsapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5401
+    ports:
+      - 5401:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  nodejsapi:
+    image: 'docker.io/node/node-books-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: nodejsapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5401/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 3001
+    ports:
+      - 3001:3001
+    restart: unless-stopped
+    depends_on:
+      - postgres-nodejsapi
 
 volumes:
   postgres_data:
