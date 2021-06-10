@@ -1,0 +1,419 @@
+version: '3.7'
+services:
+
+  #  SPRINGBOOT SERVICES
+
+  postgres-springbootreactiveapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-springbootreactiveapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5484
+    ports:
+      - 5484:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  springbootreactiveapi:
+    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreactiveapi
+    environment:
+      - DATABASE_HOST=192.168.1.197
+      - DATABASE_PORT=5484
+    expose:
+      - 8084
+    ports:
+      - 8084:8084
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootreactiveapi
+
+  springbootreactiveapi-jvm:
+    image: 'docker.io/library/sb-reactive-api-jvm:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootreactiveapi-jvm
+    environment:
+      - DATABASE_HOST=192.168.1.197
+      - DATABASE_PORT=5484
+    expose:
+      - 8084
+    ports:
+      - 8094:8084
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootreactiveapi
+
+
+  postgres-springbootimperativejpaapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-springbootimperativejpaapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5486
+    ports:
+      - 5486:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  springbootimperativejpaapi:
+    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejpaapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5486/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8086
+    ports:
+      - 8086:8086
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejpaapi
+
+  springbootimperativejpaapi-jvm:
+    image: 'docker.io/library/sb-imperative-jpa-api-jvm:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejpaapi-jvm
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5486/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8086
+    ports:
+      - 8096:8086
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejpaapi
+
+
+  postgres-springbootimperativejdbcapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-springbootimperativejdbcapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5485
+    ports:
+      - 5485:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  springbootimperativejdbcapi:
+    image: 'docker.io/library/sb-imperative-jdbc-api:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejdbcapi
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5485/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8085
+    ports:
+      - 8085:8085
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejdbcapi
+
+  springbootimperativejdbcapi-jvm:
+    image: 'docker.io/library/sb-imperative-jdbc-api-jvm:1.0-SNAPSHOT'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: springbootimperativejdbcapi-jvm
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5485/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8085
+    ports:
+      - 8095:8085
+    restart: unless-stopped
+    depends_on:
+      - postgres-springbootimperativejdbcapi
+
+
+  #  QUARKUS SERVICES
+
+  postgres-quarkusreactiveapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-quarkusreactiveapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5487
+    ports:
+      - 5487:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  quarkusreactiveapi:
+    image: 'docker.io/quarkus/quarkus-reactive-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusreactiveapi
+    environment:
+      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.1.197:5487/books_database
+    expose:
+      - 8087
+    ports:
+      - 8087:8087
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusreactiveapi
+
+  quarkusreactiveapi-jvm:
+    image: 'docker.io/quarkus/quarkus-reactive-api-jvm'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusreactiveapi-jvm
+    environment:
+      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.1.197:5487/books_database
+    expose:
+      - 8087
+    ports:
+      - 8097:8087
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusreactiveapi
+
+
+  postgres-quarkusimperativejpaapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-quarkusimperativejpaapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5489
+    ports:
+      - 5489:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  quarkusimperativejpaapi:
+    image: 'docker.io/quarkus/quarkus-imperative-jpa-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusimperativejpaapi
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5489/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8089
+    ports:
+      - 8089:8089
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusimperativejpaapi
+
+  quarkusimperativejpaapi-jvm:
+    image: 'docker.io/quarkus/quarkus-imperative-jpa-api-jvm'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusimperativejpaapi-jvm
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5489/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8089
+    ports:
+      - 8099:8089
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusimperativejpaapi
+
+
+  postgres-quarkusimperativejdbcapi:
+    image: postgres:latest
+    command: postgres -c 'max_connections=200'
+    network_mode: bridge
+    container_name: postgres-quarkusimperativejdbcapi
+    volumes:
+      - ../../infrastructure/db-init/setup.sh:/docker-entrypoint-initdb.d/initdb.sh
+      - postgres_data:/var/lib/postgresql/data
+    expose:
+      - 5488
+    ports:
+      - 5488:5432
+    environment:
+      - POSTGRES_PASSWORD=book
+      - POSTGRES_USER=book
+      - POSTGRES_DB=books_database
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  quarkusimperativejdbcapi:
+    image: 'docker.io/quarkus/quarkus-imperative-jdbc-api'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusimperativejdbcapi
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5488/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8088
+    ports:
+      - 8088:8088
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusimperativejdbcapi
+
+  quarkusimperativejdbcapi-jvm:
+    image: 'docker.io/quarkus/quarkus-imperative-jdbc-api-jvm'
+    deploy:
+      resources:
+        limits:
+          cpus: 1
+          memory: 2048MB
+        reservations:
+          cpus: 0.5
+          memory: 256MB
+    network_mode: bridge
+    container_name: quarkusimperativejdbcapi-jvm
+    environment:
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5488/books_database?createDatabaseIfNotExist=true
+    expose:
+      - 8088
+    ports:
+      - 8098:8088
+    restart: unless-stopped
+    depends_on:
+      - postgres-quarkusimperativejdbcapi
+
+
+volumes:
+  postgres_data:
