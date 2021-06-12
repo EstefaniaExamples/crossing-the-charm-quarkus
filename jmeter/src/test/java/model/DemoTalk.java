@@ -32,7 +32,7 @@ public class DemoTalk extends ProcessReportBase {
 
         Stream.concat(stream1, stream2)
                 .sorted((t1, t2) -> Float.compare(t2.getThroughput(), t1.getThroughput()))
-                .map(jmeter -> String.valueOf(jmeter.getLabel() + " " + jmeter.getThroughput()))
+                .map(jmeter -> jmeter.getLabel() + " " + jmeter.getThroughput())
                 .map(String::valueOf)
                 .limit(10)
                 .forEach(LOGGER::info);
@@ -57,7 +57,7 @@ public class DemoTalk extends ProcessReportBase {
                 .limit(1);
 
         Stream.concat(stream1, stream2)
-                .map(jmeter -> String.valueOf(jmeter.getLabel() + " " + jmeter.getThroughput()))
+                .map(jmeter -> jmeter.getLabel() + " " + jmeter.getThroughput())
                 .map(String::valueOf)
                 .forEach(LOGGER::info);
     }
