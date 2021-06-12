@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Crossing the chasm: Native Images</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -12,6 +12,8 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<link rel="shortcut icon" type="image/ico" Href="images/duke.png">
 	</head>
 	<body>
 		<div class="reveal">
@@ -29,16 +31,58 @@
 				<section data-background-image="./images/background.png">
 					<section>
 						<h2>Agenda</h2>
-						<ul>
+						<ol>
+							<li>Who I am</li>
 							<li>Product life cycle</li>
-							<li>Initial Questions</li>
-							<li>How to do it?
-							<li>Numbers</li>
-							<li>Limitations</li>
-							<li>Conclusions</li>
-							<li>Next steps</li>
+							<li>Starting hypothesis</li>
+							<li>Design of experiments</li>
+							<li>How to compile native images with Spring?</li>
+							<li>Benchmark results</li>
+							<li>Key takeaways</li>
+							<li>Sources</li>
 							<li>References</li>
+						</ol>
+					</section>
+				</section>
+				<section data-background-image="./images/background.png">
+					<section>
+						<h2>Who I am</h2>
+						<h3>Estefania Castro Vizoso</h3>
+						<ul>
+							<li>PENDING</li>
 						</ul>
+					</section>
+					<section>
+						<h2>Who I am</h2>
+						<h3>Juan Antonio Breña Moral</h3>
+						<table>
+							<tr>
+								<td style="color: #336699;">
+									<img src="./images/jab-avatar.jpg" width="100%"/>
+								</td>
+								<td style="color: #fff; vertical-align: top">
+									Technical Architect & Innovation Estratego @ <span style="color:#fff">VASS</span> <br />
+									Associate Professor @ <span style="color:#fff">ICAI</span> <br />
+									JVM Builder @ <span style="color:#fff">Eclipse Adoptium</span><br />
+									<a target="_blank" style="color: #fff; text-decoration: underline;" href="https://twitter.com/juanantoniobm">@juanantoniobm</a> |
+									<a target="_blank" style="color: #fff; text-decoration: underline;" href="https://github.com/jabrena">Github</a></li> |
+									<a target="_blank" style="color: #fff; text-decoration: underline;" href="www.linkedin.com/in/juanantoniobrenamoral">Linkedin</a>
+								</td>
+							</tr>
+							<!--
+							<tr>
+								<td colspan="2" align="center" style="color: #336699;">
+									Purpose: <i>"Riding dragons with innovation & fun"</i>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center" style="color: #336699;">
+									Quote: <i>"Pressure makes diamonds."</i><br />
+									<i>- George S. Patton Jr.</i>
+								</td>
+							</tr>
+							-->
+						</table>
 					</section>
 				</section>
 				<section data-background-image="./images/background.png">
@@ -72,26 +116,24 @@
 				</section>
 				<section data-background-image="./images/background.png">
 					<section>
-						<h2>Initial Questions</h2>
-						<ul>
-							<li>Is Java HotSpot Virtual Machine, at the end of the Product life cycle?</li>
-							<li>From a final customer perspective, What is the added value from the usage of Native Images?</li>
-						</ul>
-
-						</p>
+						<h2>Starting hypothesis</h2>
+						<ol>
+							<li>Is Java HotSpot Virtual Machine at the end of the product life cycle?</li>
+							<li>Microservices running as Native images from a GraalVM compilation have better performance than Microservices running on Java HotSpot Virtual Machine?</li>
+						</ol>
 						<h1>🤔</h1>
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							Is Java HotSpot Virtual Machine, at the end of the Product life cycle?
+							Is Java HotSpot Virtual Machine at the end of the product life cycle?
 						</p>
 						<img src="./images/jvm-hotspot.png" width="45%" />
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							Is Java HotSpot Virtual Machine, at the end of the Product life cycle?
+							Is Java HotSpot Virtual Machine at the end of the product life cycle?
 						</p>
 						<img src="./images/product_life_cycle.jpg" width="50%" />
 						<p>
@@ -99,12 +141,12 @@
 						</p>
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							Is Java HotSpot Virtual Machine, at the end of the Product life cycle?
+							Is Java HotSpot Virtual Machine at the end of the product life cycle?
 						</p>
 						<p>
-							<a href="https://sdkman.io/jdks" target="_blank">JVM Builders:</a>
+							<a href="https://sdkman.io/jdks" style="color: #fff; text-decoration: underline;" target="_blank">JVM Builders:</a>
 						</p>
 						<ul>
 							<li>Corretto, Amazon</li>
@@ -117,35 +159,38 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							Is Java HotSpot Virtual Machine, at the end of the Product life cycle?
+							Is Java HotSpot Virtual Machine at the end of the product life cycle?
 						</p>
 						<p>
-							<a href="https://openjdk.java.net/" target="_blank">Open JDK Projects:</a>
+							<a href="https://openjdk.java.net/" style="color: #fff; text-decoration: underline;" target="_blank">Open JDK Projects:</a>
 						</p>
 						<ul>
-							<li><a href="https://openjdk.java.net/projects/metropolis/">Metropolis</a></li>
-							<li><a href="https://openjdk.java.net/projects/aarch64-port/">AArch64 Port Project</a></li>
-							<li><a href="https://openjdk.java.net/projects/portola/">Portola Project</a></li>
-							<li><a href="https://openjdk.java.net/projects/shenandoah/">Shenandoah GC</a></li>
-							<li><a href="https://mail.openjdk.java.net/pipermail/discuss/2020-April/005429.html">Leyden Project</a></li>
+							<li><a style="color: #fff; text-decoration: underline;" target="_blank" href="https://openjdk.java.net/projects/metropolis/">Metropolis</a></li>
+							<li><a style="color: #fff; text-decoration: underline;" target="_blank" href="https://openjdk.java.net/projects/aarch64-port/">AArch64 Port Project</a></li>
+							<li><a style="color: #fff; text-decoration: underline;" target="_blank" href="https://openjdk.java.net/projects/portola/">Portola Project</a></li>
+							<li><a style="color: #fff; text-decoration: underline;" target="_blank" href="https://openjdk.java.net/projects/shenandoah/">Shenandoah GC</a></li>
+							<li><a style="color: #fff; text-decoration: underline;" target="_blank" href="https://mail.openjdk.java.net/pipermail/discuss/2020-April/005429.html">Leyden Project</a></li>
 						</ul>
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							Is Java HotSpot Virtual Machine, at the end of the Product life cycle?
+							Is Java HotSpot Virtual Machine at the end of the product life cycle?
 						</p>
-						<h1>🤨</h1>
+						<img src="images/rick.png" width="60%"/>
+						<p>
+							<em>"I don´t know Rick, it seems false."</em>
+						</p>
 					</section>
 
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							From a final customer perspective, What is the added value from the usage of Native Images?
+							Microservices running as Native images from a GraalVM compilation have better performance than Microservices running on Java HotSpot Virtual Machine?
 						</p>
-						<img src="./images/graalvm_figure1.jpg" width="60%" />
+						<img src="./images/graalvm_figure1.jpg" width="40%" />
 						<p>
 							<small>
 								<strong>Source:</strong>
@@ -153,63 +198,147 @@
 						</p>
 					</section>
 					<section>
-						<h2>Initial Questions</h2>
+						<h2>Starting hypothesis</h2>
 						<p>
-							From a final customer perspective, What is the added value from the usage of Native Images?
+							Microservices running as Native images from a GraalVM compilation have better performance than Microservices running on Java HotSpot Virtual Machine?
 						</p>
 						<hr />
+						<p>
+							<em>"How to verify that hypothesis?"</em>
+						</p>
+						<!--
 						<p>
 							What is the main scenario to use Native Images?
 						</p>
 						<ul>
 							<li>Serverless</li>
 						</ul>
+						-->
 					</section>
-					<!--
-					<section data-background-image="./images/background.png">
-						<h2>Initial Hypothesis</h2>
-						<p>
-							<img src="./images/josh-long-1.png" />
-						</p>
-					</section>
-					<section data-background-image="./images/background.png">
-						<h2>Initial Hypothesis</h2>
-						<p>
-							<img src="./images/josh-long-2.png" />
-						</p>
-					</section>
-					-->
-
 				</section>
 				<section data-background-image="./images/background.png">
 					<section>
-						<h2>How to do it?</h2>
+						<h2>Design of experiments</h2>
 						<p>
-							Is it easy or complex to create native images from your Spring Boot applications?
+							<strong>Experiment:</strong>
+							Develop a Microservice
+							which connect with a Database (PostgreSQL) and the logic
+							use ORM Features (In the cases that it is possible) and SQL (Native Query)
+							but in a non trivial queries trying to test the performance of that
+							dependencies.
 						</p>
 					</section>
 					<section>
-						<h2>How to do it?</h2>
+						<h2>Design of experiments</h2>
+						<p>
+							We implemented the experiment with:
+						</p>
+						<ol>
+							<li>Spring Imperative JPA (Native)</li>
+							<li>Spring Imperative JPA (ORM)</li>
+							<li>Spring Imperative JDBC (Native)</li>
+							<li>Spring Imperative JDBC (ORM)</li>
+							<li>Spring Reactive</li>
+							<li>Quarkus Imperative JPA (Native)</li>
+							<li>Quarkus Imperative JPA (ORM)</li>
+							<li>Quarkus Imperative JDBC</li>
+							<li>Quarkus Reactive</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<p>
+							And... We added Node.js in the salad too...
+						</p>
+						<h1>😃 🥗</h1>
+						<p>
+							Because we can do it!
+						</p>
+						<h2>😎 💪</h2>
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<p>
+							That developments was implemented and included in a
+							Docker compose running the microservices with Postgresql
+							(One database container per microservice to avoid possible side effects)
+						</p>
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<img src="images/benchmark-1.png" />
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<img src="images/benchmark-2.png" />
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<p>
+With the Docker compose running with the microservices connected with their databases,
+we running a JMeter script pointing for:
+						</p>
+						<ul>
+							<li>Microservices running with JVM Hotspot</li>
+							<li>Microservices running with Native images</li>
+						</ul>
+						<p>
+We run the JMeter 10x to collect some reports to analyze later.
+						</p>
+					</section>
+					<section>
+						<h2>Design of experiments</h2>
+						<p>
+							Hardware used in the experiments:
+						</p>
+<pre><code data-trim data-noescape>
+PENDING
+</code></pre>
+					</section>
+				</section>
+				<section data-background-image="./images/background.png">
+					<section>
+						<h2>How to compile native images with Spring?</h2>
+						<p>
+							Is it easy or complex to create native images from your Spring Boot applications?
+						</p>
+						<p>
+							Quarkus was designed with that feature in mind.
+						</p>
+					</section>
+					<!--
+					<section>
+						<h2>How to compile native images with Spring?</h2>
 						<img src="./images/setup-1.png" />
 <pre><code data-trim data-noescape>
 < spring-native.version>0.9.2< /spring-native.version>
 < graalvm.version>21.1.0< /graalvm.version>
 </code></pre>
 					</section>
+					-->
 					<section>
-						<h2>How to do it?</h2>
-						<img src="./images/setup-2.png" width="70%" />
+						<h2>How to compile native images with Spring?</h2>
+						<p>
+							1. We configure the Buildpack plugin for the native purpose
+						</p>
+						<img src="./images/setup-2.png" width="60%" />
 					</section>
 					<section>
-						<h2>How to do it?</h2>
-						<img src="./images/setup-3.png" width="60%" />
+						<h2>How to compile native images with Spring?</h2>
+						<p>
+							2.1 We added the plugin to compile Native images
+						</p>
+						<img src="./images/setup-3.png" width="50%" />
 					</section>
 					<section>
-						<h2>How to do it?</h2>
-						<img src="./images/setup-4.png" width="60%" />
+						<h2>How to compile native images with Spring?</h2>
+						<p>
+							2.2 Added a maven profile to compile Native images
+						</p>
+						<img src="./images/setup-4.png" width="50%" />
 					</section>
 					<section>
-						<h2>How to do it?</h2>
+						<h2>How to compile native images with Spring?</h2>
 						<p>Install GraalVM:</p>
 <pre><code data-trim data-noescape>
 sdk use java 21.1.0.r11-grl
@@ -222,12 +351,12 @@ mvn clean package -pl imperative-api -P native-image
 
 					</section>
 					<section>
-						<h2>How to do it?</h2>
+						<h2>How to compile native images with Spring?</h2>
 						<p>After few minutes compiling...</p>
 						<img src="./images/results-1.png" width="80%" />
 					</section>
 					<section>
-						<h2>How to do it?</h2>
+						<h2>How to compile native images with Spring?</h2>
 <pre><code data-trim data-noescape>
 ./imperative-api/target/books-imperative-api
 </code></pre>
@@ -237,7 +366,7 @@ mvn clean package -pl imperative-api -P native-image
 						</p>
 					</section>
 					<section>
-						<h2>How to do it?</h2>
+						<h2>How to compile native images with Spring?</h2>
 <pre><code data-trim data-noescape>
 mvn clean package spring-boot:run -pl imperative-api
 </code></pre>
@@ -249,58 +378,139 @@ mvn clean package spring-boot:run -pl imperative-api
 				</section>
 				<section data-background-image="./images/background.png">
 					<section>
-						<h1>Numbers</h1>
-						<p>
-							What happen if we compare few alternatives in Microservice spaces?
-						</p>
-						<ul>
-							<li>Spring Boot (Spring Data JDBC, JPA & R2DBC)</li>
-							<li>Quarkus (Panache & VertX)</li>
-							<li>Node.js</li>
-						</ul>
-					</section>
-					<section>
-						<h1>Numbers</h1>
-						<h2>Performance</h2>
-					</section>
-					<section>
-						<h1>Numbers</h1>
-						<h2>Memory</h2>
-					</section>
+						<h2>Benchmark results</h2>
+						<p>Throughput results:</p>
+<pre><code data-trim data-noescape>
+HTTP Request - Spring Imperative JDBC (Native) jvm 21.2766
+HTTP Request - Spring Reactive jvm 18.53912
+HTTP Request - Spring Imperative JDBC (Native) jvm 18.02127
+HTTP Request - Spring Imperative JDBC (Native) jvm 17.96945
+HTTP Request - Spring Imperative JDBC (Native) jvm 16.28664
+HTTP Request - Spring Imperative JDBC (Native) jvm 15.37752
+HTTP Request - Spring Reactive jvm 15.03986
+HTTP Request - Spring Reactive jvm 14.9723
+HTTP Request - Spring Imperative JDBC (Native) jvm 14.56876
+HTTP Request - Nodejs native 13.95868
+</code></pre>
 
+					</section>
 					<section>
-						<h1>Numbers</h1>
-						<h2>CPU</h2>
+						<h2>Benchmark results</h2>
+						<p>Compare the best Throughput result between JVM Hotspot and Native image:</p>
+<pre><code data-trim data-noescape>
+HTTP Request - Spring Imperative JDBC (Native) jvm 21.2766
+HTTP Request - Spring Imperative JDBC (Native) native 13.40123
+</code></pre>
+						<p>
+							The Throughput from JVM Hotspot is about 63% greater than using Native Images generated by GraalVM CE.
+						</p>
+					</section>
+					<section>
+						<h2>Benchmark results</h2>
+						<p>
+							Maybe the graph should be upgraded because it is greather the performance with JVM Hotspot.
+						</p>
+						<img src="./images/graalvm_figure1.jpg" width="60%" />
+					</section>
+					<section>
+						<h2>Benchmark results</h2>
+						<p>Throughput results:</p>
+						<img src="images/demo.png" width="60%"/>
+						<p>
+							<em>"Rick, show me your sources!"</em>
+						</p>
+					</section>
+					<section>
+						<h2>Benchmark results</h2>
+						<p>
+							Start up times:
+						</p>
+					</section>
+					<section data-markdown>
+|   SERVICE                             |  START UP TIME    |  FIRST REQUEST TIME
+|---------------------------------------|-------------------|-----------------------|
+|   Springboot reactive Native          |   0.177 seconds   |   0.000 seconds       |
+|   Springboot reactive JVM             |   9.117 seconds   |   0.000 seconds       |
+|   Quarkus reactive Native             |   0.014 seconds   |   0.000 seconds       |
+|   Quarkus reactive JVM                |   2.127 seconds   |   0.000 seconds       |
+					</section>
+					<section data-markdown>
+|   SERVICE                             |  START UP TIME    |  FIRST REQUEST TIME
+|---------------------------------------|-------------------|-----------------------|
+|   Spring imperative JPA Native        |   0.275 seconds   |   0.000 seconds       |
+|   Spring imperative JPA Native JVM    |   12.414 seconds  |   0.000 seconds       |
+|   Spring imperative JDBC Native       |   0.172 seconds   |   0.000 seconds       |
+|   Spring imperative JDBC Native JVM   |   9.224 seconds   |   0.000 seconds       |
+					</section>
+					<section data-markdown>
+|   SERVICE                             |  START UP TIME    |  FIRST REQUEST TIME
+|---------------------------------------|-------------------|-----------------------|
+|   Quarkus imperative JPA Native       |   0.069 seconds   |   0.000 seconds       |
+|   Quarkus imperative JPA Native JVM   |   3.924 seconds   |   0.000 seconds       |
+|   Quarkus imperative JDBC Native      |   0.011 seconds   |   0.000 seconds       |
+|   Quarkus imperative JDBC Native JVM  |   2.759 seconds   |   0.000 seconds       |
 					</section>
 				</section>
 				<section data-background-image="./images/background.png">
 					<section>
-						<h1>Conclusions</h1>
+						<h1>Key takeaways</h1>
+						<ul>
+							<li>Java code runs with better Throughput on JVM Hotspot than GraalVM CE</li>
+							<li>GraalVM CE is not ready to replace JVM Hotspot</li>
+							<li>Leyden Project will improve the Startup time on JVM Hotspot</li>
+						</ul>
+					</section>
+					<section>
+						<h1>Key takeaways</h1>
+						<ul>
+							<li>Spring Boot & Quarkus has an easy configuration to compile Native Image</li>
+							<li>Compile for Native Images requires mountains of RAM</li>
+							<li>Native images are more suitable for Serverless than Microservices</li>
+						</ul>
+					</section>
+					<!--
+					<section>
+						<h1>Key takeaways</h1>
+						<p>
+							<img src="./images/josh-long-1.png" />
+						</p>
+					</section>
+					<section>
+						<h1>Key takeaways</h1>
+						<p>
+							<img src="./images/josh-long-2.png" />
+						</p>
+					</section>
+					-->
+				</section>
+				<section data-background-image="./images/background.png">
+					<section>
+						<h1>Sources</h1>
+						<p>
+							The whole project, performance data are here:
+						</p>
+						<a style="color: #fff; text-decoration: underline;" href="https://github.com/EstefaniaExamples/crossing-the-chasm-native-images" target="_blank">
+							https://github.com/EstefaniaExamples/crossing-the-chasm-native-images
+						</a>
 					</section>
 				</section>
 				<section data-background-image="./images/background.png">
 					<h1>References</h1>
 					<ulq>
-						<li><a href="https://en.wikipedia.org/wiki/Crossing_the_Chasm" target="_blank">Crossing the Chasm</a></li>
-						<li><a href="https://spring.io/blog/2021/03/11/announcing-spring-native-beta" target="_blank">Announcing Spring Native Beta!</a></li>
-						<li><a href="https://www.thoughtworks.com/radar/platforms/graalvm" target="_blank">Thoughtworks Radar: GraalVM</a></li>
-						<li><a href="https://www.infoq.com/articles/architecture-trends-2021/" target="_blank">InfoQ Architecture trends 2021</a></li>
-						<li><a href="https://www.infoq.com/articles/java-jvm-trends-2020/" target="_blank">InfoQ JVM trends 2020</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Crossing_the_Chasm" target="_blank">Crossing the Chasm</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://spring.io/blog/2021/03/11/announcing-spring-native-beta" target="_blank">Announcing Spring Native Beta!</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/" target="_blank">Spring Native documentation</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://www.thoughtworks.com/radar/platforms/graalvm" target="_blank">Thoughtworks Radar: GraalVM</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://www.infoq.com/articles/architecture-trends-2021/" target="_blank">InfoQ Architecture trends 2021</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://www.infoq.com/articles/java-jvm-trends-2020/" target="_blank">InfoQ JVM trends 2020</a></li>
 					</ulq>
 				</section>
-				<!--
-				<section>
-					<section>
-						<h2>Quarkus features</h2>
-						<img src="images/quarkus-architecture.png" width="80%" />
-					</section>
-					<section>
-						<h2>Quarkus features</h2>
-						<img src="images/microservice-aspects.png" width="50%" />
-					</section>
+				<section data-background-image="./images/background.png">
+					<h1>🙏 🙏 🙏</h1>
+					<p>
+						Thanks
+					</p>
 				</section>
-				-->
-
 			</div>
 		</div>
 
