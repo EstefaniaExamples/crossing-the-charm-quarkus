@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export IP_ADDRESS=$1
+echo "The IP address is: $1"
+
 # SpringBoot project
 cd springboot-books-api/ || return
 

@@ -2,6 +2,7 @@
 *.iml
 
 /jmeter/target
+/infrastructure/data
 
 /node-books-api/node_modules
 

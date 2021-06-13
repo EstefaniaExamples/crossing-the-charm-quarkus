@@ -39,7 +39,7 @@ services:
     network_mode: bridge
     container_name: springbootreactiveapi
     environment:
-      - DATABASE_HOST=192.168.1.197
+      - DATABASE_HOST=${IP_ADDRESS}
       - DATABASE_PORT=5484
     expose:
       - 8084
@@ -62,7 +62,7 @@ services:
     network_mode: bridge
     container_name: springbootreactiveapi-jvm
     environment:
-      - DATABASE_HOST=192.168.1.197
+      - DATABASE_HOST=${IP_ADDRESS}
       - DATABASE_PORT=5484
     expose:
       - 8084
@@ -109,11 +109,11 @@ services:
     network_mode: bridge
     container_name: springbootimperativejpaapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5486/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${IP_ADDRESS}:5486/books_database?createDatabaseIfNotExist=true
     expose:
       - 8086
     ports:
-      - 8086:8086
+      - 8186:8086
     restart: unless-stopped
     depends_on:
       - postgres-springbootimperativejpaapi
@@ -131,7 +131,7 @@ services:
     network_mode: bridge
     container_name: springbootimperativejpaapi-jvm
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5486/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${IP_ADDRESS}:5486/books_database?createDatabaseIfNotExist=true
     expose:
       - 8086
     ports:
@@ -177,7 +177,7 @@ services:
     network_mode: bridge
     container_name: springbootimperativejdbcapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5485/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${IP_ADDRESS}:5485/books_database?createDatabaseIfNotExist=true
     expose:
       - 8085
     ports:
@@ -199,7 +199,7 @@ services:
     network_mode: bridge
     container_name: springbootimperativejdbcapi-jvm
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5485/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${IP_ADDRESS}:5485/books_database?createDatabaseIfNotExist=true
     expose:
       - 8085
     ports:
@@ -247,7 +247,7 @@ services:
     network_mode: bridge
     container_name: quarkusreactiveapi
     environment:
-      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.1.197:5487/books_database
+      - POSTGRESQL_REACTIVE_URL=postgresql://${IP_ADDRESS}:5487/books_database
     expose:
       - 8087
     ports:
@@ -269,7 +269,7 @@ services:
     network_mode: bridge
     container_name: quarkusreactiveapi-jvm
     environment:
-      - POSTGRESQL_REACTIVE_URL=postgresql://192.168.1.197:5487/books_database
+      - POSTGRESQL_REACTIVE_URL=postgresql://${IP_ADDRESS}:5487/books_database
     expose:
       - 8087
     ports:
@@ -315,7 +315,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejpaapi
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5489/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://${IP_ADDRESS}:5489/books_database?createDatabaseIfNotExist=true
     expose:
       - 8089
     ports:
@@ -337,7 +337,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejpaapi-jvm
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5489/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://${IP_ADDRESS}:5489/books_database?createDatabaseIfNotExist=true
     expose:
       - 8089
     ports:
@@ -383,7 +383,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejdbcapi
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5488/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://${IP_ADDRESS}:5488/books_database?createDatabaseIfNotExist=true
     expose:
       - 8088
     ports:
@@ -405,7 +405,7 @@ services:
     network_mode: bridge
     container_name: quarkusimperativejdbcapi-jvm
     environment:
-      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://192.168.1.197:5488/books_database?createDatabaseIfNotExist=true
+      - POSTGRESQL_IMPERATIVE_URL=jdbc:postgresql://${IP_ADDRESS}:5488/books_database?createDatabaseIfNotExist=true
     expose:
       - 8088
     ports:
@@ -451,7 +451,7 @@ services:
     network_mode: bridge
     container_name: nodejsapi
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.1.197:5401/books_database?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://${IP_ADDRESS}:5401/books_database?createDatabaseIfNotExist=true
     expose:
       - 3001
     ports:
