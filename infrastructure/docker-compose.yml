@@ -1,5 +1,25 @@
 version: '3.7'
 services:
+  influxdbData:
+    image: busybox
+    volumes:
+      - ./data/influxdb:/data
+
+  influxdb:
+    image: tutum/influxdb:0.9
+    restart: always
+    environment:
+      - PRE_CREATE_DB=cadvisor
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+    expose:
+      - "8090"
+      - "8099"
+    volumes_from:
+      - "influxdbData"
+
+
   monitoring-prometheus:
     image: "prom/prometheus:v2.26.0"
     container_name: "books-monitoring-prometheus"
@@ -11,27 +31,32 @@ services:
   monitoring-grafana:
     image: "grafana/grafana:7.5.4"
     container_name: "books-monitoring-grafana"
-    depends_on:
-      - monitoring-prometheus
+    restart: always
+    links:
+      - influxdb:influxsrv
     ports:
-      - 3000:3000
+      - "3000:3000"
+    environment:
+      - HTTP_USER=admin
+      - HTTP_PASS=admin
+      - INFLUXDB_HOST=influxsrv
+      - INFLUXDB_PORT=8086
+      - INFLUXDB_NAME=cadvisor
+      - INFLUXDB_USER=root
+      - INFLUXDB_PASS=root
 
   cadvisor:
-    image: google/cadvisor:latest
+    image: google/cadvisor:canary
     container_name: "books-monitoring-cadvisor"
+    links:
+      - influxdb:influxsrv
+    command: -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086 -storage_driver_buffer_duration=2s
+    restart: always
     ports:
-      - '8080:8080'
+      - "8080:8080"
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-      - /dev/disk/:/dev/disk:ro
-    depends_on:
-      - redis
 
-  redis:
-    image: redis:latest
-    container_name: redis
-    ports:
-      - 6379:6379
