@@ -6,3 +6,11 @@ You can find the presentation in the following link:
 - Slides: https://estefaniaexamples.github.io/crossing-the-chasm-native-images
 - Gitpod: http://gitpod.io/#https://github.com/EstefaniaExamples/crossing-the-chasm-native-images
 - [![Java CI](https://github.com/EstefaniaExamples/crossing-the-chasm-native-images/actions/workflows/build.yml/badge.svg)](https://github.com/EstefaniaExamples/crossing-the-chasm-native-images/actions/workflows/build.yml)
+
+## How to build
+
+```
+IP_LOCAL=$(ipconfig getifaddr en0)
+echo $IP_LOCAL 
+./build.sh $IP_LOCAL
+```
