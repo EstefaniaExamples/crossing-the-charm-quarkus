@@ -27,7 +27,7 @@ services:
       retries: 5
 
   springbootreactiveapi:
-    image: 'docker.io/library/sb-reactive-api:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-reactive-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -50,7 +50,7 @@ services:
       - postgres-springbootreactiveapi
 
   springbootreactiveapi-jvm:
-    image: 'docker.io/library/sb-reactive-api-jvm:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-reactive-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -97,7 +97,7 @@ services:
       retries: 5
 
   springbootimperativejpaapi:
-    image: 'docker.io/library/sb-imperative-jpa-api:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-imperative-jpa-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -119,7 +119,7 @@ services:
       - postgres-springbootimperativejpaapi
 
   springbootimperativejpaapi-jvm:
-    image: 'docker.io/library/sb-imperative-jpa-api-jvm:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-imperative-jpa-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -165,7 +165,7 @@ services:
       retries: 5
 
   springbootimperativejdbcapi:
-    image: 'docker.io/library/sb-imperative-jdbc-api:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-imperative-jdbc-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -187,7 +187,7 @@ services:
       - postgres-springbootimperativejdbcapi
 
   springbootimperativejdbcapi-jvm:
-    image: 'docker.io/library/sb-imperative-jdbc-api-jvm:1.0-SNAPSHOT'
+    image: 'docker.io/fanycastro/sb-imperative-jdbc-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -235,7 +235,7 @@ services:
       retries: 5
 
   quarkusreactiveapi:
-    image: 'docker.io/quarkus/quarkus-reactive-api'
+    image: 'docker.io/fanycastro/quarkus-reactive-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -257,7 +257,7 @@ services:
       - postgres-quarkusreactiveapi
 
   quarkusreactiveapi-jvm:
-    image: 'docker.io/quarkus/quarkus-reactive-api-jvm'
+    image: 'docker.io/fanycastro/quarkus-reactive-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -325,7 +325,7 @@ services:
       - postgres-quarkusimperativejpaapi
 
   quarkusimperativejpaapi-jvm:
-    image: 'docker.io/quarkus/quarkus-imperative-jpa-api-jvm'
+    image: 'docker.io/fanycastro/quarkus-imperative-jpa-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -371,7 +371,7 @@ services:
       retries: 5
 
   quarkusimperativejdbcapi:
-    image: 'docker.io/quarkus/quarkus-imperative-jdbc-api'
+    image: 'docker.io/fanycastro/quarkus-imperative-jdbc-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -393,7 +393,7 @@ services:
       - postgres-quarkusimperativejdbcapi
 
   quarkusimperativejdbcapi-jvm:
-    image: 'docker.io/quarkus/quarkus-imperative-jdbc-api-jvm'
+    image: 'docker.io/fanycastro/quarkus-imperative-jdbc-api-jvm:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:
@@ -439,7 +439,7 @@ services:
 
 
   nodejsapi:
-    image: 'docker.io/node/node-books-api'
+    image: 'docker.io/fanycastro/node-books-api:1.0-SNAPSHOT'
     deploy:
       resources:
         limits:

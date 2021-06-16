@@ -83,6 +83,7 @@
                 <configuration>
                     <image>
                         <builder>paketobuildpacks/builder:tiny</builder>
+                        <name>fanycastro/sb-imperative-jdbc-api:1.0-SNAPSHOT</name>
                         <env>
                             <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
                             <BP_BOOT_NATIVE_IMAGE_BUILD_ARGUMENTS>
