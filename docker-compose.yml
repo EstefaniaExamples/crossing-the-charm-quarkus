@@ -307,7 +307,7 @@ services:
       retries: 5
 
   quarkusimperativejpaapi:
-    image: 'docker.io/quarkus/quarkus-imperative-jpa-api'
+    image: 'docker.io/fanycastro/quarkus-imperative-jpa-api'
     deploy:
       resources:
         limits:
