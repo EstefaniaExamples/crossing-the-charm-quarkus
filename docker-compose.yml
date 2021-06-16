@@ -38,6 +38,8 @@ services:
           memory: 256MB
     network_mode: bridge
     container_name: springbootreactiveapi
+    links:
+      - postgres-springbootreactiveapi:postgres-springbootreactiveapi-srv
     environment:
       - DATABASE_HOST=${IP_ADDRESS}
       - DATABASE_PORT=5484
@@ -61,6 +63,8 @@ services:
           memory: 256MB
     network_mode: bridge
     container_name: springbootreactiveapi-jvm
+    links:
+      - postgres-springbootreactiveapi:postgres-springbootreactiveapi-srv
     environment:
       - DATABASE_HOST=${IP_ADDRESS}
       - DATABASE_PORT=5484
