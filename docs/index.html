@@ -33,6 +33,7 @@
 						<h2>Agenda</h2>
 						<ol>
 							<li>Who I am</li>
+							<li>Context</li>
 							<li>Product life cycle</li>
 							<li>Starting hypothesis</li>
 							<li>Design of experiments</li>
@@ -54,7 +55,7 @@
 									<img src="./images/ecv-avatar.jpg" width="90%"/>
 								</td>
 								<td style="color: #fff; vertical-align: top">
-									<p>Technical expert & Innovation</p> @ <span style="color:#fff">VASS</span> <br />
+									<p>Technical expert &<br /> Innovation @ <span style="color:#fff">VASS</span></p>
 									<a target="_blank" style="color: #fff; text-decoration: underline;" href="https://twitter.com/Fany_CV">@Fany_CV</a> |
 									<a target="_blank" style="color: #fff; text-decoration: underline;" href="https://github.com/FanyCastro">Github</a></li> |
 									<a target="_blank" style="color: #fff; text-decoration: underline;" href="www.linkedin.com/in/estefania-castro">Linkedin</a>
@@ -97,6 +98,30 @@
 				</section>
 				<section data-background-image="./images/background.png">
 					<section>
+						<h2>Context</h2>
+						<p>
+							GraalVM is the next Java Virtual Machine Generation and it includes multiple new features
+							but in this presentation, we will put the focus on: <em>Native Images</em>
+						</p>
+						<hr />
+						<p>
+							Traditionally, Java applications are called WORA (Write Once Run Anywhere).
+						</p>
+					</section>
+					<section>
+						<h2>Context</h2>
+						<img src="images/jvm-hotspot-secuence.png" width="35%"/>
+					</section>
+					<section>
+						<h2>Context</h2>
+						<p>
+							But in some scenarios, 147MB is so much...
+						</p>
+						<img src="images/spring-boot-uber-jar.png" width="70%" />
+					</section>
+				</section>
+				<section data-background-image="./images/background.png">
+					<section>
 						<h2>Product life cycle</h2>
 						<p>
 							It is the amount of time a product goes from being
@@ -115,7 +140,24 @@
 					</section>
 					<section>
 						<h2>Crossing the chasm</h2>
+						<p>
+							In what stage is GraalVM and Native Images?
+						</p>
 						<img src="images/chasm.png" width="60%" />
+					</section>
+					<section>
+						<h2>Crossing the chasm</h2>
+						<p>
+							Types of Innovation:
+						</p>
+						<img src="images/types-of-innovation.png" width="70%"/>
+					</section>
+					<section>
+						<h2>Crossing the chasm</h2>
+						<p>
+							Is this feature, compatible with your Evolutionary architecture?
+						</p>
+						<img src="images/evolutionary-architecture.jpg" width="50%"/>
 					</section>
 					<!--
 					<section data-background-image="./images/background.png">
@@ -237,6 +279,7 @@
 							but in a non trivial queries trying to test the performance of that
 							dependencies.
 						</p>
+						<img src="images/spring-boot-plus-data.png" />
 					</section>
 					<section>
 						<h2>Design of experiments</h2>
@@ -469,16 +512,17 @@ HTTP Request - Spring Imperative JDBC (Native) native 13.40123
 							<li>Java code runs with better Throughput on JVM Hotspot than GraalVM CE</li>
 							<li>GraalVM CE is not ready to replace JVM Hotspot</li>
 							<li>Leyden Project will improve the Startup time on JVM Hotspot</li>
+							<li>Compile for Native Images requires mountains of RAM</li>
+							<li>Native images are more suitable for Serverless than Microservices solutions</li>
 						</ul>
 					</section>
 					<section>
 						<h1>Key takeaways</h1>
+						<strong>Dev notes:</strong>
 						<ul>
 							<li>Spring Boot & Quarkus has an easy configuration to compile Native Images</li>
 							<li>Spring Data JDBC has better performance than Spring Data JPA</li>
 							<li>Invest time to improve SQL Skills</li>
-							<li>Compile for Native Images requires mountains of RAM</li>
-							<li>Native images are more suitable for Serverless than Microservices</li>
 						</ul>
 					</section>
 					<!--
@@ -512,6 +556,7 @@ HTTP Request - Spring Imperative JDBC (Native) native 13.40123
 					<ulq>
 						<li><a style="color: #fff; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Crossing_the_Chasm" target="_blank">Crossing the Chasm</a></li>
 						<li><a style="color: #fff; text-decoration: underline;" href="https://spring.io/blog/2021/03/11/announcing-spring-native-beta" target="_blank">Announcing Spring Native Beta!</a></li>
+						<li><a style="color: #fff; text-decoration: underline;" href="https://www.graalvm.org/reference-manual/native-image/" target="_blank">GraalVM Native Image Reference</a></li>
 						<li><a style="color: #fff; text-decoration: underline;" href="https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/" target="_blank">Spring Native documentation</a></li>
 						<li><a style="color: #fff; text-decoration: underline;" href="https://www.thoughtworks.com/radar/platforms/graalvm" target="_blank">Thoughtworks Radar: GraalVM</a></li>
 						<li><a style="color: #fff; text-decoration: underline;" href="https://www.infoq.com/articles/architecture-trends-2021/" target="_blank">InfoQ Architecture trends 2021</a></li>
