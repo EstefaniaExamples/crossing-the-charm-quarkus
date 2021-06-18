@@ -14,3 +14,20 @@ IP_LOCAL=$(ipconfig getifaddr en0)
 echo $IP_LOCAL 
 ./build.sh $IP_LOCAL
 ```
+
+## Generating JMeter Aggregate Report from the command-line
+
+To do this we need to install 2 plugins:
+- JMeterPluginsCMD Command Line Tool
+- Synthesis Report
+
+The first plugin, sort of, lets you refer and use the second plugin, which actually builds the reports.
+The easiest way to install these plugins is using the JMeter Plugins Manager.
+After installing both plugins use the command:
+```
+$ jmeter -n -t "LoadNativeTests.jmx" -l "./src/test/resources/tmp/output-native.jtl"
+$ [jmeter-dir]/bin/JMeterPluginsCMD.sh — generate-csv your-output.csv — input-jtl input.jtl — plugin-type AggregateReport
+```
+
+https://jmeter-plugins.org/wiki/JMeterPluginsCMD/
+https://medium.com/@abhimanyuPathania/automating-the-automatic-with-jmeter-at-logos-76f721faba4d

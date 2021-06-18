@@ -1,0 +1,181 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1624050772615,423,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-2,,true,,274403,153,6,6,http://localhost:8087/books,420,0,1
+1624050772588,459,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-1,,true,,274403,153,5,5,http://localhost:8087/books,456,0,17
+1624050772711,434,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-3,,true,,274403,153,5,5,http://localhost:8087/books,430,0,1
+1624050772813,404,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-4,,true,,274403,153,5,5,http://localhost:8087/books,400,0,0
+1624050772911,424,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-5,,true,,274403,153,5,5,http://localhost:8087/books,420,0,0
+1624050773011,445,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-6,,true,,274403,153,5,5,http://localhost:8087/books,441,0,1
+1624050773110,491,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-7,,true,,274403,153,4,4,http://localhost:8087/books,487,0,1
+1624050773215,410,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-8,,true,,274403,153,3,3,http://localhost:8087/books,407,0,0
+1624050773311,417,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-9,,true,,274403,153,2,2,http://localhost:8087/books,414,0,0
+1624050773414,345,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-10,,true,,274403,153,1,1,http://localhost:8087/books,342,0,1
+1624050773762,282,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-1,text,true,,201743,160,3,3,http://localhost:8088/native/books,272,0,1
+1624050773863,291,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-2,text,true,,201743,160,3,3,http://localhost:8088/native/books,284,0,1
+1624050773966,308,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-3,text,true,,201743,160,4,4,http://localhost:8088/native/books,304,0,1
+1624050774064,342,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-4,text,true,,201743,160,4,4,http://localhost:8088/native/books,336,0,1
+1624050774163,377,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-5,text,true,,201743,160,4,4,http://localhost:8088/native/books,364,0,1
+1624050774265,364,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-6,text,true,,201743,160,4,4,http://localhost:8088/native/books,359,0,1
+1624050774363,422,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-7,text,true,,201743,160,4,4,http://localhost:8088/native/books,416,0,0
+1624050774464,353,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-8,text,true,,201743,160,3,3,http://localhost:8088/native/books,351,0,1
+1624050774563,348,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-9,text,true,,201743,160,2,2,http://localhost:8088/native/books,346,0,0
+1624050774664,279,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-10,text,true,,201743,160,1,1,http://localhost:8088/native/books,273,0,0
+1624050775047,7118,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-2,text,true,,201743,160,10,10,http://localhost:8089/native/books,7106,0,1
+1624050774945,7304,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-1,text,true,,201743,160,9,9,http://localhost:8089/native/books,7296,0,1
+1624050775146,7504,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-3,text,true,,201743,160,8,8,http://localhost:8089/native/books,7497,0,0
+1624050775247,7844,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-4,text,true,,201743,160,7,7,http://localhost:8089/native/books,7838,0,0
+1624050775346,8055,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-5,text,true,,201743,160,6,6,http://localhost:8089/native/books,8050,0,0
+1624050775648,8540,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-8,text,true,,201743,160,5,5,http://localhost:8089/native/books,8536,0,0
+1624050775746,8444,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-9,text,true,,201743,160,4,4,http://localhost:8089/native/books,8436,0,1
+1624050775546,8731,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-7,text,true,,201743,160,3,3,http://localhost:8089/native/books,8725,0,0
+1624050775445,8840,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-6,text,true,,201743,160,2,2,http://localhost:8089/native/books,8837,0,1
+1624050775846,8464,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-10,text,true,,201743,160,1,1,http://localhost:8089/native/books,8461,0,0
+1624050784412,7829,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-2,text,true,,201743,153,10,10,http://localhost:8089/books,7818,0,0
+1624050784312,8074,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-1,text,true,,201743,153,9,9,http://localhost:8089/books,8069,0,0
+1624050784512,7945,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-3,text,true,,201743,153,8,8,http://localhost:8089/books,7941,0,0
+1624050784612,8258,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-4,text,true,,201743,153,7,7,http://localhost:8089/books,8255,0,0
+1624050784814,8156,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-6,text,true,,201743,153,6,6,http://localhost:8089/books,8147,0,0
+1624050784712,8276,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-5,text,true,,201743,153,5,5,http://localhost:8089/books,8272,0,0
+1624050785012,8110,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-8,text,true,,201743,153,4,4,http://localhost:8089/books,8106,0,0
+1624050784911,8337,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-7,text,true,,201743,153,3,3,http://localhost:8089/books,8330,0,1
+1624050785116,8154,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-9,text,true,,201743,153,2,2,http://localhost:8089/books,8150,0,1
+1624050785212,8131,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-10,text,true,,201743,153,1,1,http://localhost:8089/books,8129,0,1
+1624050793345,211,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-1,text,true,,201534,153,3,3,http://localhost:8084/books,209,0,0
+1624050793447,235,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-2,text,true,,201534,153,3,3,http://localhost:8084/books,233,0,0
+1624050793547,336,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-3,text,true,,201534,153,4,4,http://localhost:8084/books,333,0,0
+1624050793647,283,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-4,text,true,,201534,153,3,3,http://localhost:8084/books,281,0,0
+1624050793747,304,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-5,text,true,,201534,153,4,4,http://localhost:8084/books,301,0,0
+1624050793846,276,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-6,text,true,,201534,153,3,3,http://localhost:8084/books,274,0,1
+1624050793946,231,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-7,text,true,,201534,153,3,3,http://localhost:8084/books,229,0,1
+1624050794047,264,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-8,text,true,,201534,153,3,3,http://localhost:8084/books,261,0,0
+1624050794144,241,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-9,text,true,,201534,153,2,2,http://localhost:8084/books,239,0,1
+1624050794244,248,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-10,text,true,,201534,153,1,1,http://localhost:8084/books,246,0,1
+1624050794494,197,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-1,text,true,,201826,160,2,2,http://localhost:8085/native/books,192,0,3
+1624050794599,212,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-2,text,true,,201826,160,3,3,http://localhost:8085/native/books,205,0,1
+1624050794699,225,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-3,text,true,,201826,160,3,3,http://localhost:8085/native/books,219,0,1
+1624050794794,213,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-4,text,true,,201826,160,3,3,http://localhost:8085/native/books,209,0,1
+1624050794899,243,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-5,text,true,,201826,160,3,3,http://localhost:8085/native/books,236,0,0
+1624050794998,198,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-6,text,true,,201826,160,2,2,http://localhost:8085/native/books,194,0,0
+1624050795099,218,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-7,text,true,,201826,160,3,3,http://localhost:8085/native/books,213,0,1
+1624050795201,222,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-8,text,true,,201826,160,3,3,http://localhost:8085/native/books,213,0,0
+1624050795301,211,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-9,text,true,,201826,160,2,2,http://localhost:8085/native/books,207,0,0
+1624050795395,208,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-10,text,true,,201826,160,1,1,http://localhost:8085/native/books,203,0,0
+1624050795605,3195,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-1,text,true,,130323,153,10,10,http://localhost:8085/books,3189,0,0
+1624050795709,3315,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-2,text,true,,130323,153,9,9,http://localhost:8085/books,3293,0,0
+1624050795805,3469,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-3,text,true,,130323,153,8,8,http://localhost:8085/books,3460,0,0
+1624050795907,3511,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-4,text,true,,130323,153,7,7,http://localhost:8085/books,3489,0,0
+1624050796007,3524,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-5,text,true,,130323,153,6,6,http://localhost:8085/books,3516,0,0
+1624050796105,3448,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-6,text,true,,130323,153,5,5,http://localhost:8085/books,3438,0,1
+1624050796205,3502,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-7,text,true,,130323,153,4,4,http://localhost:8085/books,3500,0,1
+1624050796405,3328,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-9,text,true,,130323,153,3,3,http://localhost:8085/books,3325,0,0
+1624050796306,3440,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-8,text,true,,130323,153,2,2,http://localhost:8085/books,3435,0,0
+1624050796508,3258,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-10,text,true,,130323,153,1,1,http://localhost:8085/books,3255,0,1
+1624050799768,5942,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-1,text,true,,201826,160,10,10,http://localhost:8186/native/books,418,0,1
+1624050799870,6549,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-2,text,true,,201826,160,9,9,http://localhost:8186/native/books,552,0,1
+1624050799969,6550,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-3,text,true,,201826,160,8,8,http://localhost:8186/native/books,583,0,0
+1624050800069,6983,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-4,text,true,,201826,160,7,7,http://localhost:8186/native/books,793,0,1
+1624050800469,7292,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-8,text,true,,201826,160,6,6,http://localhost:8186/native/books,1049,0,1
+1624050800271,7504,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-6,text,true,,201826,160,5,5,http://localhost:8186/native/books,1475,0,0
+1624050800169,7691,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-5,text,true,,201826,160,4,4,http://localhost:8186/native/books,1498,0,0
+1624050800369,7785,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-7,text,true,,201826,160,3,3,http://localhost:8186/native/books,2045,0,0
+1624050800569,7706,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-9,text,true,,201826,160,2,2,http://localhost:8186/native/books,2102,0,1
+1624050800672,7800,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-10,text,true,,201826,160,1,1,http://localhost:8186/native/books,2297,0,0
+1624050808473,6894,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-1,text,true,,201826,153,10,10,http://localhost:8186/books,311,0,1
+1624050808873,6921,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-5,text,true,,201826,153,9,9,http://localhost:8186/books,473,0,1
+1624050808577,7261,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-2,text,true,,201826,153,8,8,http://localhost:8186/books,388,0,0
+1624050808775,7144,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-4,text,true,,201826,153,7,7,http://localhost:8186/books,422,0,1
+1624050808673,7284,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-3,text,true,,201826,153,6,6,http://localhost:8186/books,394,0,1
+1624050808974,7140,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-6,text,true,,201826,153,5,5,http://localhost:8186/books,540,0,0
+1624050809077,7133,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-7,text,true,,201826,153,4,4,http://localhost:8186/books,601,0,0
+1624050809174,7109,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-8,text,true,,201826,153,3,3,http://localhost:8186/books,612,0,1
+1624050809373,6938,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-10,text,true,,201826,153,2,2,http://localhost:8186/books,662,0,1
+1624050809275,7114,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-9,text,true,,201826,153,1,1,http://localhost:8186/books,629,0,1
+1624051183709,332,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-2,,true,,274403,153,5,5,http://localhost:8087/books,329,0,1
+1624051183676,384,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-1,,true,,274403,153,4,4,http://localhost:8087/books,377,0,17
+1624051183804,319,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-3,,true,,274403,153,4,4,http://localhost:8087/books,315,0,0
+1624051183908,309,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-4,,true,,274403,153,4,4,http://localhost:8087/books,305,0,1
+1624051184003,433,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-5,,true,,274403,153,5,5,http://localhost:8087/books,428,0,1
+1624051184102,348,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-6,,true,,274403,153,4,4,http://localhost:8087/books,344,0,1
+1624051184207,359,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-7,,true,,274403,153,4,4,http://localhost:8087/books,356,0,0
+1624051184303,314,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-8,,true,,274403,153,3,3,http://localhost:8087/books,310,0,1
+1624051184403,341,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-9,,true,,274403,153,2,2,http://localhost:8087/books,337,0,1
+1624051184502,281,HTTP Request - Quarkus Reactive,200,OK,Thread Group Quarkus Reactive 1-10,,true,,274403,153,1,1,http://localhost:8087/books,278,0,1
+1624051184785,321,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-1,text,true,,201743,160,4,4,http://localhost:8088/native/books,315,0,1
+1624051184886,320,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-2,text,true,,201743,160,4,4,http://localhost:8088/native/books,317,0,1
+1624051184985,349,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-3,text,true,,201743,160,4,4,http://localhost:8088/native/books,346,0,1
+1624051185087,292,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-4,text,true,,201743,160,3,3,http://localhost:8088/native/books,290,0,0
+1624051185189,310,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-5,text,true,,201743,160,4,4,http://localhost:8088/native/books,307,0,1
+1624051185285,288,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-6,text,true,,201743,160,3,3,http://localhost:8088/native/books,282,0,1
+1624051185389,268,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-7,text,true,,201743,160,3,3,http://localhost:8088/native/books,265,0,0
+1624051185488,332,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-8,text,true,,201743,160,3,3,http://localhost:8088/native/books,331,0,1
+1624051185587,284,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-9,text,true,,201743,160,2,2,http://localhost:8088/native/books,281,0,1
+1624051185686,276,HTTP Request - Quarkus Imperative JDBC,200,OK,Thread Group Quarkus Imperative JDBC 2-10,text,true,,201743,160,1,1,http://localhost:8088/native/books,274,0,1
+1624051186067,6110,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-2,text,true,,201743,160,10,10,http://localhost:8089/native/books,6106,0,0
+1624051185964,6295,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-1,text,true,,201743,160,9,9,http://localhost:8089/native/books,6288,0,1
+1624051186167,6818,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-3,text,true,,201743,160,8,8,http://localhost:8089/native/books,6811,0,0
+1624051186467,7081,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-6,text,true,,201743,160,7,7,http://localhost:8089/native/books,7074,0,1
+1624051186264,7463,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-4,text,true,,201743,160,6,6,http://localhost:8089/native/books,7448,0,1
+1624051186366,7538,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-5,text,true,,201743,160,5,5,http://localhost:8089/native/books,7534,0,1
+1624051186666,7349,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-8,text,true,,201743,160,4,4,http://localhost:8089/native/books,7346,0,0
+1624051186565,7987,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-7,text,true,,201743,160,3,3,http://localhost:8089/native/books,7982,0,0
+1624051186767,7907,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-9,text,true,,201743,160,2,2,http://localhost:8089/native/books,7901,0,1
+1624051186865,7836,HTTP Request - Quarkus Imperative JPA (Native),200,OK,Thread Group Quarkus Imperative JPA (Native) 3-10,text,true,,201743,160,1,1,http://localhost:8089/native/books,7831,0,0
+1624051194702,7064,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-1,text,true,,201743,153,10,10,http://localhost:8089/books,7055,0,0
+1624051194802,7179,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-2,text,true,,201743,153,9,9,http://localhost:8089/books,7172,0,0
+1624051194901,7313,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-3,text,true,,201743,153,8,8,http://localhost:8089/books,7309,0,1
+1624051195002,7337,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-4,text,true,,201743,153,7,7,http://localhost:8089/books,7333,0,0
+1624051195105,7406,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-5,text,true,,201743,153,6,6,http://localhost:8089/books,7392,0,0
+1624051195302,7275,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-7,text,true,,201743,153,5,5,http://localhost:8089/books,7269,0,1
+1624051195503,7129,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-9,text,true,,201743,153,4,4,http://localhost:8089/books,7120,0,1
+1624051195402,7325,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-8,text,true,,201743,153,3,3,http://localhost:8089/books,7322,0,0
+1624051195206,7609,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-6,text,true,,201743,153,2,2,http://localhost:8089/books,7606,0,1
+1624051195602,7360,HTTP Request - Quarkus Imperative JPA (ORM),200,OK,Thread Group Quarkus Imperative JPA (ORM) 4-10,text,true,,201743,153,1,1,http://localhost:8089/books,7358,0,1
+1624051202967,224,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-1,text,true,,201534,153,3,3,http://localhost:8084/books,222,0,0
+1624051203068,254,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-2,text,true,,201534,153,3,3,http://localhost:8084/books,248,0,1
+1624051203169,271,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-3,text,true,,201534,153,3,3,http://localhost:8084/books,269,0,1
+1624051203269,254,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-4,text,true,,201534,153,3,3,http://localhost:8084/books,252,0,0
+1624051203368,288,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-5,text,true,,201534,153,3,3,http://localhost:8084/books,286,0,1
+1624051203471,373,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-6,text,true,,201534,153,4,4,http://localhost:8084/books,370,0,0
+1624051203570,284,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-7,text,true,,201534,153,3,3,http://localhost:8084/books,282,0,1
+1624051203665,349,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-8,text,true,,201534,153,3,3,http://localhost:8084/books,346,0,1
+1624051203767,316,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-9,text,true,,201534,153,2,2,http://localhost:8084/books,313,0,1
+1624051203866,297,HTTP Request - Spring Reactive,200,OK,Thread Group Spring Reactive 5-10,text,true,,201534,153,1,1,http://localhost:8084/books,294,0,1
+1624051204167,212,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-1,text,true,,201826,160,3,3,http://localhost:8085/native/books,204,0,1
+1624051204268,259,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-2,text,true,,201826,160,3,3,http://localhost:8085/native/books,254,0,1
+1624051204365,281,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-3,text,true,,201826,160,3,3,http://localhost:8085/native/books,269,0,1
+1624051204465,293,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-4,text,true,,201826,160,3,3,http://localhost:8085/native/books,284,0,1
+1624051204567,307,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-5,text,true,,201826,160,4,4,http://localhost:8085/native/books,295,0,0
+1624051204668,288,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-6,text,true,,201826,160,3,3,http://localhost:8085/native/books,280,0,0
+1624051204770,295,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-7,text,true,,201826,160,3,3,http://localhost:8085/native/books,282,0,0
+1624051204866,307,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-8,text,true,,201826,160,3,3,http://localhost:8085/native/books,296,0,1
+1624051204969,272,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-9,text,true,,201826,160,2,2,http://localhost:8085/native/books,262,0,1
+1624051205068,260,HTTP Request - Spring Imperative JDBC (Native),200,,Thread Group Spring Imperative JDBC (Native) 6-10,text,true,,201826,160,1,1,http://localhost:8085/native/books,251,0,0
+1624051205331,3917,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-1,text,true,,130323,153,10,10,http://localhost:8085/books,3902,0,0
+1624051205435,4295,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-2,text,true,,130323,153,9,9,http://localhost:8085/books,4282,0,0
+1624051205531,4408,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-3,text,true,,130323,153,8,8,http://localhost:8085/books,4389,0,1
+1624051205632,4486,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-4,text,true,,130323,153,7,7,http://localhost:8085/books,4476,0,0
+1624051205732,4439,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-5,text,true,,130323,153,6,6,http://localhost:8085/books,4423,0,1
+1624051205932,4466,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-7,text,true,,130323,153,5,5,http://localhost:8085/books,4456,0,1
+1624051206034,4410,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-8,text,true,,130323,153,4,4,http://localhost:8085/books,4407,0,1
+1624051206131,4378,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-9,text,true,,130323,153,3,3,http://localhost:8085/books,4372,0,1
+1624051205832,4693,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-6,text,true,,130323,153,2,2,http://localhost:8085/books,4686,0,1
+1624051206233,4318,HTTP Request - Spring Imperative JDBC (ORM),200,,Thread Group Spring Imperative JDBC (ORM) 7-10,text,true,,130323,153,1,1,http://localhost:8085/books,4315,0,1
+1624051210654,7696,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-2,text,true,,201826,160,10,10,http://localhost:8186/native/books,749,0,1
+1624051210553,7961,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-1,text,true,,201826,160,9,9,http://localhost:8186/native/books,596,0,1
+1624051210754,8038,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-3,text,true,,201826,160,8,8,http://localhost:8186/native/books,785,0,0
+1624051210854,8166,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-4,text,true,,201826,160,7,7,http://localhost:8186/native/books,1174,0,0
+1624051210956,8508,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-5,text,true,,201826,160,6,6,http://localhost:8186/native/books,1253,0,1
+1624051211155,8860,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-7,text,true,,201826,160,5,5,http://localhost:8186/native/books,2304,0,1
+1624051211057,9150,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-6,text,true,,201826,160,4,4,http://localhost:8186/native/books,2719,0,1
+1624051211253,9004,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-8,text,true,,201826,160,3,3,http://localhost:8186/native/books,2709,0,1
+1624051211354,8924,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-9,text,true,,201826,160,2,2,http://localhost:8186/native/books,2440,0,0
+1624051211457,8828,HTTP Request - Spring Imperative JPA (Native),200,,Thread Group Spring Imperative JPA (Native) 8-10,text,true,,201826,160,1,1,http://localhost:8186/native/books,2356,0,1
+1624051220279,7095,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-1,text,true,,201826,153,10,10,http://localhost:8186/books,251,0,1
+1624051220383,7154,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-2,text,true,,201826,153,9,9,http://localhost:8186/books,337,0,0
+1624051220479,7097,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-3,text,true,,201826,153,8,8,http://localhost:8186/books,384,0,1
+1624051220582,7270,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-4,text,true,,201826,153,7,7,http://localhost:8186/books,440,0,0
+1624051220780,7152,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-6,text,true,,201826,153,6,6,http://localhost:8186/books,498,0,0
+1624051220680,7313,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-5,text,true,,201826,153,5,5,http://localhost:8186/books,505,0,0
+1624051220882,7113,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-7,text,true,,201826,153,4,4,http://localhost:8186/books,524,0,0
+1624051220982,7137,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-8,text,true,,201826,153,3,3,http://localhost:8186/books,587,0,0
+1624051221181,7025,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-10,text,true,,201826,153,2,2,http://localhost:8186/books,626,0,0
+1624051221081,7129,HTTP Request - Spring Imperative JPA (ORM),200,,Thread Group Spring Imperative JPA (ORM) 9-9,text,true,,201826,153,1,1,http://localhost:8186/books,599,0,1
