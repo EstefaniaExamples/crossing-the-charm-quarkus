@@ -13,7 +13,7 @@ const config = {
 
 const pool = new Pool({
     user:'book',
-    host:'192.168.1.197',
+    host:'192.168.1.23',
     database:'books_database',
     password:'book',
     port:'5401'

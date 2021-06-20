@@ -7,6 +7,13 @@ You can find the presentation in the following link:
 - Gitpod: http://gitpod.io/#https://github.com/EstefaniaExamples/crossing-the-chasm-native-images
 - [![Java CI](https://github.com/EstefaniaExamples/crossing-the-chasm-native-images/actions/workflows/build.yml/badge.svg)](https://github.com/EstefaniaExamples/crossing-the-chasm-native-images/actions/workflows/build.yml)
 
+## How to compile
+
+The script compile all the project, generate the docker containers and push them into docker repository.
+```
+./compile.sh
+```
+
 ## How to build
 
 ```
@@ -18,7 +25,7 @@ echo $IP_LOCAL
 ## Generating JMeter Aggregate Report from the command-line
 
 To do this we need to install 2 plugins:
-- JMeterPluginsCMD Command Line Tool
+- JMeterPluginsCMD Command Line Tool (Command-Line Graph Plotting Tool)
 - Synthesis Report
 
 The first plugin, sort of, lets you refer and use the second plugin, which actually builds the reports.
@@ -29,5 +36,6 @@ $ jmeter -n -t "LoadNativeTests.jmx" -l "./src/test/resources/tmp/output-native.
 $ [jmeter-dir]/bin/JMeterPluginsCMD.sh — generate-csv your-output.csv — input-jtl input.jtl — plugin-type AggregateReport
 ```
 
-https://jmeter-plugins.org/wiki/JMeterPluginsCMD/
-https://medium.com/@abhimanyuPathania/automating-the-automatic-with-jmeter-at-logos-76f721faba4d
+You can find more documentation about this plugins [here](https://medium.com/@abhimanyuPathania/automating-the-automatic-with-jmeter-at-logos-76f721faba4d)
+
+The script ```jmeter/build.sh``` run the Jmeter ten times and generate the aggregated report automatically. 
