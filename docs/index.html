@@ -360,27 +360,24 @@ iMac 4.2 GHz 4-core Intel Core i7 processor
 							Quarkus was designed with that feature in mind.
 						</p>
 					</section>
-					<!--
-					<section>
-						<h2>How to compile native images with Spring?</h2>
-						<img src="./images/setup-1.png" />
-<pre><code data-trim data-noescape>
-< spring-native.version>0.9.2< /spring-native.version>
-< graalvm.version>21.1.0< /graalvm.version>
-</code></pre>
-					</section>
-					-->
 					<section>
 						<h2>How to compile native images with Spring?</h2>
 						<p>
-							1. We configure the Buildpack plugin for the native purpose
+							1. We add the Spring Native dependency
+						</p>
+						<img src="./images/setup-nativedependency.png" width="70%" />
+					</section>
+					<section>
+						<h2>How to compile native images with Spring?</h2>
+						<p>
+							2. Enable native image support (using Spring Boot’s Cloud Native Buildpacks support)
 						</p>
 						<img src="./images/setup-2.png" width="60%" />
 					</section>
 					<section>
 						<h2>How to compile native images with Spring?</h2>
 						<p>
-							2.1 We added the plugin to compile Native images
+							3. We added the plugin to compile Native images
 						</p>
 						<img src="./images/setup-3.png" width="50%" />
 					</section>
